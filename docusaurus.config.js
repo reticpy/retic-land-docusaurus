@@ -1,29 +1,29 @@
 module.exports = {
-  title: "My Site",
-  tagline: "The tagline of my site",
-  url: "https://your-docusaurus-test-site.com",
+  title: "Retic",
+  tagline: "Retic is a framework for Python.",
+  url: "https://retic.land/",
   baseUrl: "/",
   onBrokenLinks: "throw",
-  favicon: "img/favicon.ico",
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  favicon: "img/favic.ico",
+  organizationName: "Staimer", // Usually your GitHub org/user name.
+  projectName: "retic", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: "My Site",
-      logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
-      },
+      title: "Retic",
+      // logo: {
+      //   alt: "Retic",
+      //   src: "img/retic-logo2.jpg",
+      // },
       items: [
         {
-          to: "manual/",
+          to: "manual/es/introduction",
           activeBasePath: "docs",
-          label: "Docs",
-          position: "left",
+          label: "Manual",
+          position: "right",
         },
-        { to: "blog", label: "Blog", position: "left" },
+        // { to: "blog", label: "Blog", position: "left" },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/reticpy/retic",
           label: "GitHub",
           position: "right",
         },
@@ -36,47 +36,59 @@ module.exports = {
           title: "Docs",
           items: [
             {
-              label: "Style Guide",
-              to: "manual/",
+              label: "Installation",
+              to: "manual/es/getting-started/installation",
             },
             {
-              label: "Second Doc",
-              to: "manual/doc2/",
+              label: "Getting Started",
+              to: "manual/es/getting-started/requirements",
+            },
+            {
+              label: "Tutorial",
+              to: "manual/es/tutorial/set-up",
+            },
+            {
+              label: "Main Concepts",
+              to: "manual/es/concepts/architecture",
+            },
+            {
+              label: "API Reference",
+              to: "manual/es/api/request",
             },
           ],
         },
         {
           title: "Community",
           items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
+            // {
+            //   label: "Github",
+            //   href: "https://github.com/reticpy/retic",
+            // },
             {
               label: "Discord",
               href: "https://discordapp.com/invite/docusaurus",
             },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
-            },
+            // {
+            //   label: "Twitter",
+            //   href: "https://twitter.com/docusaurus",
+            // },
           ],
         },
         {
           title: "More",
           items: [
-            {
-              label: "Blog",
-              to: "blog",
-            },
+            // {
+            //   label: "Blog",
+            //   to: "blog",
+            // },
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/reticpy/retic",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
   },
   presets: [
@@ -88,7 +100,7 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/",
+            "https://github.com/reticpy/retic-land-docusaurus/edit/master/",
         },
         blog: {
           showReadingTime: true,

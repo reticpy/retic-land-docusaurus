@@ -17,10 +17,10 @@ Diseñado para atacar los siguientes puntos en el desarrollo de software:
 
 ### Inicio rápido
 
-- [Configure su entorno local para el desarrollo.](../es/getting-started/requirements.md)
+- [Configure su entorno local para el desarrollo.](./getting-started/requirements)
 
-- [Instalar Retic.](../getting-started/installation)
+- [Instalar Retic.](./getting-started/installation)
 
-- [Trabaja en un tutorial completo para crear tu primera aplicación.](../tutorial/set-up)
+- [Trabaja en un tutorial completo para crear tu primera aplicación.](./tutorial/set-up)
 
-- [Conozca los conceptos fundamentales de diseño y la arquitectura de las aplicaciones.](../fundamentals/architecture)
+- [Conozca los conceptos fundamentales de diseño y la arquitectura de las aplicaciones.](./concepts/architecture)
