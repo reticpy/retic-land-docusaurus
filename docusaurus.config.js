@@ -1,7 +1,7 @@
 module.exports = {
   title: "Retic",
   tagline: "Retic is a framework for Python.",
-  url: "https://retic.land/",
+  url: "https://retic.land",
   baseUrl: "/",
   onBrokenLinks: "throw",
   favicon: "img/favic.ico",
