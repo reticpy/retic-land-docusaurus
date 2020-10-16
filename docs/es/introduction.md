@@ -15,7 +15,7 @@ Diseñado para atacar los siguientes puntos en el desarrollo de software:
 
 - **Inteligencia artificial**: Las librerias más importantes están escritas en Python.
 
-### Inicio rápido 
+### Inicio rápido  
 
 - [Configure su entorno local para el desarrollo.](./getting-started/requirements)
 
