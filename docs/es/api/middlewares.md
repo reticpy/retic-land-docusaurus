@@ -6,25 +6,25 @@ description: Middlewares de la Aplicación
 slug: /es/api/middlewares
 ---
 
-Retic proporciona servicios que funcionan como middlewares de la aplicación los cuales se aplican a una o varias rutas **especificadas**.
+Retic proporciona servicios que funcionan como logica de intercambio de la aplicación, ésta se aplica a una o varias rutas **especificadas**.
 
 ## cors(*methods: str*,*has_credentials: bool*,*origin: str*, *headers: str*, *expose_headers: str*)
 
-CORS es una abreviatura que significa 'Intercambio de recursos de origen cruzado' y, como su nombre lo indica, le permite compartir recursos de una variedad de fuentes.
+El intercambio de recursos de origen cruzado o "CORS" por sus siglas en ingles, le permitirá como lo indica su nombre, compartir recursos de una gran variedad de fuentes.
 
-**Parámetros:**
+**Los parámetros utilizados por CORS son:**
 
-* **methods**: El encabezado de respuesta Access-Control-Allow-Methods indica qué métodos HTTP están permitidos en un punto final particular para solicitudes de origen cruzado.
+* **methods**: Al utilizar el encabezado de respuesta "Access-Control-Allow-Methods", se podrá indicar qué métodos HTTP están permitidos en el intercambio de recursos de origen cruzado. Esto servirá como punto final particular para solicitudes de origen CORS.
 
-* **has_credentials**: El encabezado de respuesta Access-Control-Allow-Credentials le dice el navegador que el servidor permite credenciales para una solicitud de origen cruzado.
+* **has_credentials**: El encabezado de respuesta "Access-Control-Allow-Credentials" le dice el navegador que el servidor da consentimiento y permite credenciales para la solicitud de CORS o de origen cruzado.
 
-* **origin**: El encabezado de respuesta Access-Control-Allow-Origin indica si los recursos en la respuesta se pueden compartir con el origen dado.
+* **origin**: "Access-Control-Allow-Origin" en el caso de éste encabezado de respuesta, se indica si los recursos en la respuesta se pueden compartir con el origen del recurso dado.
 
-* **headers**: El encabezado de respuesta Access-Control-Allow-Headers se usa en respuesta a una solicitud de verificación previa que incluye los encabezados de solicitud de control de acceso para indicar qué encabezados HTTP se pueden usar durante la solicitud real.
+* **headers**: El uso del encabezado de respuesta "Access-Control-Allow-Headers" es usado como respuesta a una solicitud de verificación previa. Esta incluye los encabezados para la solicitud de control de acceso e indicar qué encabezados HTTP pueden ser utilizados durante la solicitud real.
 
-* **expose_headers**: El encabezado de respuesta Access-Control-Expose-Headers indica qué encabezados se pueden exponer como parte de la respuesta al enumerar.
+* **expose_headers**: Ahora en el caso del encabezado de respuesta "Access-Control-Expose-Headers", indicará qué encabezados se pueden utilizar para mostrarse como parte de la respuesta al enumerar.
 
-Por seguridad, Retic protege las rutas con el método ``options`` de accesos no autorizados. Es por ello que se debe definir las rutas de acceso con el método ``option`` especificas. Se pueden utilizar expresiones regulares como se muestra en el ejemplo siguiente.
+Para más seguridad, Retic protege las rutas con el método ``options`` contra accesos no autorizados. Es por ello que se debe definir las rutas de acceso con el mismo método (``option``) bien especificadas. También pueden utilizarse expresiones regulares como se muestra en el siguiente ejemplo.
 
 ```python
 
