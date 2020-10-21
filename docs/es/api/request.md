@@ -8,15 +8,15 @@ slug: /es/api/request
 
 ## Clase Request
 
-La clase **Request** representa la solicitud HTTP y tiene propiedades como parámetros, cuerpo de la solicitud, encabezados de la petición, etc.
+La clase **Request** representa la solicitud HTTP y contiene una biblioteca que ayuda a que las solicitudes sean mucho más simples. Contiene propiedades tales como parámetros, cuerpo de la solicitud, encabezados de la petición, entre otras.
 
 ### Propiedades
 
-Algunas propiedades son una implementación de [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableMultiDict) e [ImmutableList](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList) para representar su valor.
+Algunas propiedades son una implementación del directorio [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableMultiDict) e [ImmutableList](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList) para representar su valor.
 
 #### access_route
 
-Lista todas las direcciones IP que intervienen en la petición.
+Enlista cada dirección IP que interviene en la petición.
 
 ```python
 
@@ -27,7 +27,7 @@ req.access_route: ImmutableList(['127.0.0.1'])
 
 #### args
 
-Lista todos los parametros en la URL de la petición.
+Enlista todos los parámetros en la URL de la petición.
 
 ```python
 
@@ -39,11 +39,11 @@ req.args: ImmutableMultiDict([('queryparam', '13344')])
 
 ```
 
-Por defecto un `ImmutableMultiDict` es retornado en esta función, contiene funciones como `getlist`, `get`, `get_all` para interactuar de los párametros en la URL de una petición. Para más detalles visita la documentación oficial sobre la clase [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList).
+Por defecto un `ImmutableMultiDict` que es retornado en esta función contiene funciones como `getlist`, `get`, `get_all` para interactuar con los párametros en la URL de una petición. Si necesitas más detalles puedes visitar la documentación oficial sobre esta clase [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList).
 
 #### base_url
 
-URL de la petición sin paramertros _querystring_.
+Esta arroja la URL de la petición sin paramertros _querystring_.
 
 ```python
 
@@ -54,7 +54,7 @@ req.base_url: 'http://127.0.0.1:1801/files/123'
 
 #### body
 
-Instancia de la clase `Body`. Contiene el cuerpo de la petición.
+Instancia de la clase `Body`. Contiene el cuerpo que conforma la petición.
 
 ```python
 
@@ -67,7 +67,7 @@ req.body:
 
 #### cookies
 
-Lista todas las cookies de la petición.
+Enlista todas las cookies de la petición realizada.
 
 ```python
 
@@ -89,7 +89,7 @@ req.data: b'{\r\n    "filename":"name of the file"\r\n}'
 
 #### environ
 
-Entorno WSGI utilizado para extraer la información de la petición.
+Entorno WSGI que es utilizado para extraer la información de la petición.
 
 ```python
 
@@ -100,7 +100,7 @@ req.environ: {'CONTENT_LENGTH': '39', 'CONTENT_TYPE': 'text/plain', 'HTTP_ACCEPT
 
 #### files
 
-Lista todos los archivos de la petición HTTP. Cada valor es una instancia de la clase [FileStorage](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.FileStorage).
+Enlista todos los archivos de la petición HTTP. Cada valor es una instancia de la clase [FileStorage](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.FileStorage).
 
 Cada elemento se comporta como un _file object_ reconocido por **Python**, con la diferencia de que también tiene una función `save()` que puede almacenar el archivo en un sistema de archivos.
 
@@ -113,7 +113,7 @@ req.files: ImmutableMultiDict([('files', <FileStorage: '200px-Flag_of_Spain.svg.
 
 #### form
 
-Contiene todos los valores en un formulario de una petición tipo: `application/x-www-form-urlencoded`.
+Contiene todos los valores en un formulario de una petición del tipo: `application/x-www-form-urlencoded`.
 
 ```python
 
@@ -124,7 +124,7 @@ req.form: ImmutableMultiDict([('size', '123456')])
 
 #### full_path
 
-URL completa de la petición.
+Contiene la URL completa de la petición.
 
 ```python
 
@@ -135,7 +135,7 @@ req.full_path: '/files/123?queryparam=13344'
 
 #### headers
 
-Lista de todas las cabeceras de la petición.
+Enlista todos los encabezados de la petición.
 
 ```python
 
@@ -156,7 +156,7 @@ source = req.headers['Source']
 
 #### host
 
-Contiene el nombre del host y el puerto si este está disponible.
+Contiene el nombre del host y el puerto si el mismo está disponible.
 
 ```python
 
@@ -170,7 +170,7 @@ req.host: 'localhost:1801'
 
 #### method
 
-El método de la petición, por ejemplo: `GET`, `POST`, `DELETE` y `PUT`.
+Este es el método utilizado para la petición, por ejemplo: `GET`, `POST`, `DELETE` y `PUT`.
 
 ```python
 
@@ -181,7 +181,7 @@ req.method: 'GET'
 
 #### params
 
-Objeto que contiene todos los parametros en la URL de petición: `GET`, `POST`, `DELETE` y `PUT`.
+Objeto que contiene todos los parametros para la URL de la petición: `GET`, `POST`, `DELETE` y `PUT`.
 
 ```python
 
@@ -209,7 +209,7 @@ req.path: '/files/123'
 
 #### retic
 
-Diccionario utilizado para agregar valores personalizados a la petición y compartirlos entre controladores. Utiliza las funciones `req.set()` y `req.get()` para manipular sus valores.
+Es un diccionario que se utiliza para agregar valores personalizados a la petición y así compartirlos entre controladores. Utiliza las funciones `req.set()` y `req.get()` para manipular sus valores.
 
 ```python
 
@@ -223,13 +223,13 @@ req.retic: {'app1': {'msg': 'say hi!'}}
 
 ### Funciones
 
-La clase Request utiliza las siguientes funciones para manipulación de su información.
+La clase Request utiliza las siguientes funciones para la manipulación de su información.
 
 #### param(_key: str_, _default_value: any_ = None, _callback_ = None)
 
-Devuelve el valor del parámetro con el nombre especificado.
+Esto devuelve el valor del parámetro con el nombre especificado.
 
-`req.param(...)` busca en los parámetros analizados desde la **ruta URL**, el **cuerpo de la solicitud**, la **cadena de consulta**, en ese orden. Si no existe el valor en la solicitud, devuelve `None` o el valor predeterminado por defecto especificado.
+`req.param(...)` busca en los parámetros analizados como la **ruta URL**, el **cuerpo de la solicitud** y la **cadena de consulta**, todo en ese orden. Si no existe el valor en la solicitud, devolverá `None` o el valor por defecto especificado.
 
 **Parámetros:**
 
@@ -255,7 +255,7 @@ print(req.param('id3')
 
 #### set(_key: str_, _value: any_ = None)
 
-Asigna un objeto en el **diccionario retic** con un nombre específico. Tenga en cuenta que los nombres no distinguen entre mayúsculas y minúsculas y si ya existe se sobreescribirá su valor. Si el valor a asignar no existe, por defecto se guardará con valor `None`.
+Asigna un objeto en el **diccionario retic** con un nombre específico. Se debe tener en cuenta que los nombres no distinguen entre mayúsculas o minúsculas, en el caso de que el nombre ya exista se sobreescribirá su valor y el código no será el esperado. En el caso de que el valor a asignar no exista se guardará el valor `None` por defecto.
 
 **Parámetros:**
 
@@ -272,7 +272,7 @@ req.set('app1', {u"msg": "say hi!"})
 
 #### get(_key: str_, _default_value: any_ = None)
 
-Retorna el valor de un objeto en el **diccionario retic** con un nombre en especifico. Tenga en cuenta que los nombres no distinguen entre mayúsculas y minúsculas. Si no existe el valor en la solicitud, devuelve `None` o el valor predeterminado por defecto especificado.
+Acá se retorna el valor de un objeto en el **diccionario retic** con un nombre en especifico. Nuevamente debe terner en cuenta que los nombres no distinguen entre mayúsculas o minúsculas. Si no existe un valor en la solicitud, éste devolverá `None` o el valor predeterminado por defecto que esté especificado.
 
 **Parámetros:**
 
@@ -296,9 +296,9 @@ print(req.get('app2', 2233))
 
 #### all_params()
 
-Devuelve el valor de todos los parámetros enviados en la solicitud, y el diccionario retic combinado en un solo diccionario.
+Devuelve el valor de todos los parámetros enviados en la solicitud junto con el diccionario retic combinado en un solo diccionario.
 
-Incluye parámetros analizados desde la **ruta URL**, el **cuerpo de la solicitud**, la **cadena de consulta**, y el **diccionario retic**, en ese orden.
+Incluye parámetros analizados como la **ruta URL**, el **cuerpo de la solicitud**, la **cadena de consulta** y el **diccionario retic**, todo en ese orden.
 
 ```python
 
@@ -314,4 +314,4 @@ print(req.all_params())
 
 ### Otras propiedades y funciones
 
-Retic hereda de la clase `Request de Werkzeug` para la gestión de sus peticiones, visita la documentación acerca de su clase [Request](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#base-wrappers) para complementar la información aquí mencionada.
+Retic hereda desde la clase `Request de Werkzeug` para la gestión de sus peticiones. Visita la documentación acerca de su clase [Request](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#base-wrappers) para complementar la información que se encuentra acá mencionada.
