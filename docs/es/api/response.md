@@ -12,11 +12,11 @@ La clase **Response** representa la respuesta a una petición HTTP realizada por
 
 ### Propiedades
 
-A continuación se presentan las principales propiedades de la clase `Response` y su funcionalidad.
+A continuación se presentan las principales propiedades de la clase `Response` y su funcionalidad:
 
 #### default_mimetype
 
-Todas las respuestas tienen un por defecto un mimetype `text/plain`.
+Todas las respuestas tendrán por defecto un mimetype `text/plain`.
 
 ```python
 
@@ -27,7 +27,7 @@ res.default_mimetype: 'text/plain'
 
 #### default_status
 
-Todas las respuestas tienen un por defecto un codigo de estado de respuesta `status 200`.
+Todas las respuestas tienen por defecto un codigo de estado de respuesta `status 200`.
 
 ```python
 
@@ -38,7 +38,7 @@ res.default_status: 200
 
 #### headers
 
-Lista de todas las cabeceras de la respuesta. Por defecto, todas las peticiones tienen la cabecera. `'content-type': 'application/json'`
+Esta es la lista de todas las cabeceras o encabezados de la respuesta. Por defecto, todas las peticiones tienen la cabecera. `'content-type': 'application/json'`
 
 ```python
 
@@ -49,7 +49,7 @@ Headers([('content-type', 'application/json'), ('Access-Control-Allow-Methods', 
 
 #### status
 
-Código de estado de la respuesta en formato de cadena de texto.
+Es el código de estado de la respuesta en formato de cadena de texto.
 
 ```python
 
@@ -60,7 +60,7 @@ res.status: '200 OK'
 
 #### status_code
 
-Código de estado de la respuesta en formato númerico.
+Este es el código de estado de la respuesta en un formato númerico.
 
 ```python
 
@@ -71,17 +71,17 @@ res.status_code: 200
 
 ### Funciones
 
-La clase **Response** utiliza las siguientes funciones para manipulación de su información.
+La clase **Response** utiliza las siguientes funciones para la manipulación de su información:
 
 #### bad_request(*content: any* = "")
 
-Este método responde con un _400 Bad Request_ a la petición del cliente, esto indica que la solicitud no es válida.
+Este método tendrá como respuesta un _400 Bad Request_ a la petición del cliente, esto es para indicar que la solicitud no es válida.
 
-Esto generalmente significa que la solicitud contenía parámetros o cabeceras no válidas, o que intentó hacer algo que la lógica de su aplicación no admite.
+Esto generalmente significa que la solicitud contenía parámetros o cabeceras no válidas, o que intentó hacer algo que para la lógica de su petición no es admitica.
 
 **Parámetros:**
 
-- **content**: Información para enviar al cliente, un mensaje, un diccionario, etc. Si no existe, envía un mensaje de estado basado en el código de estado.
+- **content**: Esta es la información que está almacenada para ser enviada al cliente, puede ser en forma de un mensaje, un diccionario, entre otras cosas similares. En el caso de que no exista, se enviará un mensaje de estado basandose en el código del mismo estado.
 
 ```python
 
@@ -120,11 +120,11 @@ def upload(req: Request, res: Response):
 
 Este método se utiliza para enviar una respuesta _403 forbidden_ al cliente, indicando que una solicitud no está autorizada.
 
-Esto generalmente significa que el agente de usuario intentó hacer algo que ellos no estaban autorizados para hacerlo, como cambiar la contraseña de otro usuario.
+Esto generalmente significa que el agente de usuario intentó hacer una "acción" para la cual no tenía ningún tipo de autorización para hacerla, algo como cambiar la contraseña de otro usuario caería en una de éstas acciones que normalmente no están autorizadas.
 
 **Parámetros:**
 
-- **content**: Información para enviar al cliente, un mensaje, un diccionario, etc. Si no existe, envía un mensaje de estado basado en el código de estado.
+- **content**: Información destinada al cliente en forma de mensaje, diccionario, entre otros. en el caso de que exista, se enviará un mensaje de estado basado en el código del mismo estado.
 
 ```python
 
@@ -164,11 +164,11 @@ def login(req: Request, res: Response):
 
 Este método se utiliza para enviar una respuesta _404 not_found_.
 
-Cuando se llama manualmente desde el código de su aplicación, este método normalmente se usa para indica que el cleinte intentó encontrar, actualizar o eliminar algo que no existe.
+Cuando se llama manualmente desde el código de su aplicación, este método es normalmente utilizado para indicar que el cliente intentó encontrar, actualizar o eliminar algo que no existe.
 
 **Parámetros:**
 
-- **content**: Información para enviar al cliente, un mensaje, un diccionario, etc. Si no existe, envía un mensaje de estado basado en el código de estado.
+- **content**: Información para ser enviada al cliente en forma de mensaje, diccionario, entre otros. En el caso de que no exista, se enviará un mensaje de estado basado en el código del estado.
 
 ```python
 
@@ -209,9 +209,11 @@ def get_by_folder(req: Request, res: Response):
 
 Este método se utiliza para enviar una respuesta _200 OK_ al cliente.
 
+Esto significa que la petición del cliente ha sido aceptada.
+
 **Parámetros:**
 
-- **content**: Información para enviar al cliente, un mensaje, un diccionario, etc. Si no existe, envía un mensaje de estado basado en el código de estado.
+- **content**: Información para ser enviada al cliente como un mensaje, un diccionario, entre otros. En caso de que no exista, se enviará un mensaje de estado basado en el código del estado.
 
 ```python
 
@@ -268,11 +270,11 @@ def get_by_folder(req: Request, res: Response):
 
 #### server_error(*content: any* = "")
 
-Este método se utiliza para enviar una respuesta _500 Server error_ al cliente, indicando que ocurrió algún tipo de error del servidor
+Este método se utiliza para enviar una respuesta _500 Server error_ al cliente, indicando que ocurrió algún tipo de error en el servidor
 
 **Parámetros:**
 
-- **content**: Información para enviar al cliente, un mensaje, un diccionario, etc. Si no existe, envía un mensaje de estado basado en el código de estado.
+- **content**: Información para enviarse al cliente como un mensaje, un diccionario, entre otros. Si no existe, se enviará un mensaje de estado basado en el código del estado.
 
 ```python
 
@@ -298,13 +300,13 @@ def undefined(req: Request, res: Response):
 
 #### send(_content: any_ = "")
 
-Envia una respuesta de cadena en un formato(XML, CSV, texto plano). Respuestas en formato JSON, etc. Se recomienda su uso en el caso que se necesite enviar una respuesta de éxito al cliente con un codigo de estado diferente de 200.
+Envía una respuesta en cadena con un formato(XML, CSV, texto plano), respuestas en formato JSON, entre otros. Se recomienda su uso en el caso de que se necesite enviar una respuesta de éxito al cliente con un codigo de estado diferente de 200.
 
 Este método se utiliza en la implementación subyacente de la mayoría de los otros métodos de respuesta de terminal.
 
 **Parámetros:**
 
-- **content**: Información para enviar al cliente, un mensaje, un diccionario, etc. Si no existe, envía un mensaje de estado basado en el código de estado.
+- **content**: Información para ser enviada al cliente en forma de mensaje, diccionario, entre otros. En el caso de que no exista, se enviará un mensaje de estado basado en el código del mismo estado.
 
 ```python
 
@@ -326,15 +328,15 @@ Hi!
 
 #### set_headers(*headers: dict*, *value: str* = None)
 
-Establece cabeceras de respuesta con valores especificos.
+Establece cabeceras o encabezados de respuesta con valores especificos.
 
 Alternativamente, se puede pasar un objeto que contenga cabeceras para configurar múltiples valores a la vez, donde las claves son los nombres de las cabeceras y los valores correspondientes son los valores deseados.
 
 **Parámetros:**
 
-- **headers**: Puede ser de tipo `dict`, para representar un objeto de cabeceras que se agregarán a las cabeceras actuales. Si es de tipo `str` se utilizará para acceder a una cabecera en especifico. Cualquier otro formato provocará una excepción de error.
+- **headers**: Puede ser de tipo `dict`, para representar un objeto de cabeceras que se agregarán a las cabeceras actuales. Si es del tipo `str` será utilizado para acceder a una cabecera en específico. Cualquier otro tipo de formato provocará una excepción de error.
 
-- **value**: Valor a asignar a la cabecera especificada. Por defecto tiene un valor de `None`.
+- **value**: Este es el valor que se asignará a la cabecera especificada. Por defecto tiene un valor `None` especificado.
 
 ```python
 
@@ -361,11 +363,11 @@ content-type: text/plane
 
 #### set_status(*code: int*)
 
-Establezca el código de estado para la respuesta HTTP.
+Es utilizado para establecer el código de estado para la respuesta HTTP.
 
 **Parámetros:**
 
-- **code**: Número que representa el código de estado de la respuesta HTTP.
+- **code**: Es el número que representa el código de estado de la respuesta HTTP.
 
 ```python
 
@@ -392,7 +394,7 @@ def upload(req: Request, res: Response):
 
 #### redirect(_new_url: str_)
 
-Redirige a otra url. Utiliza redirección permanente con código de estado 308.
+Esta es utilizada para redirigir a otra url. Utiliza redirección permanente con código de estado 308.
 
 **Parámetros:**
 
