@@ -10,7 +10,7 @@ Retic es un marco de trabajo que se utiliza para crear **aplicaciónes del lado 
 
 Una aplicación se define por **rutas, controladores y servicios**. Retic provee la clase **Router** que ayuda a definir los puntos de acceso de la aplicación.
 
-Retic recomienda la siguiente estructura de directorios para que la estabilidad y mantenimiento de la plicación resulte más facil de realizar.
+Retic recomienda la siguiente estructura de directorios para que la estabilidad y mantenimiento de la aplicación resulte más facil de realizar.
 
 ```bash
 
