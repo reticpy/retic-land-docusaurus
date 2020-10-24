@@ -6,7 +6,7 @@ description: Servicios de la aplicación
 slug: /es/concepts/services
 ---
 
-Retic recomienda estructurar la aplicación de forma modular. Independizar el funcionamiento de los controladores de los servicios que realizan su acción. Fácilitando la integración con las diferentes pruebas que la aplicación requiera. Además, de minimizar el código repetido.
+Retic recomienda realizar una estructura modular para tu aplicación. Independizar el funcionamiento de los controladores de los servicios que realizan su acción. Fácilitando así la integración necesaria con las diferentes pruebas que la aplicación requiera. Además, de minimizar la repetición de código.
 
 ```python
 
