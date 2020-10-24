@@ -13,13 +13,13 @@ La clase **App** contiene la instancia principal de la aplicación.
 
 **Parámetros:**
 
-- **env**: Variables de entorno de la aplicación.
+- **env**: Son las variables de entorno de la aplicación.
 
 ### Propiedades
 
 #### apps
 
-Contiene las referencias a las aplicaciones como: aplicaciones externas, etc.
+Contiene las referencias a las aplicaciones como: aplicaciones externas, entre otras.
 
 ```python
 
@@ -44,7 +44,7 @@ app.use(APP_BACKEND, "backend")
 
 ```
 
-El codigo anterior guarda la referencias a las aplicaciones externas utilizadas en la aplicación. A continuación se muestra como obtener los valores.
+El codigo anterior guarda la referencias a las aplicaciones externas utilizadas en la aplicación. A continuación se muestra como obtener los valores de esta.
 
 ```python
 
@@ -66,23 +66,23 @@ URL_USERS = app.apps['backend']['example']['base_url'] + \
 
 #### config
 
-Guarda la configuración de la apliacción. Ver [Configuración](./settings) para más detalles.
+Es utilizada para guardar la configuración de la apliacción. Ver [Configuración](./settings) para más detalles.
 
 #### router
 
-Instancia de la clase [Router](./routing).
+Es la instancia de la clase [Router](./routing).
 
 ### Funciones
 
 #### use(_item: any_, _name: str_ = "")
 
-Configuración de los middleware de la apliacción, y permite importar otras configuración como rutas de acceso de la aplicación.
+Es la configuración de los middlewares o las lógicas de intercambio de información de la apliacción, y permite importar otras configuraciones como rutas de acceso de la aplicación.
 
 **Parámetros:**
 
-- **item**: Elemento a importar a la apliación. Si es de tipo **Router** se almacena en la propiedad **router** de la aplicación. De lo contrario se almancena en la propiedad **apps**
+- **item**: Es el elemento que se va a importar a la apliación. Si es de tipo **Router** será almacenada en la propiedad **router** de la aplicación. En caso contrario se almancena en la propiedad **apps**
 
-- **name**: Nombre del elemento a guardar.
+- **name**: Especifica el nombre del elemento a guardar.
 
 ```python
 
@@ -109,7 +109,7 @@ app.use(APP_BACKEND, "backend")
 
 #### application(environ, start_response)
 
-Aplicación para enviar una respuesta a las peticiones del cliente. Se utiliza en despliegues de la aplicación con [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface).
+Es una aplicación utilizada para enviar una respuesta a las peticiones del cliente. También es utilizada en despliegues de la aplicación con [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface).
 
 **Parámetros:**
 
@@ -160,7 +160,7 @@ if __name__ == "__main__":
 
 #### clear()
 
-Reinicia la aplicación a su estado inicial, borra la configuración, las rutas y las apps.
+Reinicia la aplicación a su estado inicial, borrando toda la configuración, las rutas y las apps.
 
 ```python
 
@@ -205,21 +205,21 @@ Crea un servidor web basado en parametros de configuracion.
 
 - **environ**: Define el [Request](../api/request) de la petición.
 
-- **hostname**: El host a enlazar, por ejemplo `localhost`. Si inicia con `unix://` se utiliza un socket de Unix en lugar de un socket de tipo TCP.
+- **hostname**: Define el host a enlazar, por ejemplo `localhost`. Si inicia con `unix://` se utiliza un socket de Unix en lugar de un socket de tipo TCP.
 - **port**: Puerto del servidor. Ejemplo: `8080`.
 - **application**: Aplicación WSGI a ejecutar.
-- **use_reloader**: Reinicia el servidor automaticamente si se realizan cambios en la aplicación.
-- **use_debugger**: Crea el servidor en modo debugger.
+- **use_reloader**: Reinicia el servidor automáticamente en caso de que se realicen cambios a la aplicación.
+- **use_debugger**: Crea el servidor en modo debugger para la detección de errores.
 - **use_evalex**: Habilita la evaluación de excepsiones de la aplicación.
-- **extra_files**: Una lista de archivos a cargar al inicio del servidor. Por ejemplo configuración extras del servidor.
-- **reloader_interval**: Asigna el intervalo de reinico del servidor en segundos.
-- **reloader_type**: El tipo de reinicio. Por defecto utiliza la detección automatica. Otros valores: `stat` y `watchdog`.
-- **threaded**: Aislas las peticiones en hilos individuales.
-- **processes**: Si es mayor que 1, maneja cada solicitud en un nuevo proceso hasta el número máximo de procesos concurrentes definido.
-- **request_handler**: Parámetro opcional que se puede utilizar para anular la clase **Request** predeterminada.
-- **static_files**: Una lista o diccionario de rutas para archivos estaticos.
-- **passthrough_errors**: Deshabilita el manejo de excepciones, lo que significa que el servidor dejará de funcionar cuando suceda un error.
-- **ssl_context**: Un contexto SSL para la conexión. Puede ser una clase `ssl.SSLContext`, una tupla con el formato`(cert_file, pkey_file)`, una cadena` 'adhoc'` si el servidor debe crear uno automáticamente, o `None` para deshabilitar SSL (que es el defecto).
+- **extra_files**: Es una lista de archivos para ser cargados al inicio del servidor. Por ejemplo, una configuración extras del servidor.
+- **reloader_interval**: Asigna el intervalo de reinico del servidor especificado en segundos.
+- **reloader_type**: Es del tipo de reinicio, por defecto utiliza la detección automatica. Otros valores: `stat` y `watchdog`.
+- **threaded**: Es utilizado para aislar las peticiones en hilos individuales.
+- **processes**: En caso de ser mayor a 1, manejará cada solicitud en un nuevo proceso hasta llegar al número máximo de procesos concurrentes definidos.
+- **request_handler**: Se trata de un parámetro opcional que puede ser utilizado para anular la clase **Request** predeterminada.
+- **static_files**: Es una lista o diccionario de rutas para archivos estáticos.
+- **passthrough_errors**: Es usado para deshabilitar el manejo de excepciones, lo cual significa que el servidor dejará de funcionar cuando suceda un error.
+- **ssl_context**: Es un contexto SSL para la conexión. Puede ser una clase `ssl.SSLContext`, una tupla con el formato`(cert_file, pkey_file)`, una cadena o secuencia de carácteres ` 'adhoc'`, si el servidor debe crear uno automáticamente, o `None` para deshabilitar SSL (el cual se usa por defecto).
 
 ```python
 
