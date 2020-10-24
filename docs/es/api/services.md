@@ -6,11 +6,11 @@ description: Servicios
 slug: /es/api/services
 ---
 
-Retic cuenta con un conjunto de servicios para apoyarte en cierto tipo de funcionalidades que tu aplicacion necesita.
+Retic posee un gran conjunto de servicios para apoyarte en cierto tipo de funcionalidades necesarias para que tu aplicación funcione adecuadamente.
 
 ## Servicios de respuesta
 
-Es importante definir un estandar de respuesta a una petición del cliente, para la mantenibilidad de una aplicación. Retic recomienda seguir una estructura de 3 atributos.
+Es importante definir un estandar de respuestas a las peticiones realizadas por el cliente, para el correcto mantenimiento de una aplicación. Retic recomienda seguir una estructura de 3 atributos.
 
 ```json
 {
@@ -22,21 +22,21 @@ Es importante definir un estandar de respuesta a una petición del cliente, para
 
 Donde:
 
-- **valid**: Representa que una petición se ha realizado correctamente cuando su valor es `True`, o en caso contrario contiene errores, su valor es `False`.
+- **valid**: Representa a una petición que se ha realizado correctamente cuando su valor es `True`, o en caso contrario donde contenga errores su valor es `False`.
 
-- **msg**: Mensaje que describe el resultado de la petición.
+- **msg**: Este es el mensaje que describe el resultado de la petición.
 
-- **data**: Información de respuesta a la petición del cliente.
+- **data**: Es la información de respuesta a la petición del cliente.
 
 ### success_response(*data: any* = None, *msg: str* = "")
 
-Define la estructura de una respuesta a una petición del cliente en formato JSON e indica que todo finalizó correctamente.
+Define la estructura de una respuesta para la petición del cliente en formato JSON e indica el hecho de que todo finalizó correctamente.
 
 **Parámetros:**
 
-- **data**: Información a enviar al cliente.
+- **data**: Información para ser enviada al cliente.
 
-- **msg**: Mensaje que indica que la petición se completó correctamente.
+- **msg**: Es el mensaje que indica que la petición se completó correctamente.
 
 ```python
 
@@ -53,7 +53,7 @@ def upload(req: Request, res: Response):
 
 ```
 
-A continuación se presenta el resulta de la petición en formato JSON.
+A continuación se presentará el resulta de la petición en formato JSON:
 
 ```json
 {
@@ -67,11 +67,11 @@ A continuación se presenta el resulta de la petición en formato JSON.
 
 ### error_response(*msg: str* = "")
 
-Define la estructura de una respuesta a una petición del cliente en formato JSON la cual contiene errores.
+Se utiliza para definir la estructura de una respuesta a una petición del cliente en formato JSON la cual contiene errores.
 
 **Parámetros:**
 
-- **msg**: Mensaje que indica que la petición no sé completo correctamente porque contiene errores.
+- **msg**: Mensaje que indica que la petición no se completó correctamente debido a que contiene errores.
 
 ```python
 
@@ -90,7 +90,7 @@ def upload(req: Request, res: Response):
 
 ```
 
-A continuación se presenta el resulta de la petición en formato JSON.
+A continuación se presenta el resultado de la petición en formato JSON.
 
 ```json
 {
@@ -101,17 +101,17 @@ A continuación se presenta el resulta de la petición en formato JSON.
 
 ## Servicios generales
 
-Retic proporciona una variedad de servicios generalizados, con enfoque en validación de parámetros obligatorios y otras funcionalidades.
+Retic proporciona una gran variedad de servicios generalizados, con un enfoque destinado a la validación de los parámetros obligatorios y otras funcionalidades.
 
 ### Servicios de URLs
 
 #### urlencode(_url: str_)
 
-Esta función es conveniente cuando se codifica una cadena para usar parte de una URL en una consulta como una forma conveniente de pasar variables a la página siguiente.
+Para esta función su uso suele ser conveniente cuando se codifica una cadena para usar parte de una URL para una consulta, como una forma conveniente de pasar variables a la siguiente página.
 
 **Parámetros:**
 
-- **url**: URL a codificar.
+- **url**: Esta es la URL a codificar.
 
 ```python
 
@@ -135,11 +135,11 @@ def get_from_req(url):
 
 #### slugify(_text: str_ = "")
 
-Simplifica las cadenas feas en URL amigables.
+Se utiliza para simplificar las cadenas feas o demasiado complejas en URL más amigables.
 
 **Parámetros:**
 
-- **text**: Texto a simplificar de tipo `str`.
+- **text**: Texto destinado a simplificar, de tipo `str`.
 
 ```python
 
@@ -165,11 +165,11 @@ def get_slug_from_title(title):
 
 #### sleep(_seconds: int_ = 0)
 
-El método de tiempo Python sleep() suspende la ejecución por el número de segundos dado. El argumento puede ser un número de coma flotante para indicar un tiempo de descanso más preciso.
+El método de tiempo Python sleep() suspende la ejecución por el número de segundos dado. El argumento puede ser un número de coma flotante(también llamado decimal) para indicar un tiempo de descanso más preciso.
 
 **Parámetros:**
 
-- **seconds**: Total de segundos que el programa estará durmiendo.
+- **seconds**: Es el total de segundos que el programa estará en descanso o suspendido.
 
 ```python
 
@@ -187,17 +187,17 @@ def download_from_url(url):
 
 ## Sericios de validación
 
-Retic ofrece la capacidad de validar ciertos requisitos en una petición de forma nativa. Por ejemplo que los parámetros obligatorios en una petición sean válidos.
+Retic también ofrece la capacidad de validar ciertos requisitos en una petición de forma nativa. Por ejemplo, en el caso de que los parámetros obligatorios en una petición sean válidos.
 
 ### validate_obligate_fields(*fields: any* = None)
 
-La mayoría de las veces existen valores que son obligatorios, Retic ofrece el servicio `validate_obligate_fields(...)` que verifica si una lista de parámetros obligatorios son validos.
+La mayoría de las veces existen valores que son obligatorios. Retic ofrece el servicio `validate_obligate_fields(...)` el cual verifica si una lista de parámetros obligatorios son validos.
 
 **Parámetros:**
 
-- **fields**: Diccionario que contiene todos los parámetros que son obligatorios, esos valores pueden ser de tipo `list` o simples valores.
+- **fields**: Es el diccionario que contiene todos los parámetros que son obligatorios, estos valores pueden ser de tipo `list` o simples valores.
 
-El siguiente ejemplo valida que exista el parametro `files` el cual se obtiene cuando se envia un archivo en una petición.
+El siguiente ejemplo valida que exista el parametro `files` el cual se obtiene cuando se envía un archivo en una petición.
 
 ```python
 
@@ -233,15 +233,15 @@ def upload(req: Request, res: Response):
 
 ## Servicios JSON
 
-Servicios para la manipulación de objetos tipo JSON y su equivalente en otros formatos.
+Son servicios utilizados para la manipulación de objetos del tipo JSON y su equivalente en otros formatos.
 
 ### jsonify(_object: any_)
 
-Convierte un diccionario JSON a su equivalente en cadena de texto.
+Se usa para convertir un diccionario JSON a su equivalente en cadena de texto.
 
 **Parámetros:**
 
-- **object**: Es el objeto de respuesta del cliente, si el objeto es str, devuelve su valor sin transformación, de lo contrario crea una representación del objeto en formato JSON.
+- **object**: Es el objeto de respuesta del cliente, si el objeto es "str", se devuelve su valor sin transformación, de lo contrario crea una representación del objeto en formato JSON.
 
 ```python
 
@@ -254,7 +254,7 @@ def upload(req: Request, res: Response):
 
 ```
 
-A continuación se presenta el resulta de la petición en cadena de texto.
+A continuación se presentará el resultado de la petición en una cadena de texto.
 
 ```sh
 
@@ -268,7 +268,7 @@ Deserializar (una instancia de str, bytes o bytearray que contiene un documento 
 
 **Parámetros:**
 
-- **object**: Contenido de type str, bytes o bytearray que contiene un JSON válido.
+- **object**: Es el contenido de type str, bytes o bytearray que contiene un JSON válido.
 
 ```python
 
@@ -281,7 +281,7 @@ def upload(req: Request, res: Response):
 
 ```
 
-A continuación se presenta el resulta de la petición en formato JSON.
+A continuación se presenta el resultado de la petición en un formato JSON.
 
 ```sh
 
