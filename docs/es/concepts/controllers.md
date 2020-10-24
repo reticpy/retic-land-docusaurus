@@ -6,7 +6,7 @@ description: Controladores del proyecto
 slug: /es/concepts/controllers
 ---
 
-Los controladores están vinculados a las rutas de su aplicación. Gestionan las solicitudes HTTP entrantes y deciden que servicios deben realizar el trabajo para dar una respuesta correcta al cliente.
+Los controladores se encuentran vinculados a las rutas de su aplicación. Gestionan las solicitudes HTTP entrantes y deciden que servicios deben realizar el trabajo para dar una respuesta correcta al cliente.
 
 Por ejemplo, la ruta GET `/users/:id` en su aplicación podría estar vinculada a un controlador como:
 
