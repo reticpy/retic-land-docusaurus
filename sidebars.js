@@ -50,6 +50,7 @@ module.exports = {
         "es/api/middlewares",
         "es/api/services",
       ],
-    },
+    },    
+    "es/glossary",
   ],
 };

@@ -28,6 +28,18 @@ module.exports = {
           position: "right",
         },
       ],
+      // algolia: {
+      //   apiKey: "aa4b8c2c737f3fa0829c959e550a0968",
+      //   indexName: "YOUR_INDEX_NAME",
+
+      //   // Optional: see doc section bellow
+      //   contextualSearch: true,
+
+      //   // Optional: Algolia search parameters
+      //   searchParameters: {},
+
+      //   //... other Algolia params
+      // },
     },
     footer: {
       style: "dark",
