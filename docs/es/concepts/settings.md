@@ -8,21 +8,21 @@ slug: /es/concepts/settings
 
 ## Clase Config
 
-La clase **Config** permite establecer valores en la aplicación para ser utilizados en las diferentes secciones de la misma.
+La clase **Config** permite establecer valores en la aplicación que permiten ser utilizados en las diferentes secciones de la misma.
 
 ### Funciones
 
-La clase **Config** utiliza las siguientes funciones para manipulación de su información.
+La clase **Config** utiliza las siguientes funciones para la manipulación de su información.
 
 #### set(_key: str_, _value: dict_)
 
-Retic permite definir los valores de configuración de la aplicación de forma dinamica.
+Retic permite definir los valores de configuración para la aplicación de una forma más dinámica.
 
 **Parámetros:**
 
-- **key**: Nombre de la variable a asignar.
+- **key**: Es el nombre de la variable a asignar.
 
-- **value**: Valor a asignar.
+- **value**: El valor a asignar.
 
 ```python
 
@@ -41,15 +41,15 @@ app.config.set("default_port", 1801)
 
 #### get(_key: str_, _default_value: dict_ = None, _callback: any_ = None)
 
-Las variables de configuración se pueden utilizar en cualquier parte de la aplicación utilizando la instancia `app`.
+Las variables de configuración pueden ser utilizadas en cualquier parte de la aplicación haciendo uso de la instancia `app`.
 
 **Parámetros:**
 
-- **key**: Nombre de la variable a buscar.
+- **key**: Es el nombre de la variable a buscar.
 
-- **default_value**: Valor por defecto si la variable no existe.
+- **default_value**: Define el valor por defecto en caso de que la variable no exista.
 
-- **callback**: Función que se ejecuta luego de obtener el valor.
+- **callback**: Es la función que se ejecuta luego de obtener el valor.
 
 ```python
 
@@ -85,11 +85,11 @@ if __name__ == "__main__":
 
 #### from_object(*settings: dict*)
 
-Establece la configuración basado en un diccionario.
+Establece la configuración basándose en un diccionario.
 
 **Parámetros:**
 
-- **settings**: Objeto de tipo diccionario que contiene la configuración.
+- **settings**: Es un objeto de tipo diccionario el cual contiene la configuración.
 
 ```python
 
@@ -113,7 +113,7 @@ app.config.from_object(config)
 
 #### clear()
 
-Borra todas las variables de configuración, sin embargo, las variables de entorno no son eliminadas.
+Se utiliza para borrar todas las variables de configuración, sin embargo, las variables de entorno no son eliminadas.
 
 ```python
 
@@ -140,13 +140,13 @@ app.config.clear()
 
 ## Variables de entorno
 
-Retic proporciona fácil acceso a las variables del sistema. Se utiliza la clase `Env` de la biblioteca `environs` para definir sus rutas en la aplicación. Consulte la [documentación oficial](https://github.com/sloria/environs) para conocer todas las posibles combinaciones y cómo acceder a las variables de entorno de la mejor forma.
+Retic proporciona además un fácil acceso a las variables del sistema. Se utiliza la clase `Env` de la biblioteca `environs` para definir sus rutas en la aplicación. Consulte la [documentación oficial](https://github.com/sloria/environs) para conocer todas las posibles combinaciones y la manera de acceder a las variables de entorno de la mejor manera.
 
 ### Funciones de la clase Env
 
 #### env.read_env(*path: str* = None, _recurse: bool_ = True, _verbose: bool_ = False, _override: bool_)
 
-Por defecto se buscan variables en el archivo `.env` si este existe. Sin embargo, en algunas ocaciones es necesario tener más de un archivo de entorno. Esta función permite leer tantos archivos de entorno como se le indique.
+Por defecto se buscan variables en el archivo `.env` en caso de que éste exista. Sin embargo, en algunas ocaciones es necesario tener más de un archivo de entorno. Esta función permite leer tantos archivos de entorno como se le indique.
 
 ```bash
 
@@ -161,13 +161,13 @@ APP_ENV                         =development
 
 **Parámetros:**
 
-- **path**: Directorio donde se encuentra el archivo de enterno.
+- **path**: Directorio donde se encuentra el archivo de entorno.
 
 - **recurse**: Realiza una busqueda de forma recursiva desde la raiz.
 
-- **verbose**: Define si se deben mostar las advertencias cuando un archivo no existe. El valor predeterminado es `False`.
+- **verbose**: Se utiliza para definir si se deben mostar las advertencias en caso de que un archivo no exista. Su valor predeterminado es `False`.
 
-- **override**: Sobreescribe las variables actuales en el sistema operativo. El valor predeterminado es `False`.
+- **override**: Este sobreescribe las variables actuales en el sistema operativo. Su valor predeterminado es `False`.
 
 ```python
 
@@ -183,7 +183,7 @@ app.env.read_env('.env.development', override=True)
 
 ##### Tipos soportados
 
-Por defecto Retic retorna el valor en formato `str`, sin embargo, se permite realizar el casteo automatico de las variables de entorno a un tipo especifico. A continuación se presenta los posibles formatos de salida al consultar una variable de entorno:
+Por defecto Retic retornará el valor en formato `str`, sin embargo, es permitido realizar el casteo automático de las variables de entorno a un tipo específico. A continuación se presentan los posibles formatos de salida que se muestran al consultar una variable de entorno:
 
 - env.str
 - env.bool
@@ -203,7 +203,7 @@ Por defecto Retic retorna el valor en formato `str`, sin embargo, se permite rea
 
 ##### Uso básico
 
-La busqueda de una variable de entorno se realiza por su nombre, de no existir, se puede asignar un valor por defecto, caso contrario devolverá una excepción que indica que la variable no existe en el sistema.
+La busqueda de una variable de entorno se realiza por medio de su nombre, en caso de no existir, se puede asignar un valor por defecto, en el caso contrario devolverá una excepción que indicará que la variable no existe en el sistema.
 
 ```bash
 
