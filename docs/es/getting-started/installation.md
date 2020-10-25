@@ -15,13 +15,13 @@ pip install -U retic
 
 ```
 
-Las notas de lanzamiento detalladas para cada versión están disponibles en [GitHub](https://github.com/reticpy/retic/releases).
+Si deseas ver las notas de lanzamiento para cada versión las podrás encontrar bien detalladas en [GitHub](https://github.com/reticpy/retic/releases).
 
 ## Archivo requirements.txt
 
-Retic recomienda utilizar un archivo ``requirements.txt``. Facilita el control de la versión de cada paquete e instalar únicamente los que sean necesarios.
+Retic recomienda además utilizar un archivo ``requirements.txt``. Para facilitar el control de la versión de cada paquete e instalar únicamente los que sean necesarios.
 
-Es similar al archivo ``package.json`` de **Node.js** en su sección de ``dependences``.
+Es algo similar al archivo ``package.json`` de **Node.js** en su sección de ``dependences``.
 
 
 ```bash
@@ -37,7 +37,7 @@ SQLAlchemy-serializer==1.3.4.2
 
 ```
 
-Para instalar las dependencias de la aplicación en **node** se utiliza ``npm install`` o ``yarn install``, el equivalente en **python** es el siguiente comando:
+Para instalar las dependencias de la aplicación en **node** se utiliza ``npm install`` o ``yarn install``, su equivalente en **Python** es el siguiente comando:
 
 ```bash
 
