@@ -6,7 +6,7 @@ description: Crear una aplicación inicial
 slug: /es/getting-started/first-steps
 ---
 
-Dentro de la carpeta principal de tu proyecto crea el archivo `app.py` con el siguiente codigo:
+Una vez creada la carpeta principal de tu proyecto debes crear, dentro de la misma, el archivo `app.py` con el siguiente codigo:
 
 ```python
 
@@ -18,7 +18,7 @@ app.listen()
 
 ```
 
-Inicia tu servidor con el siguiente comando:
+Luego inicia tu servidor con el siguiente comando:
 
 ```bash
 
