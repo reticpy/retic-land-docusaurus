@@ -18,7 +18,7 @@ retic-restapi-example
 
 ```
 
-El archivo principal únifica los controladores, las rutas, los servicios y crea el servidor de la aplicación.
+El archivo principal se usa para unificar los controladores, las rutas y los servicios, a su vez crea el servidor de la aplicación.
 
 Crea un archivo `app.py` en el cual se encontrará el servidor de nuestra aplicación.
 
@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
 ```
 
-Iniciar nuestro servidor web con el siguiente comando:
+Se debe iniciar nuestro servidor web con el siguiente comando:
 
 ```bash
 
