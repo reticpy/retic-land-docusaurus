@@ -40,9 +40,9 @@ retic-restapi-example
 
 ```
 
-Retic recomienda realizar un archivo de rutas de aplicaciones externas, de esta forma se asegura la mantenibilidad y escalabilidad de la aplicación. De la misma forma, guardar la información en Retic para ser capaz de utilizarla en toda la aplicación.
+Retic recomienda realizar un archivo para rutas de aplicaciones externas, de esta forma asegura el mantenimiento y la escalabilidad de la aplicación. De la misma manera, se debe guardar la información en Retic para facilitar la utilización en toda la aplicación.
 
-Actualiza el archivo de variables de entorno.
+Se debe actualizar el archivo de variables de entorno de la siguiente manera:
 
 ```bash
 
@@ -58,7 +58,7 @@ APP_BACKEND_EXAMPLE      =https://jsonplaceholder.typicode.com
 
 ```
 
-Crea un archivo `apps/urls.py` y agrega la configuración de las rutas de tus aplicaciones externas.
+Crea un archivo `apps/urls.py` para agregar la configuración de las rutas de tus aplicaciones externas.
 
 ```python
 
@@ -83,7 +83,7 @@ app.use(APP_BACKEND, "backend")
 
 ```
 
-Actualiza el archivo principal `app.py` y agrega el archivo de configuración:
+Actualiza el archivo principal `app.py` y luego agrega el archivo de configuración:
 
 ```python
 
@@ -129,7 +129,7 @@ requests==2.24.0
 
 ```
 
-Instala las dependencias con el siguiente comando:
+Para instalar las dependencias se debe utilizar el siguiente comando:
 
 ```bash
 
@@ -181,7 +181,7 @@ def get_by_id_db(user_id):
 
 ```
 
-Actualiza el controlador `controllers/users.py` aplicando la validación de que el usuario sí existe:
+Actualiza el controlador `controllers/users.py`, al hacerlo se debe aplicar una validación que especifique la existencia del usuario:
 
 ```python
 
