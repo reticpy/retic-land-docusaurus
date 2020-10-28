@@ -8,11 +8,11 @@ slug: /es/getting-started/requirements
 
 ## Instalar Python
 
-Retic es compatible con la versión 2.7 de [Python](https://www.python.org/downloads/) y superiores, sin embargo, se recomienda utilizar la última versión de Python 3.
+Retic es compatible con la versión 2.7 de [Python](https://www.python.org/downloads/) al igual que con versiones superiores, sin embargo, se recomienda utilizar la última versión, Python 3.
 
 ## Instalar Pip
 
-Pip es un instalador de paquetes para Python. A continuación se muestra cómo instalarlo en los sistemas operativos más populares.
+Pip es un instalador de paquetes para Python. A continuación se muestra cómo realizar una instalación adecuada en los sistemas operativos más populares.
 
 Instalación en MacOS:
 
