@@ -33,7 +33,7 @@ retic-restapi-example
 
 ```
 
-Crea un archivo `/services/users/users.py` el cual contiene la logica de los controladores de usuario de nuestra aplicación.
+Para hacer los servicios de la aplicación se debe crear un archivo `/services/users/users.py`, éste archivo contiene en su interior la logica de los controladores para el usuario de nuestra aplicación.
 
 ```python
 
@@ -59,7 +59,7 @@ def get_by_id_db(user_id):
 
 ```
 
-Actualiza el controlador `controllers/users.py` y agrega el servicio creado:
+Se debe actualizar el controlador `controllers/users.py` y agrega el servicio creado:
 
 ```python
 
@@ -94,4 +94,4 @@ Visita el siguiente enlace [http://localhost:1801/users/1234](http://localhost:1
 
 ![alt text](../../../static/img/api_rest_app_4.png "API REST")
 
-Para más detalles visita la [guía de servicios](../concepts/services).
+Si deseas ver más detalles sobre esto puedes visitar la [guía de servicios](../concepts/services).
