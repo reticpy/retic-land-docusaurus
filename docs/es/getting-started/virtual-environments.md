@@ -6,11 +6,11 @@ description: Crear entorno virtual en Python
 slug: /es/getting-started/virtual-environments
 ---
 
-Un [virtualenv](https://docs.python.org/3/library/venv.html#module-venv) permite aislar recursos como **librerías y entornos de ejecución** del sistema principal. Es decir, poder utilizar **diferentes versiones** de un mismo paquete para cada proyecto.
+Un [virtualenv](https://docs.python.org/3/library/venv.html#module-venv) permite aislar recursos como **librerías y entornos de ejecución** del sistema principal. Es decir, dá la capacidad de poder utilizar **diferentes versiones** de un mismo paquete para cada proyecto.
 
 ## Instalar virtualenv
 
-Virtualenv es una herramienta que permite crear entornos de Python aislados entre sí.
+Virtualenv es una herramienta que permite crear entornos de Python aislados entre sí, acá se muestra cómo realizar una instalación correcta.
 
 ```bash
 
@@ -24,7 +24,7 @@ sudo pip3 install virtualenv
 
 ## Crear un entorno virtual
 
-Crea un directorio para el proyecto y un directorio para el entorno virtual.
+Para crear un directorio para el proyecto y un directorio para el entorno virtual solo se debe hacer lo siguiente.
 
 ```bash
 
@@ -43,9 +43,11 @@ python3 -m venv venv
 
 ```
 
+Esto creará un entorno virtual para tu proyecto.
+
 ## Activar un entorno virtual
 
-Cada vez que trabajes en tu proyecto, activa tu entorno virtual primero.
+Cada vez que trabajes en tu proyecto, lo primero que debes hacer es activar tu entorno virtual. Con los siguientes códigos se puede activar el entorno virtual en los sistemas operativos más populares.
 
 En Linux/MacOS:
 
@@ -73,7 +75,7 @@ pip --version
 
 ### Actualizar paquete Pip
 
-Por defecto se instala una versión antigua de Pip, por lo que se recomienta actualices a la última versión estable con el siguiente comando:
+Por defecto se instala una versión antigua de Pip, por lo que se recomienta hacer una actualización a la última versión estable con el siguiente comando:
 
 ```bash
 
