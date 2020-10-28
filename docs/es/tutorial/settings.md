@@ -37,11 +37,11 @@ retic-restapi-example
 
 ```
 
-Muchas veces es necesario declarar valores constantes al inicio de cada archivo `.py` y estos pueden depender de otras variables dentro de la aplicación, por ejemplo, valores que se obtienen del archivo de variables de entorno (.env).
+Muchas veces es necesario declarar valores constantes al inicio de cada archivo `.py`. Estos pueden depender de otras variables dentro de la aplicación, los valores que se obtienen del archivo de variables de entorno (.env) son un ejemplo de lo dicho anteriormente.
 
-Por tal razón, Retic recomienda utilizar un archivo `settings.py` donde se importen todas estás variables y sean agregadas a la configuración de Retic para poder ser utilizadas dentro de toda la aplicación.
+Por esta razón, Retic recomienda utilizar un archivo `settings.py`, en el cual se importen todas éstas variables y sean agregadas a la configuración de Retic. De ésta manera se podrán utilizar dentro de toda la aplicación.
 
-Crea un archivo `settings.py` y agrega la carga del archivo de variables de entorno.
+Crea un archivo `settings.py` y agrega la carga del archivo de variables de entorno de la siguiente manera:
 
 ```python
 
@@ -55,9 +55,9 @@ app.env.read_env('.env.development', override=True)
 
 ```
 
-Por defecto la función `read_env()` realiza una busqueda del archivo `.env`, sin embargo, la ruta del archivo puede ser diferente. Se recomienda cargar las variables directamente desde el sistema en un entorno de producción.
+Por defecto, la función `read_env()` realiza una busqueda del archivo `.env`, sin embargo, la ruta del archivo podría ser diferente. Se recomienda cargar las variables desde el sistema directamente y en un entorno de producción.
 
-Crea el archivo de variables de entorno `.env.development` de desarrollo.
+Crea el archivo de variables de entorno de desarrollo `.env.development`.
 
 ```bash
 
@@ -70,7 +70,7 @@ APP_ENV                         =development
 
 ```
 
-Crea el archivo de variables de entorno `.env.staging` de staging.
+Luego crea el archivo de variables de entorno de staging `.env.staging`.
 
 ```bash
 
@@ -83,7 +83,7 @@ APP_ENV                         =staging
 
 ```
 
-Crea el archivo de variables de entorno `.env.production` de producción.
+Finalmente crea el archivo de variables de entorno de producción `.env.production`.
 
 ```bash
 
@@ -96,7 +96,7 @@ APP_ENV                         =production
 
 ```
 
-Actualiza el archivo principal `app.py` y agrega el archivo de configuración:
+Por último actualiza el archivo principal `app.py` y agrega el archivo de configuración:
 
 ```python
 
@@ -128,4 +128,4 @@ if __name__ == "__main__":
 
 ```
 
-Para más información visita la sección de [configuración](../concepts/settings).
+Si estás buscando más información puedes visitar la sección de [configuración](../concepts/settings).
