@@ -6,9 +6,9 @@ description: Instalar Retic y configurar el archivo requirements.txt
 slug: /es/tutorial/set-up
 ---
 
-_Puedes encontrar el código en el siguiente [repositorio](https://github.com/reticpy/retic-restapi-example)._
+_Puedes encontrar éste código en el siguiente [repositorio](https://github.com/reticpy/retic-restapi-example)._
 
-Para comenzar crea un [entorno virtual](../getting-started/virtual-environments) para el proyecto.
+Para comenzar a crea un [entorno virtual](../getting-started/virtual-environments) para el proyecto se debe hacer lo siguiente:
 
 ```bash
 
@@ -29,7 +29,7 @@ python -m pip install --upgrade pip
 
 ```
 
-Crea un archivo `requirements.txt` para agregar los paquetes del proyecto.
+Se debe crear un archivo `requirements.txt` para agregar los paquetes del proyecto.
 
 ```bash
 
