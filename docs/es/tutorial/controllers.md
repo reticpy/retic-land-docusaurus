@@ -27,9 +27,9 @@ retic-restapi-example
 
 ```
 
-Gestionan las solicitudes HTTP entrantes y deciden que servicios deben realizar el trabajo para dar una respuesta correcta al cliente.
+Estas gestionan las solicitudes HTTP entrantes y deciden qué servicios deben realizar el trabajo, esto se hace para darle una respuesta correcta al cliente.
 
-Crea un archivo `/controllers/users.py` el cual gestiona la logica de los servicios de usuario de nuestra aplicación.
+Se debe crea un archivo `/controllers/users.py` el cual puede gestionar la lógica de los servicios de usuario de nuestra aplicación.
 
 ```python
 
@@ -55,7 +55,7 @@ def get_by_id(req: Request, res: Response, next: Next):
 
 ```
 
-Actualiza el archivo principal `routes/routes.py` de la aplicación y agrega los controladores de la aplicación:
+Actualiza el archivo principal `routes/routes.py` de la aplicación y agrega los controladores de la misma:
 
 ```python
 
@@ -84,4 +84,4 @@ Visita el siguiente enlace [http://localhost:1801/users/123](http://localhost:18
 
 ![alt text](../../../static/img/api_rest_app_3.png "API REST")
 
-Para más detalles visita la [guía de controladores](../concepts/controllers).
+Si deseas ver más detalles visita la [guía de controladores](../concepts/controllers).
