@@ -22,9 +22,9 @@ retic-restapi-example
 
 ```
 
-Permite definir nuevas rutas para el servidor.
+Este comando permite definir nuevas rutas para el servidor.
 
-Crea un archivo `/routes/routes.py` en el cual se encuentra las rutas de nuestra aplicación.
+Para esto se debe crear un archivo `/routes/routes.py` en el cual se encuentran las rutas de nuestra aplicación.
 
 ```python
 
@@ -41,7 +41,7 @@ router.get("/", lambda req, res, next: res.ok({u"msg": "Hello world!"}))
 
 ```
 
-Crea el archivo principal para empaquetar las rutas.
+Crea el archivo principal para almacenar y empaquetar las rutas.
 
 ```python
 
@@ -77,7 +77,7 @@ if __name__ == "__main__":
 
 ```
 
-Reinicia el servidor web con el siguiente comando:
+Para terminar debes reiniciar el servidor web con el siguiente comando:
 
 ```bash
 
