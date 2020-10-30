@@ -8,7 +8,7 @@ slug: /es/api/request
 
 ## Clase Request
 
-La clase **Request** representa la solicitud HTTP y contiene una biblioteca que ayuda a que las solicitudes sean mucho más simples. Contiene propiedades tales como parámetros, cuerpo de la solicitud, encabezados de la petición, entre otras.
+La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") **Request** representa la solicitud HTTP y contiene una biblioteca que ayuda a que las solicitudes sean mucho más simples. Contiene propiedades tales como parámetros, cuerpo de la solicitud, encabezados de la petición, entre otras.
 
 ### Propiedades
 
@@ -54,7 +54,7 @@ req.base_url: 'http://127.0.0.1:1801/files/123'
 
 #### body
 
-Instancia de la clase `Body`. Contiene el cuerpo que conforma la petición.
+Instancia de la [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") `Body`. Contiene el cuerpo que conforma la petición.
 
 ```python
 
@@ -170,7 +170,7 @@ req.host: 'localhost:1801'
 
 #### method
 
-Este es el método utilizado para la petición, por ejemplo: `GET`, `POST`, `DELETE` y `PUT`.
+Este es el [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") utilizado para la petición, por ejemplo: `GET`, `POST`, `DELETE` y `PUT`.
 
 ```python
 
@@ -223,7 +223,7 @@ req.retic: {'app1': {'msg': 'say hi!'}}
 
 ### Funciones
 
-La clase Request utiliza las siguientes funciones para la manipulación de su información.
+La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") Request utiliza las siguientes funciones para la manipulación de su información.
 
 #### param(_key: str_, _default_value: any_ = None, _callback_ = None)
 
@@ -314,4 +314,4 @@ print(req.all_params())
 
 ### Otras propiedades y funciones
 
-Retic hereda desde la clase `Request de Werkzeug` para la gestión de sus peticiones. Visita la documentación acerca de su clase [Request](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#base-wrappers) para complementar la información que se encuentra acá mencionada.
+Retic hereda desde la [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") `Request de Werkzeug` para la gestión de sus peticiones. Visita la documentación acerca de su clase [Request](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#base-wrappers) para complementar la información que se encuentra acá mencionada.
