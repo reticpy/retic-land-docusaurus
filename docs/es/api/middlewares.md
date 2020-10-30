@@ -24,7 +24,7 @@ El intercambio de recursos de origen cruzado o "CORS" por sus siglas en ingles, 
 
 * **expose_headers**: Ahora en el caso del encabezado de respuesta "Access-Control-Expose-Headers", indicará qué encabezados se pueden utilizar para mostrarse como parte de la respuesta al enumerar.
 
-Para más seguridad, Retic protege las rutas con el método ``options`` contra accesos no autorizados. Es por ello que se debe definir las rutas de acceso con el mismo método (``option``) bien especificadas. También pueden utilizarse expresiones regulares como se muestra en el siguiente ejemplo.
+Para más seguridad, Retic protege las rutas con el [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") ``options`` contra accesos no autorizados. Es por ello que se debe definir las rutas de acceso con el mismo método (``option``) bien especificadas. También pueden utilizarse expresiones regulares como se muestra en el siguiente ejemplo.
 
 ```python
 
