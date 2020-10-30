@@ -165,7 +165,7 @@ def get_slug_from_title(title):
 
 #### sleep(_seconds: int_ = 0)
 
-El método de tiempo Python sleep() suspende la ejecución por el número de segundos dado. El argumento puede ser un número de coma flotante(también llamado decimal) para indicar un tiempo de descanso más preciso.
+El [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") de tiempo Python sleep() suspende la ejecución por el número de segundos dado. El argumento puede ser un número de coma flotante(también llamado decimal) para indicar un tiempo de descanso más preciso.
 
 **Parámetros:**
 
