@@ -6,7 +6,7 @@ description: Next
 slug: /es/api/next
 ---
 
-La clase ``Next`` permite pasar el control de la petición al siguiente controlador. Con frecuencia se utiliza en el desarrollo de *middlewares* o lógicas para el intercambio de información.
+La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") ``Next`` permite pasar el control de la petición al siguiente controlador. Con frecuencia se utiliza en el desarrollo de *middlewares* o lógicas para el intercambio de información.
   
 ```python
 
