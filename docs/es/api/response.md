@@ -8,11 +8,11 @@ slug: /es/api/response
 
 ## Clase Response
 
-La clase **Response** representa la respuesta a una petición HTTP realizada por un cliente.
+La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") **Response** representa la respuesta a una petición HTTP realizada por un cliente.
 
 ### Propiedades
 
-A continuación se presentan las principales propiedades de la clase `Response` y su funcionalidad:
+A continuación se presentan las principales propiedades de la [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") `Response` y su funcionalidad:
 
 #### default_mimetype
 
@@ -71,11 +71,11 @@ res.status_code: 200
 
 ### Funciones
 
-La clase **Response** utiliza las siguientes funciones para la manipulación de su información:
+La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") **Response** utiliza las siguientes funciones para la manipulación de su información:
 
 #### bad_request(*content: any* = "")
 
-Este método tendrá como respuesta un _400 Bad Request_ a la petición del cliente, esto es para indicar que la solicitud no es válida.
+Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") tendrá como respuesta un _400 Bad Request_ a la petición del cliente, esto es para indicar que la solicitud no es válida.
 
 Esto generalmente significa que la solicitud contenía parámetros o cabeceras no válidas, o que intentó hacer algo que para la lógica de su petición no es admitica.
 
@@ -118,7 +118,7 @@ def upload(req: Request, res: Response):
 
 #### forbidden(_content: any_ = "")
 
-Este método se utiliza para enviar una respuesta _403 forbidden_ al cliente, indicando que una solicitud no está autorizada.
+Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") se utiliza para enviar una respuesta _403 forbidden_ al cliente, indicando que una solicitud no está autorizada.
 
 Esto generalmente significa que el agente de usuario intentó hacer una "acción" para la cual no tenía ningún tipo de autorización para hacerla, algo como cambiar la contraseña de otro usuario caería en una de éstas acciones que normalmente no están autorizadas.
 
@@ -162,9 +162,9 @@ def login(req: Request, res: Response):
 
 #### not_found(*content: any* = "")
 
-Este método se utiliza para enviar una respuesta _404 not_found_.
+Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") se utiliza para enviar una respuesta _404 not_found_.
 
-Cuando se llama manualmente desde el código de su aplicación, este método es normalmente utilizado para indicar que el cliente intentó encontrar, actualizar o eliminar algo que no existe.
+Cuando se llama manualmente desde el código de su aplicación, este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") es normalmente utilizado para indicar que el cliente intentó encontrar, actualizar o eliminar algo que no existe.
 
 **Parámetros:**
 
@@ -207,7 +207,7 @@ def get_by_folder(req: Request, res: Response):
 
 #### ok(_content: dict_ = None)
 
-Este método se utiliza para enviar una respuesta _200 OK_ al cliente.
+Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") se utiliza para enviar una respuesta _200 OK_ al cliente.
 
 Esto significa que la petición del cliente ha sido aceptada.
 
@@ -270,7 +270,7 @@ def get_by_folder(req: Request, res: Response):
 
 #### server_error(*content: any* = "")
 
-Este método se utiliza para enviar una respuesta _500 Server error_ al cliente, indicando que ocurrió algún tipo de error en el servidor
+Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") se utiliza para enviar una respuesta _500 Server error_ al cliente, indicando que ocurrió algún tipo de error en el servidor
 
 **Parámetros:**
 
@@ -302,7 +302,7 @@ def undefined(req: Request, res: Response):
 
 Envía una respuesta en cadena con un formato(XML, CSV, texto plano), respuestas en formato JSON, entre otros. Se recomienda su uso en el caso de que se necesite enviar una respuesta de éxito al cliente con un codigo de estado diferente de 200.
 
-Este método se utiliza en la implementación subyacente de la mayoría de los otros métodos de respuesta de terminal.
+Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") se utiliza en la implementación subyacente de la mayoría de los otros métodos de respuesta de terminal.
 
 **Parámetros:**
 
@@ -421,4 +421,4 @@ def upload(req: Request, res: Response):
 
 ### Otras propiedades y funciones
 
-Retic hereda de la clase `Response de Werkzeug` para la gestión de las respuestas de peticiones, visita la documentación acerca de su clase [Response](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#werkzeug.wrappers.Response) para complementar la información aquí mencionada.
+Retic hereda de la [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") `Response de Werkzeug` para la gestión de las respuestas de peticiones, visita la documentación acerca de su clase [Response](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#werkzeug.wrappers.Response) para complementar la información aquí mencionada.
