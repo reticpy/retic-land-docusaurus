@@ -85,3 +85,46 @@ MethodTypes.staticMethod()
 
 Para saber un poco más sobre el tema puedes visitar ésta [página](https://blog.nearsoftjobs.com/tipos-de-m%C3%A9todos-en-python-cls-vs-self-d6da1e08efa8 "Métodos en Python")
 
+## Función
+
+Las funciones se caracterizan por ser bloques de código reutilizables que poseen un nombre asociado, éste recibe desde ninguno hasta una gran cantidad de argumentos como entrada. Le hace seguimiento a una secuencia de sentencias, estas ejecutan operaciones deseadas y devuelven un valor y realizan determinadas tareas, este bloque puede ser llamado las veces que sea necesario.
+
+Luego de declarar una función se le debe agregar a esta los parámetros correspondientes para así especificar la acción o acciones a realizar. Por ejemplo:
+
+```
+  (Función)      (Parámetros)
+        |           |
+1  def sumar(number1, number2):
+2      print number1 + number2
+3
+4  sumar(10, 20) # 25
+```
+
+Esta función llamada sumar arroja como resultado la suma exacta de sus parámetros, en este caso el resultante sería 25.
+
+Si lo que buscas es una información más concreta, puedes entrar [aquí](https://devcode.la/tutoriales/funciones-en-python/ "Función")
+
+## Parámetros
+
+Los parámetros son valores que una función espera recibir al momento de ser llamada o invocada, con el fin de ejecutar acciones en base a este parámetro.
+Los parámetros pueden ser dados una o más veces a la misma función, estos deben ir separados por coma para no causar errores en la sintaxis de la consola.
+
+Ejemplo:
+
+```
+1  def mi_funcion(nombre, apellido):
+```
+
+Los parámetros son los que se encuentran dentro de los paréntesis a modo de variables con el fin de ser usadas como tales dentro de la misma función.
+
+
+Para saber un poco más sobre los parámetros puedes entrar a ésta [página](https://uniwebsidad.com/libros/python/capitulo-4/definiendo-funciones#:~:text=Un%20par%C3%A1metro%20es%20un%20valor,acciones%20en%20base%20al%20mismo.&text=Los%20par%C3%A1metros%2C%20se%20indican%20entre,dentro%20de%20la%20misma%20funci%C3%B3n. "Parámetros en Python")
+
+## Objeto
+
+En python si creas una variable y a esta le asignas un valor entero, est evalor pasa a ser un objeto. Por lo tanto siguiendo este concepto, las funciones, listas, tuplas, diccionarios, cadenas, y demás son un objeto.
+
+Tambien pueden llamarse al obheto una concreción o instancia de la clase.
+
+Puedes ver un concepto más detallado desde este [apartado](https://j2logo.com/python/tutorial/programacion-orientada-a-objetos/#:~:text=Python%20es%20un%20lenguaje%20orientado%20a%20objetos,-S%C3%AD%2C%20soy%20un&text=Cuando%20creas%20una%20variable%20y,Y%20as%C3%AD%20podr%C3%ADa%20seguir%20indefinidamente. "Objeto")
+
