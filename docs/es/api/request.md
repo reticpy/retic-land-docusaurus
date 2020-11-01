@@ -156,7 +156,7 @@ source = req.headers.get('Source')
 
 ```
 
-Forma alterna la cual retornar una Excepción cuando la cabecera no existeÑ
+Forma alterna la cual retornar una Excepción cuando la cabecera no existe:
 
 ```python
 
