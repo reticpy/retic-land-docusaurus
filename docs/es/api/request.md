@@ -146,6 +146,16 @@ EnvironHeaders([('Cookie', 'cookie1=123456'), ('User-Agent', 'PostmanRuntime/7.2
 
 ```python
 
+No existe diferencia entre mayúsculas y minúsculas.
+
+source = req.headers.get('source')
+source = req.headers.get('Source')
+
+# http://localhost:1810/downloads/files/3db7ce17ced111eab61ae454e894d9d6
+# http://localhost:1810/downloads/files/3db7ce17ced111eab61ae454e894d9d6
+
+Forma alterna la cual retornar una Excepción cuando la cabecera no existeÑ
+
 source = req.headers['source']
 source = req.headers['Source']
 
