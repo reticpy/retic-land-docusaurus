@@ -128,3 +128,19 @@ Tambien pueden llamarse al obheto una concreción o instancia de la clase.
 
 Puedes ver un concepto más detallado desde este [apartado](https://j2logo.com/python/tutorial/programacion-orientada-a-objetos/#:~:text=Python%20es%20un%20lenguaje%20orientado%20a%20objetos,-S%C3%AD%2C%20soy%20un&text=Cuando%20creas%20una%20variable%20y,Y%20as%C3%AD%20podr%C3%ADa%20seguir%20indefinidamente. "Objeto")
 
+## Instancia
+
+Los objetos son creados usando el constructor de una clase, luego de ser creado el objeto, se le conoce como instancia de la clase.
+
+
+Para saber más sobre el tema haz clic [aqui](https://blog.nearsoftjobs.com/tipos-de-m%C3%A9todos-en-python-cls-vs-self-d6da1e08efa8 "Instancia del objeto")
+
+## Tupla
+
+En python se define por tupla al conjunto ordenado e incambiable de elementos de un mismo o un diferente tipo. Son representadas escribiendo los elementos dentro de parentesis siendo separados por comas. Por ejemplo:
+
+```
+>>> (4, "h", 12.8)
+```
+
+Acá podrás saber un poco más sobre lo que significa [Tupla](https://www.mclibre.org/consultar/python/lecciones/python-tupla.html#:~:text=En%20Python%2C%20una%20tupla%20es,par%C3%A9ntesis%20y%20separados%20por%20comas.&text=Una%20tupla%20puede%20no%20contener,decir%2C%20ser%20una%20tupla%20vac%C3%ADa. "Tupla en Python")
