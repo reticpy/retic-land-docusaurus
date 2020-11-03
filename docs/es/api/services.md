@@ -101,13 +101,13 @@ A continuación se presenta el resultado de la petición en formato JSON.
 
 ## Servicios generales
 
-Retic proporciona una gran variedad de servicios generalizados, con un enfoque destinado a la validación de los parámetros obligatorios y otras funcionalidades.
+Retic proporciona una gran variedad de servicios generalizados, con un enfoque destinado a la validación de los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") obligatorios y otras funcionalidades.
 
 ### Servicios de URLs
 
 #### urlencode(_url: str_)
 
-Para esta función su uso suele ser conveniente cuando se codifica una cadena para usar parte de una URL para una consulta, como una forma conveniente de pasar variables a la siguiente página.
+Para esta [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") su uso suele ser conveniente cuando se codifica una cadena para usar parte de una URL para una consulta, como una forma conveniente de pasar variables a la siguiente página.
 
 **Parámetros:**
 
@@ -187,15 +187,15 @@ def download_from_url(url):
 
 ## Sericios de validación
 
-Retic también ofrece la capacidad de validar ciertos requisitos en una petición de forma nativa. Por ejemplo, en el caso de que los parámetros obligatorios en una petición sean válidos.
+Retic también ofrece la capacidad de validar ciertos requisitos en una petición de forma nativa. Por ejemplo, en el caso de que los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") obligatorios en una petición sean válidos.
 
 ### validate_obligate_fields(*fields: any* = None)
 
-La mayoría de las veces existen valores que son obligatorios. Retic ofrece el servicio `validate_obligate_fields(...)` el cual verifica si una lista de parámetros obligatorios son validos.
+La mayoría de las veces existen valores que son obligatorios. Retic ofrece el servicio `validate_obligate_fields(...)` el cual verifica si una lista de [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") obligatorios son validos.
 
 **Parámetros:**
 
-- **fields**: Es el diccionario que contiene todos los parámetros que son obligatorios, estos valores pueden ser de tipo `list` o simples valores.
+- **fields**: Es el diccionario que contiene todos los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") que son obligatorios, estos valores pueden ser de tipo `list` o simples valores.
 
 El siguiente ejemplo valida que exista el parametro `files` el cual se obtiene cuando se envía un archivo en una petición.
 
@@ -233,7 +233,7 @@ def upload(req: Request, res: Response):
 
 ## Servicios JSON
 
-Son servicios utilizados para la manipulación de objetos del tipo JSON y su equivalente en otros formatos.
+Son servicios utilizados para la manipulación de [objetos](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") del tipo JSON y su equivalente en otros formatos.
 
 ### jsonify(_object: any_)
 
@@ -241,7 +241,7 @@ Se usa para convertir un diccionario JSON a su equivalente en cadena de texto.
 
 **Parámetros:**
 
-- **object**: Es el objeto de respuesta del cliente, si el objeto es "str", se devuelve su valor sin transformación, de lo contrario crea una representación del objeto en formato JSON.
+- **object**: Es el objeto de respuesta del cliente, si el [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") es "str", se devuelve su valor sin transformación, de lo contrario crea una representación del objeto en formato JSON.
 
 ```python
 
@@ -264,7 +264,7 @@ text: '{"msg": "say hi!"}'
 
 ### parse(_content: str_)
 
-Deserializar (una instancia de str, bytes o bytearray que contiene un documento JSON) a un objeto Python.
+Deserializar (una instancia de str, bytes o bytearray que contiene un documento JSON) a un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") Python.
 
 **Parámetros:**
 
