@@ -9,7 +9,7 @@ slug: /es/concepts/app
 
 ## Clase App
 
-La [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **App** contiene la instancia principal de la aplicación.
+La [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **App** contiene la [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") principal de la aplicación.
 
 **Parámetros:**
 
@@ -70,7 +70,7 @@ Es utilizada para guardar la configuración de la apliacción. Ver [Configuraci�
 
 #### router
 
-Es la instancia de la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") [Router](./routing).
+Es la [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") de la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") [Router](./routing).
 
 ### Funciones
 
@@ -219,7 +219,7 @@ Crea un servidor web basado en [parámetros](https://retic.land/manual/es/glossa
 - **request_handler**: Se trata de un parámetro opcional que puede ser utilizado para anular la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Request** predeterminada.
 - **static_files**: Es una lista o diccionario de rutas para archivos estáticos.
 - **passthrough_errors**: Es usado para deshabilitar el manejo de excepciones, lo cual significa que el servidor dejará de funcionar cuando suceda un error.
-- **ssl_context**: Es un contexto SSL para la conexión. Puede ser una clase `ssl.SSLContext`, una tupla con el formato`(cert_file, pkey_file)`, una cadena o secuencia de carácteres ` 'adhoc'`, si el servidor debe crear uno automáticamente, o `None` para deshabilitar SSL (el cual se usa por defecto).
+- **ssl_context**: Es un contexto SSL para la conexión. Puede ser una clase `ssl.SSLContext`, una [tupla](https://retic.land/manual/es/glossary/#tupla "Glosario de Términos") con el formato`(cert_file, pkey_file)`, una cadena o secuencia de carácteres ` 'adhoc'`, si el servidor debe crear uno automáticamente, o `None` para deshabilitar SSL (el cual se usa por defecto).
 
 ```python
 
