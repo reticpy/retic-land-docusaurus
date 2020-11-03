@@ -8,7 +8,7 @@ slug: /es/api/request
 
 ## Clase Request
 
-La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") **Request** representa la solicitud HTTP y contiene una biblioteca que ayuda a que las solicitudes sean mucho más simples. Contiene propiedades tales como parámetros, cuerpo de la solicitud, encabezados de la petición, entre otras.
+La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") **Request** representa la solicitud HTTP y contiene una biblioteca que ayuda a que las solicitudes sean mucho más simples. Contiene propiedades tales como [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos"), cuerpo de la solicitud, encabezados de la petición, entre otras.
 
 ### Propiedades
 
@@ -27,7 +27,7 @@ req.access_route: ImmutableList(['127.0.0.1'])
 
 #### args
 
-Enlista todos los parámetros en la URL de la petición.
+Enlista todos los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") en la URL de la petición.
 
 ```python
 
@@ -39,7 +39,7 @@ req.args: ImmutableMultiDict([('queryparam', '13344')])
 
 ```
 
-Por defecto un `ImmutableMultiDict` que es retornado en esta función contiene funciones como `getlist`, `get`, `get_all` para interactuar con los párametros en la URL de una petición. Si necesitas más detalles puedes visitar la documentación oficial sobre esta clase [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList).
+Por defecto un `ImmutableMultiDict` que es retornado en esta [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") contiene funciones como `getlist`, `get`, `get_all` para interactuar con los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") en la URL de una petición. Si necesitas más detalles puedes visitar la documentación oficial sobre esta clase [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList).
 
 #### base_url
 
@@ -102,7 +102,7 @@ req.environ: {'CONTENT_LENGTH': '39', 'CONTENT_TYPE': 'text/plain', 'HTTP_ACCEPT
 
 Enlista todos los archivos de la petición HTTP. Cada valor es una instancia de la clase [FileStorage](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.FileStorage).
 
-Cada elemento se comporta como un _file object_ reconocido por **Python**, con la diferencia de que también tiene una función `save()` que puede almacenar el archivo en un sistema de archivos.
+Cada elemento se comporta como un _file object_ reconocido por **Python**, con la diferencia de que también tiene una [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") `save()` que puede almacenar el archivo en un sistema de archivos.
 
 ```python
 
@@ -195,7 +195,7 @@ req.method: 'GET'
 
 #### params
 
-Objeto que contiene todos los parametros para la URL de la petición: `GET`, `POST`, `DELETE` y `PUT`.
+Objeto que contiene todos los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") para la URL de la petición: `GET`, `POST`, `DELETE` y `PUT`.
 
 ```python
 
@@ -243,7 +243,7 @@ La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") 
 
 Esto devuelve el valor del parámetro con el nombre especificado.
 
-`req.param(...)` busca en los parámetros analizados como la **ruta URL**, el **cuerpo de la solicitud** y la **cadena de consulta**, todo en ese orden. Si no existe el valor en la solicitud, devolverá `None` o el valor por defecto especificado.
+`req.param(...)` busca en los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") analizados como la **ruta URL**, el **cuerpo de la solicitud** y la **cadena de consulta**, todo en ese orden. Si no existe el valor en la solicitud, devolverá `None` o el valor por defecto especificado.
 
 **Parámetros:**
 
@@ -251,7 +251,7 @@ Esto devuelve el valor del parámetro con el nombre especificado.
 
 - **default_value**: Valor por defecto si el parámetro no existe.
 
-- **callback**: Función que se ejecuta luego de obtener el valor del párametro, puede ser `bool`, `int`, `str`, etc.
+- **callback**: [Función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") que se ejecuta luego de obtener el valor del párametro, puede ser `bool`, `int`, `str`, etc.
 
 ```python
 
@@ -269,7 +269,7 @@ print(req.param('id3')
 
 #### set(_key: str_, _value: any_ = None)
 
-Asigna un objeto en el **diccionario retic** con un nombre específico. Se debe tener en cuenta que los nombres no distinguen entre mayúsculas o minúsculas, en el caso de que el nombre ya exista se sobreescribirá su valor y el código no será el esperado. En el caso de que el valor a asignar no exista se guardará el valor `None` por defecto.
+Asigna un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") en el **diccionario retic** con un nombre específico. Se debe tener en cuenta que los nombres no distinguen entre mayúsculas o minúsculas, en el caso de que el nombre ya exista se sobreescribirá su valor y el código no será el esperado. En el caso de que el valor a asignar no exista se guardará el valor `None` por defecto.
 
 **Parámetros:**
 
@@ -286,7 +286,7 @@ req.set('app1', {u"msg": "say hi!"})
 
 #### get(_key: str_, _default_value: any_ = None)
 
-Acá se retorna el valor de un objeto en el **diccionario retic** con un nombre en especifico. Nuevamente debe terner en cuenta que los nombres no distinguen entre mayúsculas o minúsculas. Si no existe un valor en la solicitud, éste devolverá `None` o el valor predeterminado por defecto que esté especificado.
+Acá se retorna el valor de un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") en el **diccionario retic** con un nombre en especifico. Nuevamente debe terner en cuenta que los nombres no distinguen entre mayúsculas o minúsculas. Si no existe un valor en la solicitud, éste devolverá `None` o el valor predeterminado por defecto que esté especificado.
 
 **Parámetros:**
 
@@ -310,7 +310,7 @@ print(req.get('app2', 2233))
 
 #### all_params()
 
-Devuelve el valor de todos los parámetros enviados en la solicitud junto con el diccionario retic combinado en un solo diccionario.
+Devuelve el valor de todos los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") enviados en la solicitud junto con el diccionario retic combinado en un solo diccionario.
 
 Incluye parámetros analizados como la **ruta URL**, el **cuerpo de la solicitud**, la **cadena de consulta** y el **diccionario retic**, todo en ese orden.
 
