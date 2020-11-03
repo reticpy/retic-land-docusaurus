@@ -11,7 +11,7 @@ Se refiere a la definición de cómo una aplicación responde a una solicitud da
 
 ## Clase Router
 
-La clase **Router** permite definir las rutas de acceso de la aplicación.
+La [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Router** permite definir las rutas de acceso de la aplicación.
 
 **Parámetros:**
 
@@ -75,9 +75,9 @@ router \
 
 Dónde:
 
-- `router` es una instancia de la clase `Router`.
+- `router` es una instancia de la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") `Router`.
 
-- `METHOD` es un método HTTP, el cual debe estar expresado en minúsculas.
+- `METHOD` es un [método](https://retic.land/manual/es/glossary/#m%C3%A9todo "Glosario de Términos") HTTP, el cual debe estar expresado en minúsculas.
 
 - `PATH` es una ruta en el servidor.
 
