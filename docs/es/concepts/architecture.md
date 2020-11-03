@@ -8,7 +8,7 @@ slug: /es/concepts/architecture
 
 Retic es un marco de trabajo que se utiliza para crear **aplicaciónes del lado del servidor**. Retic está escrito en Python, y utiliza Werkzeug como servidor.
 
-Una aplicación se define por **rutas, controladores y servicios**. Retic provee la clase **Router** que ayuda a definir los puntos de acceso de la aplicación.
+Una aplicación se define por **rutas, controladores y servicios**. Retic provee la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Router** que ayuda a definir los puntos de acceso de la aplicación.
 
 Retic recomienda la siguiente estructura de directorios para que la estabilidad y mantenimiento de la aplicación resulte más facil de realizar.
 
