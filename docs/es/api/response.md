@@ -77,7 +77,7 @@ La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") 
 
 Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") tendrá como respuesta un _400 Bad Request_ a la petición del cliente, esto es para indicar que la solicitud no es válida.
 
-Esto generalmente significa que la solicitud contenía parámetros o cabeceras no válidas, o que intentó hacer algo que para la lógica de su petición no es admitica.
+Esto generalmente significa que la solicitud contenía [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") o cabeceras no válidas, o que intentó hacer algo que para la lógica de su petición no es admitica.
 
 **Parámetros:**
 
@@ -330,11 +330,11 @@ Hi!
 
 Establece cabeceras o encabezados de respuesta con valores especificos.
 
-Alternativamente, se puede pasar un objeto que contenga cabeceras para configurar múltiples valores a la vez, donde las claves son los nombres de las cabeceras y los valores correspondientes son los valores deseados.
+Alternativamente, se puede pasar un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") que contenga cabeceras para configurar múltiples valores a la vez, donde las claves son los nombres de las cabeceras y los valores correspondientes son los valores deseados.
 
 **Parámetros:**
 
-- **headers**: Puede ser de tipo `dict`, para representar un objeto de cabeceras que se agregarán a las cabeceras actuales. Si es del tipo `str` será utilizado para acceder a una cabecera en específico. Cualquier otro tipo de formato provocará una excepción de error.
+- **headers**: Puede ser de tipo `dict`, para representar un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") de cabeceras que se agregarán a las cabeceras actuales. Si es del tipo `str` será utilizado para acceder a una cabecera en específico. Cualquier otro tipo de formato provocará una excepción de error.
 
 - **value**: Este es el valor que se asignará a la cabecera especificada. Por defecto tiene un valor `None` especificado.
 
