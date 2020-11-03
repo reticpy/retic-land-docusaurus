@@ -8,11 +8,11 @@ slug: /es/concepts/settings
 
 ## Clase Config
 
-La clase **Config** permite establecer valores en la aplicación que permiten ser utilizados en las diferentes secciones de la misma.
+La [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Config** permite establecer valores en la aplicación que permiten ser utilizados en las diferentes secciones de la misma.
 
 ### Funciones
 
-La clase **Config** utiliza las siguientes funciones para la manipulación de su información.
+La [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Config** utiliza las siguientes funciones para la manipulación de su información.
 
 #### set(_key: str_, _value: dict_)
 
@@ -49,7 +49,7 @@ Las variables de configuración pueden ser utilizadas en cualquier parte de la a
 
 - **default_value**: Define el valor por defecto en caso de que la variable no exista.
 
-- **callback**: Es la función que se ejecuta luego de obtener el valor.
+- **callback**: Es la [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") que se ejecuta luego de obtener el valor.
 
 ```python
 
@@ -89,7 +89,7 @@ Establece la configuración basándose en un diccionario.
 
 **Parámetros:**
 
-- **settings**: Es un objeto de tipo diccionario el cual contiene la configuración.
+- **settings**: Es un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") de tipo diccionario el cual contiene la configuración.
 
 ```python
 
@@ -140,13 +140,13 @@ app.config.clear()
 
 ## Variables de entorno
 
-Retic proporciona además un fácil acceso a las variables del sistema. Se utiliza la clase `Env` de la biblioteca `environs` para definir sus rutas en la aplicación. Consulte la [documentación oficial](https://github.com/sloria/environs) para conocer todas las posibles combinaciones y la manera de acceder a las variables de entorno de la mejor manera.
+Retic proporciona además un fácil acceso a las variables del sistema. Se utiliza la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") `Env` de la biblioteca `environs` para definir sus rutas en la aplicación. Consulte la [documentación oficial](https://github.com/sloria/environs) para conocer todas las posibles combinaciones y la manera de acceder a las variables de entorno de la mejor manera.
 
 ### Funciones de la clase Env
 
 #### env.read_env(*path: str* = None, _recurse: bool_ = True, _verbose: bool_ = False, _override: bool_)
 
-Por defecto se buscan variables en el archivo `.env` en caso de que éste exista. Sin embargo, en algunas ocaciones es necesario tener más de un archivo de entorno. Esta función permite leer tantos archivos de entorno como se le indique.
+Por defecto se buscan variables en el archivo `.env` en caso de que éste exista. Sin embargo, en algunas ocaciones es necesario tener más de un archivo de entorno. Esta [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") permite leer tantos archivos de entorno como se le indique.
 
 ```bash
 
