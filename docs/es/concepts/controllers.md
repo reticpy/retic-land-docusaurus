@@ -64,7 +64,7 @@ def get_by_id(req: Request, res: Response, next: Next):
 
 ```
 
-Cada controlador recibe los siguientes parametros:
+Cada controlador recibe los siguientes [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos"):
 
 - [Request](../api/request): Representa una solicitud HTTP hacia el servidor.
 - [Response](../api/response): Representa una respuesta al cliente desde el servidor.
