@@ -9,7 +9,7 @@ slug: /es/concepts/app
 
 ## Clase App
 
-La clase **App** contiene la instancia principal de la aplicación.
+La [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **App** contiene la instancia principal de la aplicación.
 
 **Parámetros:**
 
@@ -70,7 +70,7 @@ Es utilizada para guardar la configuración de la apliacción. Ver [Configuraci�
 
 #### router
 
-Es la instancia de la clase [Router](./routing).
+Es la instancia de la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") [Router](./routing).
 
 ### Funciones
 
@@ -199,7 +199,7 @@ if __name__ == "__main__":
 
 #### listen(_hostname: str_ = "localhost", _port: int_ = 1801, _application: any_ = None, _use_reloader: bool_ = False, _use_debugger: bool_ = False, _use_evalex: bool_ = True, _extra_files: any_ = None, _reloader_interval: int_ = 1, _reloader_type: str_ = 'auto', _threaded: bool_ = False, _processes: int_ = 1, _request_handler: any_ = None, _static_files: any_ = None, _passthrough_errors=False_, _ssl_context: any_ = None)
 
-Crea un servidor web basado en parametros de configuracion.
+Crea un servidor web basado en [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") de configuracion.
 
 **Parámetros:**
 
@@ -216,7 +216,7 @@ Crea un servidor web basado en parametros de configuracion.
 - **reloader_type**: Es del tipo de reinicio, por defecto utiliza la detección automatica. Otros valores: `stat` y `watchdog`.
 - **threaded**: Es utilizado para aislar las peticiones en hilos individuales.
 - **processes**: En caso de ser mayor a 1, manejará cada solicitud en un nuevo proceso hasta llegar al número máximo de procesos concurrentes definidos.
-- **request_handler**: Se trata de un parámetro opcional que puede ser utilizado para anular la clase **Request** predeterminada.
+- **request_handler**: Se trata de un parámetro opcional que puede ser utilizado para anular la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Request** predeterminada.
 - **static_files**: Es una lista o diccionario de rutas para archivos estáticos.
 - **passthrough_errors**: Es usado para deshabilitar el manejo de excepciones, lo cual significa que el servidor dejará de funcionar cuando suceda un error.
 - **ssl_context**: Es un contexto SSL para la conexión. Puede ser una clase `ssl.SSLContext`, una tupla con el formato`(cert_file, pkey_file)`, una cadena o secuencia de carácteres ` 'adhoc'`, si el servidor debe crear uno automáticamente, o `None` para deshabilitar SSL (el cual se usa por defecto).
