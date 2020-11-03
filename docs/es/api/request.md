@@ -54,7 +54,7 @@ req.base_url: 'http://127.0.0.1:1801/files/123'
 
 #### body
 
-Instancia de la [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") `Body`. Contiene el cuerpo que conforma la petición.
+[Instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") de la [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") `Body`. Contiene el cuerpo que conforma la petición.
 
 ```python
 
@@ -100,7 +100,7 @@ req.environ: {'CONTENT_LENGTH': '39', 'CONTENT_TYPE': 'text/plain', 'HTTP_ACCEPT
 
 #### files
 
-Enlista todos los archivos de la petición HTTP. Cada valor es una instancia de la clase [FileStorage](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.FileStorage).
+Enlista todos los archivos de la petición HTTP. Cada valor es una [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") de la clase [FileStorage](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.FileStorage).
 
 Cada elemento se comporta como un _file object_ reconocido por **Python**, con la diferencia de que también tiene una [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") `save()` que puede almacenar el archivo en un sistema de archivos.
 
