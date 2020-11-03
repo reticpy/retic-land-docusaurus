@@ -55,7 +55,7 @@ app.env.read_env('.env.development', override=True)
 
 ```
 
-Por defecto, la función `read_env()` realiza una busqueda del archivo `.env`, sin embargo, la ruta del archivo podría ser diferente. Se recomienda cargar las variables desde el sistema directamente y en un entorno de producción.
+Por defecto, la [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") `read_env()` realiza una busqueda del archivo `.env`, sin embargo, la ruta del archivo podría ser diferente. Se recomienda cargar las variables desde el sistema directamente y en un entorno de producción.
 
 Crea el archivo de variables de entorno de desarrollo `.env.development`.
 
