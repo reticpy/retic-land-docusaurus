@@ -264,7 +264,7 @@ text: '{"msg": "say hi!"}'
 
 ### parse(_content: str_)
 
-Deserializar (una instancia de str, bytes o bytearray que contiene un documento JSON) a un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") Python.
+Deserializar (una [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") de str, bytes o bytearray que contiene un documento JSON) a un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") Python.
 
 **Parámetros:**
 
