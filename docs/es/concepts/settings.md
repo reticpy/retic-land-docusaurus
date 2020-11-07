@@ -41,7 +41,7 @@ app.config.set("default_port", 1801)
 
 #### get(_key: str_, _default_value: dict_ = None, _callback: any_ = None)
 
-Las variables de configuración pueden ser utilizadas en cualquier parte de la aplicación haciendo uso de la instancia `app`.
+Las variables de configuración pueden ser utilizadas en cualquier parte de la aplicación haciendo uso de la [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") `app`.
 
 **Parámetros:**
 
