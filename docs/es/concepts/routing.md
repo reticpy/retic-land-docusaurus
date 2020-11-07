@@ -75,7 +75,7 @@ router \
 
 Dónde:
 
-- `router` es una instancia de la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") `Router`.
+- `router` es una [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") de la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") `Router`.
 
 - `METHOD` es un [método](https://retic.land/manual/es/glossary/#m%C3%A9todo "Glosario de Términos") HTTP, el cual debe estar expresado en minúsculas.
 
