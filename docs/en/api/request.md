@@ -6,59 +6,59 @@ description: Request
 slug: /es/api/request
 ---
 
-## Clase Request
+## Request Class
 
-La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") **Request** representa la solicitud HTTP y contiene una biblioteca que ayuda a que las solicitudes sean mucho más simples. Contiene propiedades tales como [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos"), cuerpo de la solicitud, encabezados de la petición, entre otras.
+The **Request** [class](https://retic.land/manual/es/glossary#clase "Glosario de Términos") represents the HTTP request and contains a library that helps make requests much simpler. It contains properties such as [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos"), request body, request headers, among others.
 
-### Propiedades
+### Properties
 
-Algunas propiedades son una implementación del directorio [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableMultiDict) e [ImmutableList](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList) para representar su valor.
+Some properties are an implementation of the [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableMultiDict) and [ImmutableList](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList) directory to represent their value.
 
 #### access_route
 
-Enlista cada dirección IP que interviene en la petición.
+List each IP address involved in the request.
 
 ```python
 
-# Valor actual de access_route
+# Actual value of access_route
 req.access_route: ImmutableList(['127.0.0.1'])
 
 ```
 
 #### args
 
-Enlista todos los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") en la URL de la petición.
+List all the [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") in the URL of the request.
 
 ```python
 
-# URL de la petición HTTP
+# URL of the request HTTP
 # GET http://localhost:1801/files/123?queryparam=13344
 
-# Valor actual de args
+# Actual value of the args
 req.args: ImmutableMultiDict([('queryparam', '13344')])
 
 ```
 
-Por defecto un `ImmutableMultiDict` que es retornado en esta [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") contiene funciones como `getlist`, `get`, `get_all` para interactuar con los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") en la URL de una petición. Si necesitas más detalles puedes visitar la documentación oficial sobre esta clase [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList).
+By default an `ImmutableMultiDict` that is returned in this [function](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") contains functions like `getlist`, `get`, `get_all` to interact with the [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") in the URL of a request. If you need more details you can visit the official documentation about this [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList) class.
 
 #### base_url
 
-Esta arroja la URL de la petición sin paramertros _querystring_.
+This returns the URL of the request without any _querystring_ parameters.
 
 ```python
 
-# Valor actual de base_url
+# Actual value of  the base_url
 req.base_url: 'http://127.0.0.1:1801/files/123'
 
 ```
 
 #### body
 
-[Instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") de la [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") `Body`. Contiene el cuerpo que conforma la petición.
+`Body` [class](https://retic.land/manual/es/glossary#clase "Glosario de Términos") [instance](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos"). Contains the body that makes up the request.
 
 ```python
 
-# Valor actual de body
+# actual value of the body
 req.body:
     type: 'form'
     body: ImmutableMultiDict([('filename', 'fullname')])
@@ -67,7 +67,7 @@ req.body:
 
 #### cookies
 
-Enlista todas las cookies de la petición realizada.
+List all the cookies of the request made.
 
 ```python
 
@@ -78,73 +78,73 @@ req.cookies: ImmutableMultiDict([('cookie1', '123456')])
 
 #### data
 
-Contiene la data entrante de la petición en formato binario.
+Contains the incoming data of the request in binary format.
 
 ```python
 
-# Valor actual de data
+# Actual value of the data
 req.data: b'{\r\n    "filename":"name of the file"\r\n}'
 
 ```
 
 #### environ
 
-Entorno WSGI que es utilizado para extraer la información de la petición.
+WSGI environment that is used to extract the information from the request.
 
 ```python
 
-# Valor actual de environ
+# Actual value of the environ
 req.environ: {'CONTENT_LENGTH': '39', 'CONTENT_TYPE': 'text/plain', 'HTTP_ACCEPT': '*/*', 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, br', 'HTTP_CACHE_CONTROL': 'no-cache', 'HTTP_CONNECTION': 'keep-alive', 'HTTP_COOKIE': 'example1=123456', 'HTTP_HOST': 'localhost:1801', 'HTTP_USER_AGENT': 'PostmanRuntime/7.26.1', 'PATH_INFO': '/files/123', 'QUERY_STRING': 'queryparam=13344', 'RAW_URI': '/files/123?queryparam=13344', 'REMOTE_ADDR': 'localhost', ...}
 
 ```
 
 #### files
 
-Enlista todos los archivos de la petición HTTP. Cada valor es una [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") de la clase [FileStorage](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.FileStorage).
+List all files in the HTTP request. Each value is an [instance](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") of the [FileStorage](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.FileStorage) class.
 
-Cada elemento se comporta como un _file object_ reconocido por **Python**, con la diferencia de que también tiene una [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") `save()` que puede almacenar el archivo en un sistema de archivos.
+Each element behaves like a _file object_ recognized by **Python**, with the difference that it also has a `save()` [function](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") that can store the file on a file system.
 
 ```python
 
-# Valor actual de files
+# Actual value of the files
 req.files: ImmutableMultiDict([('files', <FileStorage: '200px-Flag_of_Spain.svg.png' ('image/png')>)])
 
 ```
 
 #### form
 
-Contiene todos los valores en un formulario de una petición del tipo: `application/x-www-form-urlencoded`.
+It contains all the values in a form of a request of the type: `application/x-www-form-urlencoded`.
 
 ```python
 
-# Valor actual de form
+# Actual value of form
 req.form: ImmutableMultiDict([('size', '123456')])
 
 ```
 
 #### full_path
 
-Contiene la URL completa de la petición.
+Contains the complete URL of the request
 
 ```python
 
-# Valor actual de full_path
+# Actual value of full_path
 req.full_path: '/files/123?queryparam=13344'
 
 ```
 
 #### headers
 
-Enlista todos los encabezados de la petición.
+List all the request headers.
 
 ```python
 
-# Valor actual de headers
+# Actual value of headers
 EnvironHeaders([('Cookie', 'cookie1=123456'), ('User-Agent', 'PostmanRuntime/7.26.1'), ('Accept', '*/*'), ('Cache-Control', 'no-cache'), ('Postman-Token', 'a0c82eb0-7864-472f-8991-5fce2c250554'), ('Host', 'localhost:1801'), ('Accept-Encoding', 'gzip, deflate, br'), ('Connection', 'keep-alive'), ('Content-Type', 'application/x-www-form-urlencoded'), ('Content-Length', '11')])
 
 ```
 
-No existe diferencia entre mayúsculas y minúsculas.
+There is no difference between upper and lower case.
 
 ```python
 
@@ -156,7 +156,7 @@ source = req.headers.get('Source')
 
 ```
 
-Forma alterna la cual retornar una Excepción cuando la cabecera no existe:
+Alternate form in which to return an Exception when the header does not exist:
 
 ```python
 
@@ -170,162 +170,162 @@ source = req.headers['Source']
 
 #### host
 
-Contiene el nombre del host y el puerto si el mismo está disponible.
+Contains hostname and port if it's available.
 
 ```python
 
 # URL de la petición HTTP
 # GET http://localhost:1801/files/123?queryparam=13344
 
-# Valor actual de host
+# Actual value of the host
 req.host: 'localhost:1801'
 
 ```
 
 #### method
 
-Este es el [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") utilizado para la petición, por ejemplo: `GET`, `POST`, `DELETE` y `PUT`.
+This is the [method](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") used for the request, for example: `GET`, `POST`, `DELETE` y `PUT`.
 
 ```python
 
-# Valor actual de method
+# Actual value of method
 req.method: 'GET'
 
 ```
 
 #### params
 
-Objeto que contiene todos los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") para la URL de la petición: `GET`, `POST`, `DELETE` y `PUT`.
+Object that contains all the [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") for the request URL: `GET`, `POST`, `DELETE` y `PUT`.
 
 ```python
 
-# URL de la petición HTTP
+# URL of the HTTP request
 # GET http://localhost:1801/files/123?queryparam=13344
 
-# Valor actual de params
+# Actual value of the params
 req.params: {'id': '123'}
 
 ```
 
 #### path
 
-Contiene la ruta de acceso en la URL de la petición.
+Contains the path in the request URL.
 
 ```python
 
-# URL de la petición HTTP
+# URL of the HTTP request
 # GET http://localhost:1801/files/123?queryparam=13344
 
-# Valor actual de params
+# Actual value of params
 req.path: '/files/123'
 
 ```
 
 #### retic
 
-Es un diccionario que se utiliza para agregar valores personalizados a la petición y así compartirlos entre controladores. Utiliza las funciones `req.set()` y `req.get()` para manipular sus valores.
+It's a dictionary that is used to add custom values to the request and thus share them between controllers. Use the `req.set()` and `req.get()` functions to manipulate their values.
 
 ```python
 
-# Asignar el objeto JSON con nombre app1
+# Assign the object JSON with the name app1
 req.set('app1', {u"msg": "say hi!"})
 
-# Valor actual de retic
+# Actual value of retic
 req.retic: {'app1': {'msg': 'say hi!'}}
 
 ```
 
-### Funciones
+### Functions
 
-La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") Request utiliza las siguientes funciones para la manipulación de su información.
+The Request [class](https://retic.land/manual/es/glossary#clase "Glosario de Términos") uses the following functions to manipulate your information.
 
 #### param(_key: str_, _default_value: any_ = None, _callback_ = None)
 
-Esto devuelve el valor del parámetro con el nombre especificado.
+This returns the value of the parameter with the specified name.
 
-`req.param(...)` busca en los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") analizados como la **ruta URL**, el **cuerpo de la solicitud** y la **cadena de consulta**, todo en ese orden. Si no existe el valor en la solicitud, devolverá `None` o el valor por defecto especificado.
+`req.param(...)` searches the parsed [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") such as the **URL path**, **request body**, and **query string**, all in that order. If the value does not exist in the request, it will return `None` or the specified default value.
 
-**Parámetros:**
+**Parameters:**
 
-- **key**: Nombre del parámetro a buscar.
+- **key**: Name of the parameter to search.
 
-- **default_value**: Valor por defecto si el parámetro no existe.
+- **default_value**: Value by default if the parameter doesn't exist.
 
-- **callback**: [Función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") que se ejecuta luego de obtener el valor del párametro, puede ser `bool`, `int`, `str`, etc.
+- **callback**: [Function](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") that is executed after obtaining the value of the parameter, it can be `bool`, `int`, `str`, etc.
 
 ```python
 
-# URL de la petición HTTP
+# URL of the HTTP request
 # GET http://localhost:1801/files/123?queryparam=13344
 
-# Imprimir el valor actual del parámetro id, o utilizar un valor por defecto
+# Print the current value of the id parameter, or use a default value
 print(req.param('id', 'default_value', int))
 print(req.param('id3')
 
-# Salida: 123
-# Salida: None
+# out: 123
+# out: None
 
 ```
 
 #### set(_key: str_, _value: any_ = None)
 
-Asigna un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") en el **diccionario retic** con un nombre específico. Se debe tener en cuenta que los nombres no distinguen entre mayúsculas o minúsculas, en el caso de que el nombre ya exista se sobreescribirá su valor y el código no será el esperado. En el caso de que el valor a asignar no exista se guardará el valor `None` por defecto.
+Assign an [object](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") in the **retic dictionary** with a specific name. It should be noted that names are not case-sensitive, in the event that the name already exists, its value will be overwritten and the code will not be as expected. In the event that the value to be assigned does not exist, the value `None` will be saved by default.
 
-**Parámetros:**
+**Parameters:**
 
-- **key**: Nombre del objeto a guardar.
+- **key**: Name of the object to save.
 
-- **value**: Valor con el que se guardará el objeto.
+- **value**: Value with which the object will be saved.
 
 ```python
 
-# Asignar el objeto JSON con nombre app1
+# Assign JSON object with name app1
 req.set('app1', {u"msg": "say hi!"})
 
 ```
 
 #### get(_key: str_, _default_value: any_ = None)
 
-Acá se retorna el valor de un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") en el **diccionario retic** con un nombre en especifico. Nuevamente debe terner en cuenta que los nombres no distinguen entre mayúsculas o minúsculas. Si no existe un valor en la solicitud, éste devolverá `None` o el valor predeterminado por defecto que esté especificado.
+Here the value of an [object](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") in the **retic dictionary** with a specific name is returned. Again you should note that the names are not case sensitive. If there is no value in the request, it will return `None` or whatever default value is specified.
 
-**Parámetros:**
+**Parameters:**
 
-- **key**: Nombre del objeto a buscar.
+- **key**: Name of the object to search.
 
-- **default_value**: Valor por defecto si el objeto no existe.
+- **default_value**: Value by default if the object desn't exist.
 
 ```python
 
-# Asignar el objeto JSON con nombre app1
+# Assing JSON object with name app1
 req.set('app1', {u"msg": "say hi!"})
 
-# Imprimir el valor actual de los parámetros, o utilizar un valor por defecto
+# Print the current value of the parameters, or use a default value
 print(req.get('app1'))
 print(req.get('app2', 2233))
 
-# Salida: {'msg': 'say hi!'}
-# Salida: 2233
+# out: {'msg': 'say hi!'}
+# out: 2233
 
 ```
 
 #### all_params()
 
-Devuelve el valor de todos los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") enviados en la solicitud junto con el diccionario retic combinado en un solo diccionario.
+Returns the value of all the [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") sent in the request together with the retic dictionary combined into a single dictionary.
 
-Incluye parámetros analizados como la **ruta URL**, el **cuerpo de la solicitud**, la **cadena de consulta** y el **diccionario retic**, todo en ese orden.
+It includes parsed parameters like the **URL path**, **request body**, **query string** and **retic dictionary**, all in that order.
 
 ```python
 
-# URL de la petición HTTP
+# URL of the HTTP request
 # GET http://localhost:1801/files/123?queryparam=13344
 
-# Imprimir todos los parámetros de la petición
+# Print all the parameters of the request
 print(req.all_params())
 
-# Salida: {'id': '123', 'size': '123456', 'queryparam': '13344', 'app1': {'msg': 'say hi!'}}
+# Out: {'id': '123', 'size': '123456', 'queryparam': '13344', 'app1': {'msg': 'say hi!'}}
 
 ```
 
-### Otras propiedades y funciones
+### Other properties and functions
 
-Retic hereda desde la [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") `Request de Werkzeug` para la gestión de sus peticiones. Visita la documentación acerca de su clase [Request](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#base-wrappers) para complementar la información que se encuentra acá mencionada.
+Retic inherits from `Werkzeug's Request` [class](https://retic.land/manual/es/glossary#clase "Glosario de Términos") to handle its requests. Visit the documentation about your [Request](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#base-wrappers) class to complement the information that is mentioned here.
