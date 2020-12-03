@@ -1,25 +1,24 @@
 ---
 id: app
-title: Archivo principal
-sidebar_label: Archivo principal
-description: Archivo principal de la Aplicación
+title: Principal file
+sidebar_label: Principal file
+description: Principal file of the app
 slug: /es/concepts/app
 ---
 
 
-## Clase App
+## App class
 
-La [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **App** contiene la [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") principal de la aplicación.
+The [class](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **App** contains the principal [instance](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") of the app.
 
-**Parámetros:**
+**Parameters:**
 
-- **env**: Son las variables de entorno de la aplicación.
+- **env**: They are the application environment variables.
 
-### Propiedades
-
+### Properties
 #### apps
 
-Contiene las referencias a las aplicaciones como: aplicaciones externas, entre otras.
+Contains references to applications such as: external applications, among others.
 
 ```python
 
@@ -28,29 +27,29 @@ Contiene las referencias a las aplicaciones como: aplicaciones externas, entre o
 # Retic
 from retic import App as app
 
-"""Define otras aplicaciones"""
+"""Define other apps"""
 BACKEND_EXAMPLE= {
     u"base_url": app.config.get('APP_BACKEND_EXAMPLE'),
     u"users": "/users",
 }
 
-"""Crea el objeto referencia de las apps"""
+"""Creates the reference object of the apps"""
 APP_BACKEND = {
     u"example": BACKEND_EXAMPLE,
 }
 
-"""Agrega las aplicaciones a Retic"""
+"""Add the applications to Retic"""
 app.use(APP_BACKEND, "backend")
 
 ```
 
-El codigo anterior guarda la referencias a las aplicaciones externas utilizadas en la aplicación. A continuación se muestra como obtener los valores de esta.
+The above code saves references to external applications used in the application. Below is how to obtain the values ​​of this.
 
 ```python
 
 # services\users\users.py
 
-"""Servicios para el controlador de usuarios"""
+"""Services for the user controller"""
 
 # Retic
 from retic import App as app
@@ -66,23 +65,23 @@ URL_USERS = app.apps['backend']['example']['base_url'] + \
 
 #### config
 
-Es utilizada para guardar la configuración de la apliacción. Ver [Configuración](./settings) para más detalles.
+It is used to save the configuration of the application. See [settings](./settings) for more datails.
 
 #### router
 
-Es la [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") de la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") [Router](./routing).
+In the [instance](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") of the [class](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") [Router](./routing).
 
-### Funciones
+### Functions
 
 #### use(_item: any_, _name: str_ = "")
 
-Es la configuración de los middlewares o las lógicas de intercambio de información de la apliacción, y permite importar otras configuraciones como rutas de acceso de la aplicación.
+It is the configuration of the middleware or the information exchange logic of the application, and it allows importing other configurations such as application paths.
 
-**Parámetros:**
+**Parameters:**
 
-- **item**: Es el elemento que se va a importar a la apliación. Si es de tipo **Router** será almacenada en la propiedad **router** de la aplicación. En caso contrario se almancena en la propiedad **apps**
+- **item**: It is the element to be imported into the application. If it's type **Router** it will be restored in the **router** property of the app. Otherwise it is stored in the  **apps** property.
 
-- **name**: Especifica el nombre del elemento a guardar.
+- **name**: Specifies the name of the element to save.
 
 ```python
 
@@ -91,31 +90,31 @@ Es la configuración de los middlewares o las lógicas de intercambio de informa
 # Retic
 from retic import App as app
 
-"""Define otras aplicaciones"""
+"""Defines others apps."""
 BACKEND_EXAMPLE= {
     u"base_url": app.config.get('APP_BACKEND_EXAMPLE'),
     u"users": "/users",
 }
 
-"""Crea el objeto referencia de las apps"""
+"""Creates the reference object of the apps"""
 APP_BACKEND = {
     u"example": BACKEND_EXAMPLE,
 }
 
-"""Agrega las aplicaciones a Retic"""
+"""Add the applications to Retic"""
 app.use(APP_BACKEND, "backend")
 
 ```
 
 #### application(environ, start_response)
 
-Es una aplicación utilizada para enviar una respuesta a las peticiones del cliente. También es utilizada en despliegues de la aplicación con [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface).
+It is an application used to send a response to customer requests. It is also used in application deployments with  [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface).
 
-**Parámetros:**
+**Parameters:**
 
-- **environ**: Define el [Request](../api/request) de la petición.
+- **environ**: define the[Request](../api/request) of the request.
 
-- **start_response**: Define el [Response](../api/response) de la petición.
+- **start_response**: Define the [Response](../api/response) of the request.
 
 ```python
 
@@ -135,7 +134,7 @@ from apps import urls
 # Routes
 from routes import router
 
-# Agregar las rutas a la aplicación
+# Add the rutes of the app.
 app.use(router)
 
 
@@ -150,9 +149,9 @@ def application(req, res):
 if __name__ == "__main__":
     # Create web server
     app.listen(
-        # Obtener la variable de entorno APP_HOSTNAME en el formato por defecto (str)
+        # Get the environment variable APP_HOSTNAME in the format by default (str)
         hostname=app.env("APP_HOSTNAME"),
-        # Obtener la variable de entorno APP_PORT en formato númerico. De no existir, retorna 1801.
+        # Get the environment variable APP_PORT in numeric format. if it doesn't exist, returns 1801.
         port=app.env.int("APP_PORT", app.config.get("default_port"))
     )
 
@@ -160,7 +159,7 @@ if __name__ == "__main__":
 
 #### clear()
 
-Reinicia la aplicación a su estado inicial, borrando toda la configuración, las rutas y las apps.
+Restart the application to its initial state, erasing all the settings, routes and apps.
 
 ```python
 
@@ -180,18 +179,18 @@ from apps import urls
 # Routes
 from routes import router
 
-# Eliminar información previa en la aplicación
+# Delete previous information in the application
 app.clear()
 
-# Agregar las rutas a la aplicación
+# Add the routes to the application
 app.use(router)
 
 if __name__ == "__main__":
     # Create web server
     app.listen(
-        # Obtener la variable de entorno APP_HOSTNAME en el formato por defecto (str)
+        # Get the environment variable APP_HOSTNAME in the format by default n(str)
         hostname=app.env("APP_HOSTNAME"),
-        # Obtener la variable de entorno APP_PORT en formato númerico. De no existir, retorna 1801.
+        # Get the environment variable APP_PORT in numeric format. If it doesn't exist, returns 1801.
         port=app.env.int("APP_PORT", app.config.get("default_port"))
     )
 
@@ -199,28 +198,27 @@ if __name__ == "__main__":
 
 #### listen(_hostname: str_ = "localhost", _port: int_ = 1801, _application: any_ = None, _use_reloader: bool_ = False, _use_debugger: bool_ = False, _use_evalex: bool_ = True, _extra_files: any_ = None, _reloader_interval: int_ = 1, _reloader_type: str_ = 'auto', _threaded: bool_ = False, _processes: int_ = 1, _request_handler: any_ = None, _static_files: any_ = None, _passthrough_errors=False_, _ssl_context: any_ = None)
 
-Crea un servidor web basado en [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") de configuracion.
+Create a web server based on configuration [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") 
 
-**Parámetros:**
+**Parameters:**
 
-- **environ**: Define el [Request](../api/request) de la petición.
+- **environ**: dfines the [Request](../api/request) of the request.
 
-- **hostname**: Define el host a enlazar, por ejemplo `localhost`. Si inicia con `unix://` se utiliza un socket de Unix en lugar de un socket de tipo TCP.
-- **port**: Puerto del servidor. Ejemplo: `8080`.
-- **application**: Aplicación WSGI a ejecutar.
-- **use_reloader**: Reinicia el servidor automáticamente en caso de que se realicen cambios a la aplicación.
-- **use_debugger**: Crea el servidor en modo debugger para la detección de errores.
-- **use_evalex**: Habilita la evaluación de excepsiones de la aplicación.
-- **extra_files**: Es una lista de archivos para ser cargados al inicio del servidor. Por ejemplo, una configuración extras del servidor.
-- **reloader_interval**: Asigna el intervalo de reinico del servidor especificado en segundos.
-- **reloader_type**: Es del tipo de reinicio, por defecto utiliza la detección automatica. Otros valores: `stat` y `watchdog`.
-- **threaded**: Es utilizado para aislar las peticiones en hilos individuales.
-- **processes**: En caso de ser mayor a 1, manejará cada solicitud en un nuevo proceso hasta llegar al número máximo de procesos concurrentes definidos.
-- **request_handler**: Se trata de un parámetro opcional que puede ser utilizado para anular la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Request** predeterminada.
-- **static_files**: Es una lista o diccionario de rutas para archivos estáticos.
-- **passthrough_errors**: Es usado para deshabilitar el manejo de excepciones, lo cual significa que el servidor dejará de funcionar cuando suceda un error.
-- **ssl_context**: Es un contexto SSL para la conexión. Puede ser una clase `ssl.SSLContext`, una [tupla](https://retic.land/manual/es/glossary/#tupla "Glosario de Términos") con el formato`(cert_file, pkey_file)`, una cadena o secuencia de carácteres ` 'adhoc'`, si el servidor debe crear uno automáticamente, o `None` para deshabilitar SSL (el cual se usa por defecto).
-
+- **hostname**: Defines the host to bind, for example `localhost`. If it start with `unix://` a Unix socket is used instead of  TCP type.
+- **port**: Server port. Ecample: `8080`.
+- **application**: App WSGI to run.
+- **use_reloader**: Automatically restart the server in case changes are made to the application.
+- **use_debugger**: Creates the server in debugger mode for error detection.
+- **use_evalex**: Enables evaluation of application exceptions.
+- **extra_files**: It is a list of files to be loaded at the start of the server. For example, an extra server configuration.
+- **reloader_interval**: Assigns the specified server restart interval in seconds.
+- **reloader_type**: It is the reboot type, by default it uses automatic detection. Other values: `stat` y `watchdog`.
+- **threaded**: It is used to isolate requests in individual threads.
+- **processes**: If it is greater than 1, it will handle each request in a new process until it reaches the maximum number of concurrent processes defined.
+- **request_handler**: This is an optional parameter that can be used to override the default Request [class](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Request**
+- **static_files**: It is a list or dictionary of paths for static files.
+- **passthrough_errors**: It is used to disable exception handling, which means that the server will stop working when an error occurs.
+- **ssl_context**: it is a SSL context for the connection. It can be a class `ssl.SSLContext`, a [tupla](https://retic.land/manual/es/glossary/#tupla "Glosario de Términos") with the`(cert_file, pkey_file)` format, a string or a sequence of characters ` 'adhoc'`, if the server should create one automatically, or `None` to disable SSL (which is used by default)
 ```python
 
 # app.py
@@ -239,15 +237,15 @@ from apps import urls
 # Routes
 from routes import router
 
-# Agregar las rutas a la aplicación
+# Add the app rutes
 app.use(router)
 
 if __name__ == "__main__":
     # Create web server
     app.listen(
-        # Obtener la variable de entorno APP_HOSTNAME en el formato por defecto (str)
+        # Get the environment variable APP_HOSTNAME in the default format (str)
         hostname=app.env("APP_HOSTNAME"),
-        # Obtener la variable de entorno APP_PORT en formato númerico. De no existir, retorna 1801.
+        # Get the APP_PORT environment variable in numeric format. If it does not exist, it returns 1801.
         port=app.env.int("APP_PORT", app.config.get("default_port"))
     )
 
