@@ -1,16 +1,16 @@
 ---
 id: architecture
-title: Arquitectura
-sidebar_label: Arquitectura
-description: Estructura inicial del proyecto
+title: Architecture
+sidebar_label: Architecture
+description: initial structure of the project.
 slug: /es/concepts/architecture
 ---
 
-Retic es un marco de trabajo que se utiliza para crear **aplicaciónes del lado del servidor**. Retic está escrito en Python, y utiliza Werkzeug como servidor.
+Retic is a framework used to create **server-side applications**. Retic is written in Python, and uses Werkzeug as a server.
 
-Una aplicación se define por **rutas, controladores y servicios**. Retic provee la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Router** que ayuda a definir los puntos de acceso de la aplicación.
+An app is define by **rutes, controlers and services**. Retic provides the [class](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Router** that helps to define the access points of the app. 
 
-Retic recomienda la siguiente estructura de directorios para que la estabilidad y mantenimiento de la aplicación resulte más facil de realizar.
+Retic recommends the following directory structure for easier application stability and maintenance.
 
 ```bash
 
