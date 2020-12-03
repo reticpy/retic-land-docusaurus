@@ -6,82 +6,82 @@ description: Response
 slug: /es/api/response
 ---
 
-## Clase Response
+## Response class
 
-La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") **Response** representa la respuesta a una petición HTTP realizada por un cliente.
+The **Response** [class](https://retic.land/manual/es/glossary#clase "Glosario de Términos") represents the response to an HTTP request made by a client.
 
-### Propiedades
+### Properties
 
-A continuación se presentan las principales propiedades de la [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") `Response` y su funcionalidad:
+The main properties of the `Response` [class](https://retic.land/manual/es/glossary#clase "Glosario de Términos") and their functionality are presented below:
 
 #### default_mimetype
 
-Todas las respuestas tendrán por defecto un mimetype `text/plain`.
+All responses will default to a `text/plain` mimetype.
 
 ```python
 
-# Valor actual de default_mimetype
+# Current value of default_mimetype
 res.default_mimetype: 'text/plain'
 
 ```
 
 #### default_status
 
-Todas las respuestas tienen por defecto un codigo de estado de respuesta `status 200`.
+All responses have a default response status code of `status 200`.
 
 ```python
 
-# Valor actual de default_status
+# Current value of default_status
 res.default_status: 200
 
 ```
 
 #### headers
 
-Esta es la lista de todas las cabeceras o encabezados de la respuesta. Por defecto, todas las peticiones tienen la cabecera. `'content-type': 'application/json'`
+This is the list of all headers or headers in the response. By default, all requests have the header. `'content-type': 'application/json'`
 
 ```python
 
-# Valor actual de headers
+# Current value of headers
 Headers([('content-type', 'application/json'), ('Access-Control-Allow-Methods', 'True'), ('Access-Control-Allow-Credentials', 'GET,POST,DELETE,PUT,OPTIONS'), ('Access-Control-Allow-Origin', '*'), ('Access-Control-Allow-Headers', 'Content-Type'), ('Access-Control-Expose-Headers', 'Content-Type')])
 
 ```
 
 #### status
 
-Es el código de estado de la respuesta en formato de cadena de texto.
+It is the status code of the response in text string format.
 
 ```python
 
-# Valor actual de status
+# Current value of status
 res.status: '200 OK'
 
 ```
 
 #### status_code
 
-Este es el código de estado de la respuesta en un formato númerico.
+This is the status code of the response in a numeric format.
 
 ```python
 
-# Valor actual de status_code
+# Current value of status_code
 res.status_code: 200
 
 ```
 
-### Funciones
+### Features
 
-La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") **Response** utiliza las siguientes funciones para la manipulación de su información:
+The **Response** [class](https://retic.land/manual/es/glossary#clase "Glosario de Términos") uses the following functions to manipulate its information:
 
 #### bad_request(*content: any* = "")
 
-Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") tendrá como respuesta un _400 Bad Request_ a la petición del cliente, esto es para indicar que la solicitud no es válida.
+This [method](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") will respond with a _400 Bad_ Request to the client's request, this is to indicate that the request is not valid.
 
-Esto generalmente significa que la solicitud contenía [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") o cabeceras no válidas, o que intentó hacer algo que para la lógica de su petición no es admitica.
+This generally means that the request contained invalid [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") or headers, or that you tried to do something that your request logic does not support.
 
-**Parámetros:**
+**Parameters:**
 
-- **content**: Esta es la información que está almacenada para ser enviada al cliente, puede ser en forma de un mensaje, un diccionario, entre otras cosas similares. En el caso de que no exista, se enviará un mensaje de estado basandose en el código del mismo estado.
+- **content**: This is the information that is stored to be sent to the client, it can be in the form of a message, a dictionary, among other similar things. In the event that it does not exist, a status message will be sent based on the status code.
 
 ```python
 
@@ -92,7 +92,7 @@ from retic.services.validations import validate_obligate_fields
 
 def upload(req: Request, res: Response):
 
-    """Revisar que todos los parametros obligatorios sean validos"""
+    """Check that all mandatory parameters are valid"""
     _validate = validate_obligate_fields({
         u'files': _files
     })
@@ -108,7 +108,7 @@ def upload(req: Request, res: Response):
 
 ```sh
 
-# Salida:
+# Out:
 {
     "valid": false,
     "msg": "The param files is necesary."
@@ -118,13 +118,13 @@ def upload(req: Request, res: Response):
 
 #### forbidden(_content: any_ = "")
 
-Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") se utiliza para enviar una respuesta _403 forbidden_ al cliente, indicando que una solicitud no está autorizada.
+This [method](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") is used to send a _403 forbidden_ response to the client, indicating that a request is not authorized.
 
-Esto generalmente significa que el agente de usuario intentó hacer una "acción" para la cual no tenía ningún tipo de autorización para hacerla, algo como cambiar la contraseña de otro usuario caería en una de éstas acciones que normalmente no están autorizadas.
+This generally means that the user agent tried to do an "action" for which it did not have any type of authorization to do so, something like changing the password of another user would fall into one of these actions that are normally not authorized.
 
-**Parámetros:**
+**Parameters:**
 
-- **content**: Información destinada al cliente en forma de mensaje, diccionario, entre otros. en el caso de que exista, se enviará un mensaje de estado basado en el código del mismo estado.
+- **content**: Information intended for the client in the form of a message, dictionary, among others. if it exists, a status message based on the status code will be sent.
 
 ```python
 
@@ -137,7 +137,7 @@ from services.users.users as users
 
 def login(req: Request, res: Response):
 
-    """Revisar que todos los parametros obligatorios sean validos"""
+    """Check that all mandatory parameters are valid"""
     _user = users.login({
         u'username': "user1",
         u'password': "123",
@@ -152,7 +152,7 @@ def login(req: Request, res: Response):
 
 ```sh
 
-# Salida:
+# Out:
 {
     "valid": false,
     "msg": "User is invalid."
@@ -162,17 +162,17 @@ def login(req: Request, res: Response):
 
 #### not_found(*content: any* = "")
 
-Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") se utiliza para enviar una respuesta _404 not_found_.
+This [method](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") is used to send a _404 not_found_ response.
 
-Cuando se llama manualmente desde el código de su aplicación, este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") es normalmente utilizado para indicar que el cliente intentó encontrar, actualizar o eliminar algo que no existe.
+When called manually from your application code, this [method](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") is typically used to indicate that the client tried to find, update, or remove something that doesn't exist.
 
-**Parámetros:**
+**Parameters:**
 
-- **content**: Información para ser enviada al cliente en forma de mensaje, diccionario, entre otros. En el caso de que no exista, se enviará un mensaje de estado basado en el código del estado.
+- **content**: Information to be sent to the client in the form of a message, dictionary, among others. In the event that it does not exist, a status message based on the status code will be sent.
 
 ```python
 
-# URL de la petición HTTP
+# URL of the HTTP request
 # GET: http://localhost:1801/folders/86698adcb9b711eaa7524c0082ae1a80
 
 # Retic
@@ -182,12 +182,12 @@ from retic import Request, Response
 from services.files.files as files
 
 def get_by_folder(req: Request, res: Response):
-    """Obtener archivos en base a su directorio"""
+    """Get files based on your directory"""
     _files_db = files.get_all_by_folder_db(
         req.param("folder")
     )
 
-    """Revisar si se encontró el folder, caso contrario, retornar un error."""
+    """Check if the folder was found, otherwise, return an error."""
     if _files_db['valid'] is False:
         res.not_found(_files_db)
     else:
@@ -197,7 +197,7 @@ def get_by_folder(req: Request, res: Response):
 
 ```sh
 
-# Salida:
+# Out:
 {
     "valid": false,
     "msg": "Folder not found."
@@ -207,17 +207,17 @@ def get_by_folder(req: Request, res: Response):
 
 #### ok(_content: dict_ = None)
 
-Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") se utiliza para enviar una respuesta _200 OK_ al cliente.
+This [method](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") is used to send a _200 OK_ response to the client.
 
-Esto significa que la petición del cliente ha sido aceptada.
+This means that the client's request has been accepted.
 
-**Parámetros:**
+**Parameters:**
 
-- **content**: Información para ser enviada al cliente como un mensaje, un diccionario, entre otros. En caso de que no exista, se enviará un mensaje de estado basado en el código del estado.
+- **content**: Information to be sent to the client as a message, a dictionary, among others. In case it does not exist, a status message based on the status code will be sent.
 
 ```python
 
-# URL de la petición HTTP
+# URL of the HTTP request
 # GET: http://localhost:1801/folders/77698adcb9b711eaa7524c0082ae1a80
 
 #Retic
@@ -227,12 +227,12 @@ from retic import Request, Response
 from services.files.files as files
 
 def get_by_folder(req: Request, res: Response):
-    """Obtener archivos en base a su directorio"""
+    """Get files based on your directory"""
     _files_db = files.get_all_by_folder_db(
         req.param("folder")
     )
 
-    """Revisar si se encontró el folder, caso contrario, retornar un error."""
+    """Check if the folder was found, otherwise, return an error."""
     if _files_db['valid'] is False:
         res.not_found(_files_db)
     else:
@@ -242,7 +242,7 @@ def get_by_folder(req: Request, res: Response):
 
 ```sh
 
-# Salida:
+# Out:
 {
     "valid": true,
     "msg": "Files found.",
@@ -270,11 +270,11 @@ def get_by_folder(req: Request, res: Response):
 
 #### server_error(*content: any* = "")
 
-Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") se utiliza para enviar una respuesta _500 Server error_ al cliente, indicando que ocurrió algún tipo de error en el servidor
+This [method](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") is used to send a _500 Server error_ response to the client, indicating that some kind of error occurred on the server.
 
-**Parámetros:**
+**Parameters:**
 
-- **content**: Información para enviarse al cliente como un mensaje, un diccionario, entre otros. Si no existe, se enviará un mensaje de estado basado en el código del estado.
+- **content**: Information to be sent to the client as a message, a dictionary, among others. If it does not exist, a status message based on the status code will be sent.
 
 ```python
 
@@ -290,7 +290,7 @@ def undefined(req: Request, res: Response):
 
 ```sh
 
-# Salida:
+# Out:
 {
     "valid": false,
     "msg": "Controller is invalid."
@@ -300,13 +300,13 @@ def undefined(req: Request, res: Response):
 
 #### send(_content: any_ = "")
 
-Envía una respuesta en cadena con un formato(XML, CSV, texto plano), respuestas en formato JSON, entre otros. Se recomienda su uso en el caso de que se necesite enviar una respuesta de éxito al cliente con un codigo de estado diferente de 200.
+Sends a response in string with a format (XML, CSV, plain text), responses in JSON format, among others. Its use is recommended in the event that it is necessary to send a success response to the client with a status code other than 200.
 
-Este [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") se utiliza en la implementación subyacente de la mayoría de los otros métodos de respuesta de terminal.
+This [method](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") is used in the underlying implementation of most of the other terminal response methods.
 
-**Parámetros:**
+**Parameters:**
 
-- **content**: Información para ser enviada al cliente en forma de mensaje, diccionario, entre otros. En el caso de que no exista, se enviará un mensaje de estado basado en el código del mismo estado.
+- **content**: Information to be sent to the client in the form of a message, dictionary, among others. In the event that it does not exist, a status message based on the status code will be sent.
 
 ```python
 
@@ -321,22 +321,22 @@ def say_hi(req: Request, res: Response):
 
 ```sh
 
-# Salida:
+# Out:
 Hi!
 
 ```
 
 #### set_headers(*headers: dict*, *value: str* = None)
 
-Establece cabeceras o encabezados de respuesta con valores especificos.
+Set response headers or headers with specific values.
 
-Alternativamente, se puede pasar un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") que contenga cabeceras para configurar múltiples valores a la vez, donde las claves son los nombres de las cabeceras y los valores correspondientes son los valores deseados.
+Alternatively, an [object](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") containing headers can be passed to set multiple values at once, where the keys are the names of the headers and the corresponding values are the desired values.
 
-**Parámetros:**
+**Parameters:**
 
-- **headers**: Puede ser de tipo `dict`, para representar un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") de cabeceras que se agregarán a las cabeceras actuales. Si es del tipo `str` será utilizado para acceder a una cabecera en específico. Cualquier otro tipo de formato provocará una excepción de error.
+- **headers**: It can be of type `dict`, to represent an [object](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") of headers that will be added to the current headers. If it is of type `str` it will be used to access a specific header. Any other type of format will cause an error exception.
 
-- **value**: Este es el valor que se asignará a la cabecera especificada. Por defecto tiene un valor `None` especificado.
+- **value**: This is the value that will be assigned to the specified header. By default it has a specified `None` value.
 
 ```python
 
@@ -353,21 +353,21 @@ def say_hi(req: Request, res: Response):
 
 ```sh
 
-# Salida:
+# Out:
 {"msg": "say hi!"}
 
-## Cabeceras de la respuesta
+## Response headers
 content-type: text/plane
 
 ```
 
 #### set_status(*code: int*)
 
-Es utilizado para establecer el código de estado para la respuesta HTTP.
+It is used to set the status code for the HTTP response.
 
-**Parámetros:**
+**Parameters:**
 
-- **code**: Es el número que representa el código de estado de la respuesta HTTP.
+- **code**: It is the number that represents the status code of the HTTP response.
 
 ```python
 
@@ -382,23 +382,23 @@ def upload(req: Request, res: Response):
 
 ```sh
 
-# Salida:
+# Out:
 {
     "msg": "file created!"
 }
 
-## Código de estado
+## Status code
 201 Created
 
 ```
 
 #### redirect(_new_url: str_)
 
-Esta es utilizada para redirigir a otra url. Utiliza redirección permanente con código de estado 308.
+This is used to redirect to another url. Use permanent redirect with status code 308.
 
-**Parámetros:**
+**Parameters:**
 
-- **new_utl**: URL a redirigir.
+- **new_utl**: URL to redirect.
 
 ```python
 
@@ -413,12 +413,12 @@ def upload(req: Request, res: Response):
 
 ```sh
 
-## Código de estado
+## Status code
 308 Permanent Redirect
 ...
 
 ```
 
-### Otras propiedades y funciones
+### Other properties and functions
 
-Retic hereda de la [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") `Response de Werkzeug` para la gestión de las respuestas de peticiones, visita la documentación acerca de su clase [Response](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#werkzeug.wrappers.Response) para complementar la información aquí mencionada.
+Retic inherits from `Werkzeug's Response` [class](https://retic.land/manual/es/glossary#clase "Glosario de Términos")  for managing request responses, visit the documentation about its [Response](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#werkzeug.wrappers.Response) class to complement the information mentioned here.
