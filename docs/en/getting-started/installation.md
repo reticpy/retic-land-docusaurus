@@ -1,27 +1,27 @@
 ---
 id: installation
-title: Instalación
-sidebar_label: Instalación
-description: Instalar Retic Windows, Linux, MacOS.
+title: Installation
+sidebar_label: Installation
+description: Instal Retic Windows, Linux, MacOS.
 slug: /es/getting-started/installation
 ---
 
-Retic recomienda utilizar un [entorno virutal](./virtual-environments) para trabajar.
+Retic recomend using a [cirtual enviroment](./virtual-environments) to work.
 
 ```bash
 
-# Instalar la última versión estable de Retic
+# Instal the latest stable version of Retic
 pip install -U retic
 
 ```
 
-Si deseas ver las notas de lanzamiento para cada versión las podrás encontrar bien detalladas en [GitHub](https://github.com/reticpy/retic/releases).
+If you want to see the release notes for each version you can find them well detailed on [GitHub](https://github.com/reticpy/retic/releases).
 
 ## Archivo requirements.txt
 
-Retic recomienda además utilizar un archivo ``requirements.txt``. Para facilitar el control de la versión de cada paquete e instalar únicamente los que sean necesarios.
+Retic also recommends using a``requirements.txt``. To facilitate the version control of each package and install only those that are necessary.
 
-Es algo similar al archivo ``package.json`` de **Node.js** en su sección de ``dependences``.
+It's something similar to ``package.json`` of **Node.js** in its section of ``dependences``.
 
 
 ```bash
@@ -37,7 +37,7 @@ SQLAlchemy-serializer==1.3.4.2
 
 ```
 
-Para instalar las dependencias de la aplicación en **node** se utiliza ``npm install`` o ``yarn install``, su equivalente en **Python** es el siguiente comando:
+To install the application dependencies in **node** use ``npm install`` or ``yarn install``, its equivalent in **Python** is the following command:
 
 ```bash
 
