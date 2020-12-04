@@ -1,13 +1,13 @@
 ---
 id: languages
-title: Idiomas
-sidebar_label: La documentación de Retic está disponible en los siguientes idiomas.
+title: Languages
+sidebar_label: Retic documentation is available in the following languages.
 slug: /es
 ---
-## Español
+## Spanish
 
-[Español](/manual/es/introduction)
+[Spanish](/manual/es/introduction)
 
-## Ingles
+## English
 
-[Ingles](/manual/es/introduction)
+[English](/manual/es/introduction)
