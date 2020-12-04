@@ -1,90 +1,90 @@
 ---
 id: virtual-environments
-title: Entorno virtual
-sidebar_label: Entorno virtual
-description: Crear entorno virtual en Python
+title: Virtual enviroments
+sidebar_label: Virtual enviroment
+description: Create virtual enviroment in Python
 slug: /es/getting-started/virtual-environments
 ---
 
-Un [virtualenv](https://docs.python.org/3/library/venv.html#module-venv) permite aislar recursos como **librerías y entornos de ejecución** del sistema principal. Es decir, dá la capacidad de poder utilizar **diferentes versiones** de un mismo paquete para cada proyecto.
+A [virtualenv](https://docs.python.org/3/library/venv.html#module-venv) allows you to isolate resources such as **libraries and runtime environments** from the host system. That is, it gives the ability to use **different versions** of the same package for each project.
 
-## Instalar virtualenv
+## Installl virtualenv
 
-Virtualenv es una herramienta que permite crear entornos de Python aislados entre sí, acá se muestra cómo realizar una instalación correcta.
+Virtualenv is a tool that allows you to create Python environments isolated from each other, here is how to perform a correct installation.
 
 ```bash
 
-# Opción con pip
+# Option qith pip
 pip install virtualenv
 
-# Opción con pip3
+# Option with pip3
 sudo pip3 install virtualenv
 
 ```
 
-## Crear un entorno virtual
+## Create a virtual enviroment
 
-Para crear un directorio para el proyecto y un directorio para el entorno virtual solo se debe hacer lo siguiente.
+To create a directory for the project and a directory for the virtual environment, just do the following.
 
 ```bash
 
-# Crear la carpeta del proyecto
+# Create the project folder 
 mkdir retic-restapi-example
 
-# Ingresar a la carpeta
+# Enter the folder
 cd retic-restapi-example
 
-# Crear entorno virtual
-# Opción 1
+# Create virtual environment
+# Option 1
 python -m venv venv
 
-# Opción 2
+# Option 2
 python3 -m venv venv
 
 ```
 
-Esto creará un entorno virtual para tu proyecto.
+This will create a virtual environment for your project.
 
-## Activar un entorno virtual
+## Activate a virtual environment
 
-Cada vez que trabajes en tu proyecto, lo primero que debes hacer es activar tu entorno virtual. Con los siguientes códigos se puede activar el entorno virtual en los sistemas operativos más populares.
+Every time you work on your project, the first thing you should do is activate your virtual environment. With the following codes you can activate the virtual environment in the most popular operating systems.
 
 En Linux/MacOS:
 
 ```bash
 
-# Ejecutar el script de activación
+# Run the activation script
 . venv/bin/activate
 
-# Ver versión de pip instalada en el entorno virtual
+# See version of pip installed in the virtual environment
 pip --version
 
 ```
 
-En Windows:
+In Windows:
 
 ```bash
 
-# Ejecutar el script de activación
+# Run the activation script
 venv\Scripts\activate
 
-# Ver versión de pip instalada en el entorno virtual
+# See version of pip installed in the virtual environment
 pip --version
 
 ```
 
-### Actualizar paquete Pip
+### Update Pip package
 
-Por defecto se instala una versión antigua de Pip, por lo que se recomienta hacer una actualización a la última versión estable con el siguiente comando:
+By default, an old version of Pip is installed, so it is recommended to update to the latest stable version with the following command:
 
 ```bash
 
-# Actualizar el paquete pip a la última versión
+# Update the pip package to the latest version
 
-# Opción 1
+# Option 1
 python -m pip install --upgrade pip
 
-# Opción 2
+# Option 2
 python3 -m pip install --upgrade pip
 
 ```
