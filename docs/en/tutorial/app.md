@@ -1,12 +1,12 @@
 ---
 id: app
-title: Archivo principal
-sidebar_label: Archivo principal
-description: Archivo principal de la Aplicación
+title: Principal file
+sidebar_label: Principal file
+description: Principal app file
 slug: /es/tutorial/app
 ---
 
-_Estructura de carpetas utilizada:_
+_folder strcture used:_
 
 ```bash
 
@@ -18,9 +18,9 @@ retic-restapi-example
 
 ```
 
-El archivo principal se usa para unificar los controladores, las rutas y los servicios, a su vez crea el servidor de la aplicación.
+The main file is used to unify drivers, routes and services, in turn creates the application server.
 
-Crea un archivo `app.py` en el cual se encontrará el servidor de nuestra aplicación.
+Create a file  `app.py` in which the server of our application will be located.
 
 ```python
 
@@ -32,7 +32,7 @@ Crea un archivo `app.py` en el cual se encontrará el servidor de nuestra aplica
 from retic import App as app
 
 if __name__ == "__main__":
-    # Crear servidor web
+    # create a web server
     app.listen(
         hostname="localhost",
         port=1801,
@@ -40,14 +40,14 @@ if __name__ == "__main__":
 
 ```
 
-Se debe iniciar nuestro servidor web con el siguiente comando:
+Our web server must be started with the following command:
+
 
 ```bash
 
 python app.py
 
 ```
-
-Visita el siguiente enlace [http://localhost:1801/](http://localhost:1801/) para ver el resultado.
+Visit the following link  [http://localhost:1801/](http://localhost:1801/) to see the result.
 
 ![alt text](../../../static/img/api_rest_app.png "API REST")
