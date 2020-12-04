@@ -1,12 +1,12 @@
 ---
 id: controllers
-title: Controladores
-sidebar_label: Controladores
-description: Crear controladores de la aplicación
+title: Controllers
+sidebar_label: Controllers
+description: Create application controllers
 slug: /es/tutorial/controllers
 ---
 
-_Estructura de carpetas utilizada:_
+_Folder structure used:_
 
 ```bash
 
@@ -26,10 +26,9 @@ retic-restapi-example
 │   requirements.txt
 
 ```
+These manage incoming HTTP requests and decide which services should perform the work, this is done to give the client a correct response.
 
-Estas gestionan las solicitudes HTTP entrantes y deciden qué servicios deben realizar el trabajo, esto se hace para darle una respuesta correcta al cliente.
-
-Se debe crea un archivo `/controllers/users.py` el cual puede gestionar la lógica de los servicios de usuario de nuestra aplicación.
+A file `/controllers/users.py` must be created which can manage the logic of the user services of our application.
 
 ```python
 
@@ -40,11 +39,11 @@ from retic import Request, Response, Next
 
 
 def get_by_id(req: Request, res: Response, next: Next):
-    """Obtener un usuario por su identificador"""
+    """Get a user by her identifier"""
 
     response = {
         u"valid": True,
-        u"msg": "Usuario encontrado.",
+        u"msg": "User found.",
         u"data": {
             u"username": "Retic",
             u"id": req.param("id")
@@ -55,8 +54,7 @@ def get_by_id(req: Request, res: Response, next: Next):
 
 ```
 
-Actualiza el archivo principal `routes/routes.py` de la aplicación y agrega los controladores de la misma:
-
+Update the main routes `routes/routes.py`/ file of the application and add the application controllers:
 ```python
 
 # routes/routes.py
@@ -67,21 +65,20 @@ from retic import Router
 # Controllers
 import controllers.users as users
 
-"""Definir la instancia Router"""
+"""Define the Router instance"""
 router = Router()
 
-"""Definir las rutas de la apliación"""
+"""Define the app routes"""
 router\
     .get("/", lambda req, res, next: res.ok({"msg": "Hello world! - HTTP GET"})) \
     .post("/", lambda req, res, next: res.ok({"msg": "Hello world! - HTTP POST"}))
 
-"""Definir las rutas de la apliación - users"""
+"""Define the app-users rutes"""
 router.get("/users/:id", users.get_by_id)
 
 ```
-
-Visita el siguiente enlace [http://localhost:1801/users/123](http://localhost:1801/users/123) para ver el resultado.
+Visit the following link [http://localhost:1801/users/123](http://localhost:1801/users/123) para ver el resultado.
 
 ![alt text](../../../static/img/api_rest_app_3.png "API REST")
 
-Si deseas ver más detalles visita la [guía de controladores](../concepts/controllers).
+If you wish to look for more details go visit the [drivers guide](../concepts/controllers).
