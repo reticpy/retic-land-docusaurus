@@ -1,28 +1,28 @@
 ---
 id: settings
-title: Configuración
-sidebar_label: Configuración
-description: Configuración de la aplicación
+title: setting
+sidebar_label: setting
+description: Setting of the app.
 slug: /es/concepts/settings
 ---
 
-## Clase Config
+## Config class
 
-La [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Config** permite establecer valores en la aplicación que permiten ser utilizados en las diferentes secciones de la misma.
+the [class](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Config** allows you to set values in the application that allow them to be used in its different sections.
 
-### Funciones
+### Functions
 
-La [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Config** utiliza las siguientes funciones para la manipulación de su información.
+the [class](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Config** uses the following functions to manipulate its information.
 
 #### set(_key: str_, _value: dict_)
 
-Retic permite definir los valores de configuración para la aplicación de una forma más dinámica.
+Retic allows you to define the configuration settings for your application in a more dynamic way.
 
-**Parámetros:**
+**Parametros:**
 
-- **key**: Es el nombre de la variable a asignar.
+- **key**: It is the name of the variable to assign.
 
-- **value**: El valor a asignar.
+- **value**: The value to assign.
 
 ```python
 
@@ -31,25 +31,25 @@ Retic permite definir los valores de configuración para la aplicación de una f
 # Retic
 from retic import App as app
 
-"""Asignar ruta de variables de entorno"""
+"""Map environment variable path"""
 app.env.read_env('.env.development', override=True)
 
-"""Asignar variables de configuracion"""
+"""Assign configuration variables"""
 app.config.set("default_port", 1801)
 
 ```
 
 #### get(_key: str_, _default_value: dict_ = None, _callback: any_ = None)
 
-Las variables de configuración pueden ser utilizadas en cualquier parte de la aplicación haciendo uso de la [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") `app`.
+The configuration variables can be used in any part of the application using the app [instance](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") `app`.
 
-**Parámetros:**
+**Parameters:**
 
-- **key**: Es el nombre de la variable a buscar.
+- **key**: It is the name of the variable to search.
 
-- **default_value**: Define el valor por defecto en caso de que la variable no exista.
+- **default_value**: Defines the default value in case the variable does not exist.
 
-- **callback**: Es la [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") que se ejecuta luego de obtener el valor.
+- **callback**: is the [function](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") that is executed after obtaining the value.
 
 ```python
 
@@ -69,15 +69,15 @@ from apps import urls
 # Routes
 from routes import router
 
-# Agregar las rutas a la aplicación
+# add the rutes of the app
 app.use(router)
 
 if __name__ == "__main__":
     # Create web server
     app.listen(
-        # Obtener la variable de entorno APP_HOSTNAME en el formato por defecto (str)
+        # Get the environment variable APP_HOSTNAME in the default format (str)
         hostname=app.env("APP_HOSTNAME"),
-        # Obtener la variable de entorno APP_PORT en formato númerico. De no existir, retorna 1801.
+        # Get the APP_PORT environment variable in numeric format. If it does not exist, it returns 1801.
         port=app.env.int("APP_PORT", app.config.get("default_port"))
     )
 
@@ -85,11 +85,11 @@ if __name__ == "__main__":
 
 #### from_object(*settings: dict*)
 
-Establece la configuración basándose en un diccionario.
+Sets the configuration based on a dictionary.
 
-**Parámetros:**
+**Parameters:**
 
-- **settings**: Es un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") de tipo diccionario el cual contiene la configuración.
+- **settings**: is a dictionary type [object](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") which contains the settings.
 
 ```python
 
@@ -98,22 +98,22 @@ Establece la configuración basándose en un diccionario.
 # Retic
 from retic import App as app
 
-"""Asignar ruta de variables de entorno"""
+"""Map environment variable path"""
 app.env.read_env('.env.development', override=True)
 
-"""Crear diccionario de congfiguración"""
+"""Create congfiguration dictionary"""
 config = {
     u"default_port": 1801
 }
 
-"""Configuración basada en un objeto"""
+"""Configuration based on an object"""
 app.config.from_object(config)
 
 ```
 
 #### clear()
 
-Se utiliza para borrar todas las variables de configuración, sin embargo, las variables de entorno no son eliminadas.
+It is used to clear all configuration variables, however environment variables are not removed.
 
 ```python
 
@@ -122,31 +122,31 @@ Se utiliza para borrar todas las variables de configuración, sin embargo, las v
 # Retic
 from retic import App as app
 
-"""Asignar ruta de variables de entorno"""
+"""Map environment variable path"""
 app.env.read_env('.env.development', override=True)
 
-"""Crear diccionario de congfiguración"""
+"""Create congfiguration dictionaryn"""
 config = {
     u"default_port": 1801
 }
 
-"""Configuración basada en un objeto"""
+"""Configuration based on an object"""
 app.config.from_object(config)
 
-"""Eliminar variables de configuracion"""
+"""Delete configuration variables"""
 app.config.clear()
 
 ```
 
-## Variables de entorno
+## Environment Variables
 
-Retic proporciona además un fácil acceso a las variables del sistema. Se utiliza la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") `Env` de la biblioteca `environs` para definir sus rutas en la aplicación. Consulte la [documentación oficial](https://github.com/sloria/environs) para conocer todas las posibles combinaciones y la manera de acceder a las variables de entorno de la mejor manera.
+Retic also provides easy access to system variables. The `Env` [class](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") from the `environs` library is used to define its routes in the app. see the [official documentation ](https://github.com/sloria/environs)for all possible combinations and how to access environment variables in the best way.
 
-### Funciones de la clase Env
+### Env class functions
 
 #### env.read_env(*path: str* = None, _recurse: bool_ = True, _verbose: bool_ = False, _override: bool_)
 
-Por defecto se buscan variables en el archivo `.env` en caso de que éste exista. Sin embargo, en algunas ocaciones es necesario tener más de un archivo de entorno. Esta [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") permite leer tantos archivos de entorno como se le indique.
+By default, variables are searched in the .env file if it exists. However, sometimes it is necessary to have more than one environment file.  This [funtion](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") allows you to read as many environment files as you indicate.
 
 ```bash
 
@@ -159,15 +159,16 @@ APP_ENV                         =development
 
 ```
 
-**Parámetros:**
+**Parameters:**
 
-- **path**: Directorio donde se encuentra el archivo de entorno.
+- **path**: Directory where the environment file is located.
 
-- **recurse**: Realiza una busqueda de forma recursiva desde la raiz.
+- **recurse**: Perform a search recursively from the root.
 
-- **verbose**: Se utiliza para definir si se deben mostar las advertencias en caso de que un archivo no exista. Su valor predeterminado es `False`.
 
-- **override**: Este sobreescribe las variables actuales en el sistema operativo. Su valor predeterminado es `False`.
+- **verbose**: It is used to define if warnings should be shown in case a file does not exist. Its default value is`False`.
+
+- **override**: This overrides the current variables in the operating system. Its default value is `False`.
 
 ```python
 
@@ -183,7 +184,7 @@ app.env.read_env('.env.development', override=True)
 
 ##### Tipos soportados
 
-Por defecto Retic retornará el valor en formato `str`, sin embargo, es permitido realizar el casteo automático de las variables de entorno a un tipo específico. A continuación se presentan los posibles formatos de salida que se muestran al consultar una variable de entorno:
+By default Retic will return the value in `str` format, however, it is allowed to automatically cast environment variables to a specific type. Following are the possible output formats that are displayed when querying an environment variable:
 
 - env.str
 - env.bool
@@ -201,9 +202,9 @@ Por defecto Retic retornará el valor en formato `str`, sin embargo, es permitid
 - env.log_level
 - env.path (casts to a pathlib.Path)
 
-##### Uso básico
+##### basic use
 
-La busqueda de una variable de entorno se realiza por medio de su nombre, en caso de no existir, se puede asignar un valor por defecto, en el caso contrario devolverá una excepción que indicará que la variable no existe en el sistema.
+The search for an environment variable is carried out by means of its name, if it does not exist, a default value can be assigned, otherwise it will return an exception indicating that the variable does not exist in the system.
 
 ```bash
 
@@ -234,15 +235,15 @@ from apps import urls
 # Routes
 from routes import router
 
-# Agregar las rutas a la aplicación
+# add the rutes to the app.
 app.use(router)
 
 if __name__ == "__main__":
     # Create web server
     app.listen(
-        # Obtener la variable de entorno APP_HOSTNAME en el formato por defecto (str)
+        # Get the environment variable APP_HOSTNAME in the default format (str)
         hostname=app.env("APP_HOSTNAME"),
-        # Obtener la variable de entorno APP_PORT en formato númerico. De no existir, retorna 1801.
+        # Get the APP_PORT environment variable in numeric format. If it does not exist, it returns 1801.
         port=app.env.int("APP_PORT", 1801),
     )
 
