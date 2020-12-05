@@ -1,12 +1,12 @@
 ---
 id: external-apps
-title: Aplicaciones externas
-sidebar_label: Aplicaciones externas
-description: Aplicaciones externas
+title: External apps
+sidebar_label: External apps
+description: External apps
 slug: /es/tutorial/external-apps
 ---
 
-_Estructura de carpetas utilizada:_
+_Folder strcture used:_
 
 ```bash
 
@@ -40,9 +40,9 @@ retic-restapi-example
 
 ```
 
-Retic recomienda realizar un archivo para rutas de aplicaciones externas, de esta forma asegura el mantenimiento y la escalabilidad de la aplicación. De la misma manera, se debe guardar la información en Retic para facilitar la utilización en toda la aplicación.
+Retic recommends making a file for external application paths, in this way ensures the maintenance and scalability of the application. In the same way, the information should be saved in Retic to facilitate use throughout the application.
 
-Se debe actualizar el archivo de variables de entorno de la siguiente manera:
+The environment variables file should be updated as follows:
 
 ```bash
 
@@ -58,7 +58,7 @@ APP_BACKEND_EXAMPLE      =https://jsonplaceholder.typicode.com
 
 ```
 
-Crea un archivo `apps/urls.py` para agregar la configuración de las rutas de tus aplicaciones externas.
+Create an `apps/urls.py` to add your external app path settings.
 
 ```python
 
@@ -67,24 +67,23 @@ Crea un archivo `apps/urls.py` para agregar la configuración de las rutas de tu
 # Retic
 from retic import App as app
 
-"""Define otras aplicaciones"""
+"""Define others apps"""
 BACKEND_EXAMPLE = {
     u"base_url": app.config.get('APP_BACKEND_EXAMPLE'),
     u"users": "/users",
 }
 
-"""Crea el objeto referencia de las apps"""
+"""Create the reference object of the apps """
 APP_BACKEND = {
     u"example": BACKEND_EXAMPLE,
 }
 
-"""Agrega las aplicaciones a Retic"""
+"""Add the Retic apps"""
 app.use(APP_BACKEND, "backend")
 
 ```
 
-Actualiza el archivo principal `app.py` y luego agrega el archivo de configuración:
-
+Update the main `app.py` file and then add the configuration file:
 ```python
 
 # app.py
@@ -107,18 +106,18 @@ from routes import router
 app.use(router)
 
 if __name__ == "__main__":
-    # Crear servidor web
+    # Create the web server
     app.listen(
-        # Obtener la variable de entorno APP_HOSTNAME en el formato por defecto (str)
+        # Get the environment variable APP_HOSTNAME in the default format (str)
         hostname=app.env("APP_HOSTNAME"),
-        # Obtener la variable de entorno APP_PORT en formato númerico. De no existir, retorna 1801.
+        # Get the APP_PORT environment variable in numeric format. If it does not exist, it returns 1801.
         port=app.env.int("APP_PORT", 1801),
     )
 
 
 ```
 
-Instala el paquete `requests` para realizar llamadas HTTP.
+Install the packaged `requests` to make HTTP calls.
 
 ```bash
 
@@ -129,7 +128,7 @@ requests==2.24.0
 
 ```
 
-Para instalar las dependencias se debe utilizar el siguiente comando:
+To install the dependencies you must use the following command:
 
 ```bash
 
@@ -137,7 +136,7 @@ pip install -r requirements.txt
 
 ```
 
-Actualiza el servicio `services/users/users.py` realizando el consumo de la apicación externa:
+Update the `services/users/users.py` service doing the external app consume.
 
 ```python
 
@@ -157,31 +156,31 @@ URL_USERS = app.apps['backend']['example']['base_url'] + \
 
 
 def get_by_id_db(user_id):
-    """Encontrar un usuario en base a un identificador
+    """Find a user based on an identifier
 
-    :param user_id: Identificador del usuario
+    :param user_id: user identifier
     """
 
     """Declarar variables"""
     user = None
 
-    """Obtener todos los usuarios"""
+    """Declare variables"""
     users_req = requests.get(URL_USERS)
 
-    """Transformar en json"""
+    """Transform in json"""
     users = users_req.json()
 
-    """Realizar la busqueda"""
+    """make the search"""
     for _user in users:
         if _user["id"] == user_id:
             user = _user
 
-    """Retornar información"""
+    """Return information"""
     return user
 
 ```
 
-Actualiza el controlador `controllers/users.py`, al hacerlo se debe aplicar una validación que especifique la existencia del usuario:
+Update the controller `controllers/users.py`,doing so must apply a validation that specifies the existence of the user:
 
 ```python
 
@@ -199,12 +198,12 @@ def get_by_id(req: Request, res: Response, next: Next):
 
     user = users.get_by_id_db(req.param("id", callback=int))
 
-    """Transformar información de respuesta"""
+    """Transform response information"""
     if user:
-        """Retornar una respuesta al cliente"""
+        """Return an error message to the client"""
         res.ok({
             u"valid": True,
-            u"msg": "Usuario encontrado.",
+            u"msg": "User found.",
             u"data": user
         })
     else:
@@ -215,7 +214,6 @@ def get_by_id(req: Request, res: Response, next: Next):
         })
 
 ```
-
-Visita el siguiente enlace [http://localhost:1801/users/1](http://localhost:1801/users/1) para ver el resultado.
+Visite the following liink [http://localhost:1801/users/1](http://localhost:1801/users/1) para ver el resultado.
 
 ![alt text](../../../static/img/api_rest_app_5.png "API REST")
