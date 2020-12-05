@@ -1,18 +1,18 @@
 ---
 id: services
-title: Servicios
-sidebar_label: Servicios
-description: Servicios de la aplicación
+title: Services
+sidebar_label: Services
+description: Services of the app
 slug: /es/concepts/services
 ---
 
-Retic recomienda realizar una estructura modular para tu aplicación. Independizar el funcionamiento de los controladores de los servicios que realizan su acción. Fácilitando así la integración necesaria con las diferentes pruebas que la aplicación requiera. Además, de minimizar la repetición de código.
+Retic recommends making a modular structure for your application. Independent the operation of the controllers from the services that carry out their action. Thus facilitating the necessary integration with the different tests that the application requires. In addition, to minimize code repetition.
 
 ```python
 
 # services/users/users.py
 
-"""Servicios para el controlador de usuarios"""
+"""Services for the user controller"""
 
 # Retic
 from retic import App as app
@@ -26,24 +26,24 @@ URL_USERS = app.apps['backend']['example']['base_url'] + \
 
 
 def get_by_id_db(user_id):
-    """Encontrar un usuario en base a un identificador
+    """Find a user based on an identifier
 
     :param user_id: Identificador del usuario
     """
 
-    """Declarar variables"""
+    """Declare variables"""
     user = None
 
-    """Obtener todos los usuarios"""
+    """Get all users"""
     users_req = requests.get(URL_USERS)
 
-    """Transformar en json"""
+    """Transform to json"""
     users = users_req.json()
 
-    """Realizar la busqueda"""
+    """Perform the search"""
     for _user in users:
         if _user["id"] == user_id:
             user = _user
 
-    """Retornar información"""
+    """Return information"""
     return user
