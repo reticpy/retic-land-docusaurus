@@ -1,21 +1,21 @@
 ---
 id: routing
-title: Enrutamiento
-sidebar_label: Enrutamiento
-description: Definir rutas de la aplicación
+title: routing
+sidebar_label: routing
+description: Define application routing
 slug: /es/concepts/routing
 ---
 
 
-Se refiere a la definición de cómo una aplicación responde a una solicitud dada por el cliente, utilizando [metodos HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Methods).
+It refers to the definition of how an application responds to a request given by the client, using [HTTP methods](https://developer.mozilla.org/es/docs/Web/HTTP/Methods).
 
-## Clase Router
+## Router class
 
-La [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Router** permite definir las rutas de acceso de la aplicación.
+The [class](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") **Router** allows you to define the application paths.
 
-**Parámetros:**
+**Parameters:**
 
-- **strict_slashes**: Se refiere a que si una ruta termina con una barra inclinada (/), pero la URL correspondiente no lo hace, se redirige a la URL final sin barra inclinada. Por defecto el valor de esta es `True`. En caso contrario, se permite el acceso a la ruta con o sin la barra inclinada.
+- **strict_slashes**: It means that if a route ends with a slash (/), , but the corresponding URL does not, it is redirected to the final URL without a slash. By default the value of this is `True`. Otherwise, access to the route with or without the forward slash is allowed.
 
 ```python
 
@@ -27,10 +27,10 @@ from retic import Router
 # Controllers
 import controllers.users as users
 
-"""Definir la instancia Router"""
+"""Define the Router instance"""
 router = Router(strict_slashes=False)
 
-"""Definir las rutas de la apliación - users"""
+"""Define the rutes of the apliation - users"""
 router.get("/users/:id", users.get_by_id)
 
 ```
@@ -38,30 +38,29 @@ router.get("/users/:id", users.get_by_id)
 ```bash
 
 # strict_slashes=False
-# Ambas rutas tienen el mismo resultado
+# Both routes have the same result
 http://localhost:1801/users/1/
 http://localhost:1801/users/1
 
 # strict_slashes=True
-# La primera ruta redirije a la segunda ruta
+# The first route redirects to the second route
 http://localhost:1801/users/1/
 http://localhost:1801/users/1
 
 ```
 
-## Rutas de acceso
+## Access routes
 
-Cada ruta puede tener uno o más controladores, los cuales se ejecutan cuando la ruta coincide.
+Each route can have one or more controllers, which are executed when the route matches.
 
-La definición de una ruta toma la siguiente estructura:
+The definition of a route takes the following structure:
 
 ```python
 
 router.METHOD(PATH, [HANDLER, ...])
 
 ```
-
-Retic también tiene la capacidad de soportar la definición de rutas con la siguiente estructura:
+Retic also has the ability to support the definition of routes with the following structure:
 
 ```python
 
@@ -73,19 +72,19 @@ router \
 
 ```
 
-Dónde:
+where:
 
-- `router` es una [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") de la [clase](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") `Router`.
+- `router` is an [instance](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") of the [class](https://retic.land/manual/es/glossary/#clase "Glosario de Términos") `Router`.
 
-- `METHOD` es un [método](https://retic.land/manual/es/glossary/#m%C3%A9todo "Glosario de Términos") HTTP, el cual debe estar expresado en minúsculas.
+- `METHOD` is a [method](https://retic.land/manual/es/glossary/#m%C3%A9todo "Glosario de Términos") HTTP, which must be in minusletters.
 
-- `PATH` es una ruta en el servidor.
+- `PATH` is a path on the server.
 
-- `HANDLER` es el controlador que se ejecuta cuando la ruta coincide. Cada ruta puede poseer uno o más controladores.
+- `HANDLER` is the handler that runs when the path matches. Each route can have one or more controllers.
 
-Los siguientes ejemplos ilustran la definición de rutas con los metodos más utilizados en un [CRUD](https://es.wikipedia.org/wiki/CRUD).
+The following examples illustrate the definition of routes with the most used methods in a [CRUD](https://es.wikipedia.org/wiki/CRUD).
 
-Responde con `Hola mundo` en la página de inicio:
+Response as `Hi world` in the home page.
 
 ```python
 
@@ -100,7 +99,7 @@ import controllers.users as users
 """Definir la instancia Router"""
 router = Router()
 
-"""Definir las rutas de la apliación"""
+"""Define the paths of the application"""
 router \
     .get("/", lambda req, res, next: res.ok({"msg": "Hello world! - HTTP GET"})) \
     .post("/", lambda req, res, next: res.ok({"msg": "Hello world! - HTTP POST"})) \
@@ -108,12 +107,12 @@ router \
     .delete("/", lambda req, res, next: res.send({"msg": "Hello world! - HTTP DELETE"}))
 
 
-"""Definir las rutas de la apliación - users"""
+"""Define application paths - users"""
 router.get("/users/:id", users.get_by_id)
 
 ```
 
-Crea el archivo principal para empaquetar las rutas.
+Create the main file to package the routes.
 
 ```python
 

@@ -1,16 +1,16 @@
 ---
 id: services
-title: Servicios
-sidebar_label: Servicios
-description: Servicios
+title: Services
+sidebar_label: Services
+description: Services
 slug: /es/api/services
 ---
 
-Retic posee un gran conjunto de servicios para apoyarte en cierto tipo de funcionalidades necesarias para que tu aplicación funcione adecuadamente.
+Retic has a large set of services to support you in certain types of functionalities necessary for your application to function properly.
 
-## Servicios de respuesta
+## Response Services
 
-Es importante definir un estandar de respuestas a las peticiones realizadas por el cliente, para el correcto mantenimiento de una aplicación. Retic recomienda seguir una estructura de 3 atributos.
+It is important to define a standard of responses to the requests made by the client, for the correct maintenance of an application. Retic recommends following a 3-attribute structure.
 
 ```json
 {
@@ -20,23 +20,23 @@ Es importante definir un estandar de respuestas a las peticiones realizadas por 
 }
 ```
 
-Donde:
+where:
 
-- **valid**: Representa a una petición que se ha realizado correctamente cuando su valor es `True`, o en caso contrario donde contenga errores su valor es `False`.
+- **valid**: Represents a request that has been carried out correctly when its value is `True`,or otherwise where it contains errors, its value is`False`.
 
-- **msg**: Este es el mensaje que describe el resultado de la petición.
+- **msg**: This is the message that describes the result of the request.
 
-- **data**: Es la información de respuesta a la petición del cliente.
+- **data**: Is the response informatios of que client's request. 
 
 ### success_response(*data: any* = None, *msg: str* = "")
 
-Define la estructura de una respuesta para la petición del cliente en formato JSON e indica el hecho de que todo finalizó correctamente.
+Defines the structure of a response for the client's request in JSON format and indicates the fact that everything completed successfully.
 
-**Parámetros:**
+**Parameters:**
 
-- **data**: Información para ser enviada al cliente.
+- **data**: Information to send to the client.
 
-- **msg**: Es el mensaje que indica que la petición se completó correctamente.
+- **msg**: This message indicates that the request is correctly complete.  
 
 ```python
 
@@ -53,7 +53,8 @@ def upload(req: Request, res: Response):
 
 ```
 
-A continuación se presentará el resulta de la petición en formato JSON:
+
+The result of the request in JSON format will be presented below:
 
 ```json
 {
@@ -67,11 +68,11 @@ A continuación se presentará el resulta de la petición en formato JSON:
 
 ### error_response(*msg: str* = "")
 
-Se utiliza para definir la estructura de una respuesta a una petición del cliente en formato JSON la cual contiene errores.
+It's used to define the structure of a response to a client request in JSON format which contains errors.
 
-**Parámetros:**
+**Parameters:**
 
-- **msg**: Mensaje que indica que la petición no se completó correctamente debido a que contiene errores.
+- **msg**: Message that indicates that the request did not complete correctly because it contains errors.
 
 ```python
 
@@ -90,7 +91,7 @@ def upload(req: Request, res: Response):
 
 ```
 
-A continuación se presenta el resultado de la petición en formato JSON.
+The following is the result of the request in JSON format.
 
 ```json
 {
@@ -99,19 +100,19 @@ A continuación se presenta el resultado de la petición en formato JSON.
 }
 ```
 
-## Servicios generales
+## General services
 
-Retic proporciona una gran variedad de servicios generalizados, con un enfoque destinado a la validación de los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") obligatorios y otras funcionalidades.
+Retic provides a wide variety of generalized services, with an approach aimed at validating mandatory [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") and other functionalities.
 
-### Servicios de URLs
+### services of the URLs
 
 #### urlencode(_url: str_)
 
-Para esta [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") su uso suele ser conveniente cuando se codifica una cadena para usar parte de una URL para una consulta, como una forma conveniente de pasar variables a la siguiente página.
+for this [function](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") its use is usually convenient when encoding a string to use part of a URL for a query, as a convenient way to pass variables to the next page.
 
-**Parámetros:**
+**Parameters:**
 
-- **url**: Esta es la URL a codificar.
+- **url**: This is the URL to encode.
 
 ```python
 
@@ -135,11 +136,11 @@ def get_from_req(url):
 
 #### slugify(_text: str_ = "")
 
-Se utiliza para simplificar las cadenas feas o demasiado complejas en URL más amigables.
+It's used to simplify ugly or too complex strings in friendlier URLs.
 
-**Parámetros:**
+**Parameterss:**
 
-- **text**: Texto destinado a simplificar, de tipo `str`.
+- **text**: Text intended to simplify, of type `str`.
 
 ```python
 
@@ -161,15 +162,15 @@ def get_slug_from_title(title):
 
 ```
 
-### Servicios del Tiempo
+### Services of Time
 
 #### sleep(_seconds: int_ = 0)
 
-El [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") de tiempo Python sleep() suspende la ejecución por el número de segundos dado. El argumento puede ser un número de coma flotante(también llamado decimal) para indicar un tiempo de descanso más preciso.
+The [method](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") Time of Python sleep() suspends execution for the given number of seconds. The argument can be a floating point number (also called a decimal) to indicate a more precise rest time.
 
-**Parámetros:**
+**Parameters:**
 
-- **seconds**: Es el total de segundos que el programa estará en descanso o suspendido.
+- **seconds**: It's the total number of seconds that the program will be in rest or suspended.
 
 ```python
 
@@ -185,19 +186,19 @@ def download_from_url(url):
 
 ```
 
-## Sericios de validación
+## Validation Services
 
-Retic también ofrece la capacidad de validar ciertos requisitos en una petición de forma nativa. Por ejemplo, en el caso de que los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") obligatorios en una petición sean válidos.
+Retic also offers the ability to validate certain requirements in a request natively. For example, in the case that the mandatory [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") in a request are valid.
 
 ### validate_obligate_fields(*fields: any* = None)
 
-La mayoría de las veces existen valores que son obligatorios. Retic ofrece el servicio `validate_obligate_fields(...)` el cual verifica si una lista de [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") obligatorios son validos.
+Most of the time there are values that are required. Retic offers the `validate_obligate_fields(...)`service which checks if a list of mandatory [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") are valid.
 
-**Parámetros:**
+**Parameters:**
 
-- **fields**: Es el diccionario que contiene todos los [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") que son obligatorios, estos valores pueden ser de tipo `list` o simples valores.
+- **fields**: It's the glosary that contains the [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos") that are required, these values ​​can be of type list or simple values.
 
-El siguiente ejemplo valida que exista el parametro `files` el cual se obtiene cuando se envía un archivo en una petición.
+The following example validates that the `files` parameter exists, which is obtained when a file is sent in a request.
 
 ```python
 
@@ -209,18 +210,18 @@ from retic.services.validations import validate_obligate_fields
 from retic.services.responses import error_response
 
 def upload(req: Request, res: Response):
-    """Obtener una lsita desde la petición, si no existe, retorna una lista vacia por defecto.
+    """Get a list from the request, if it doesn't exist, it returns an empty list by default.
     """
 
     _files = req.files.getlist('files') or list()
 
-    """Validar si todos los campos obligatorios son validos"""
+    """Validate if all required fields are valid"""
     _validate = validate_obligate_fields({
         u'files': _files,
         u'source': req.headers['source'] if "source" in req.headers else None
     })
 
-    """Si existe algún campo invalido, retorna un mensaje de error y una respuesta de tipo 400 Bad request.
+    """If there is an invalid field, it returns an error message and a 400 Bad request response.
     """
     if _validate["valid"] is False:
         return res.bad_request(
@@ -231,17 +232,17 @@ def upload(req: Request, res: Response):
 
 ```
 
-## Servicios JSON
+## JSON Services
 
-Son servicios utilizados para la manipulación de [objetos](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") del tipo JSON y su equivalente en otros formatos.
+They are services used for the manipulation of [objects](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") of the JSON type and its equivalent in other formats.
 
 ### jsonify(_object: any_)
 
-Se usa para convertir un diccionario JSON a su equivalente en cadena de texto.
+It is used to convert a JSON dictionary to its equivalent in a text string.
 
-**Parámetros:**
+**Parameters:**
 
-- **object**: Es el objeto de respuesta del cliente, si el [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") es "str", se devuelve su valor sin transformación, de lo contrario crea una representación del objeto en formato JSON.
+- **object**: it's the object of response of the client, if the [object](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") is "str", its value is returned without transformation, otherwise it creates a representation of the object in JSON format.
 
 ```python
 
@@ -254,7 +255,7 @@ def upload(req: Request, res: Response):
 
 ```
 
-A continuación se presentará el resultado de la petición en una cadena de texto.
+Next, the result of the request will be presented in a text string.
 
 ```sh
 
@@ -264,11 +265,11 @@ text: '{"msg": "say hi!"}'
 
 ### parse(_content: str_)
 
-Deserializar (una [instancia](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") de str, bytes o bytearray que contiene un documento JSON) a un [objeto](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") Python.
+Deserialize (an [instance](https://retic.land/manual/es/glossary/#instancia "Glosario de Términos") of str, bytes or bytearray that contains a JSON)document in an [object](https://retic.land/manual/es/glossary/#objeto "Glosario de Términos") Python.
 
-**Parámetros:**
+**Parameters:**
 
-- **object**: Es el contenido de type str, bytes o bytearray que contiene un JSON válido.
+- **object**: It's the content of type str, bytes or bytearray that contains a valid JSON.
 
 ```python
 
@@ -281,7 +282,7 @@ def upload(req: Request, res: Response):
 
 ```
 
-A continuación se presenta el resultado de la petición en un formato JSON.
+The following is the result of the request in a JSON format.
 
 ```sh
 
