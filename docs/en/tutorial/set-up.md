@@ -1,36 +1,34 @@
 ---
 id: set-up
-title:  Configurar entorno de desarrollo
-sidebar_label:  Configurar entorno de desarrollo
-description: Instalar Retic y configurar el archivo requirements.txt
+title:  Set up development environment
+sidebar_label:  Set up development environment
+description: Install Retic and configure the requirements.txt
 slug: /es/tutorial/set-up
 ---
 
-_Puedes encontrar éste código en el siguiente [repositorio](https://github.com/reticpy/retic-restapi-example)._
+_You can find this code in the [repositorY](https://github.com/reticpy/retic-restapi-example)._
 
-Para comenzar a crea un [entorno virtual](../getting-started/virtual-environments) para el proyecto se debe hacer lo siguiente:
+To start create a [virtual enviroment](../getting-started/virtual-environments) for the project, do the following:
 
 ```bash
 
-# Crear la carpeta del proyecto
+Create the project folder
 mkdir retic-restapi-example
 
-# Ingresar a la carpeta
+# Enter the folder
 cd retic-restapi-example
 
-# Crear entorno virtual
+# Create virtual environment
 python -m venv venv
 
-# Activar entorno virtual
+# Activate virtual environment
 venv\Scripts\activate
 
-# Actualizar el paquete pip a la última versión
+# Update the pip package to the latest version
 python -m pip install --upgrade pip
 
 ```
-
-Se debe crear un archivo `requirements.txt` para agregar los paquetes del proyecto.
-
+A `requirements.txt` file must be created to add the project packages.
 ```bash
 
 # requirements.txt
@@ -39,7 +37,7 @@ retic==0.1.1
 
 ```
 
-Instala las dependencias con el siguiente comando:
+Install the dependencies with the following command:
 
 ```bash
 
