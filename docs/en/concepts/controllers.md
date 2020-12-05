@@ -1,15 +1,14 @@
 ---
 id: controllers
-title: Controladores
-sidebar_label: Controladores
-description: Controladores del proyecto
+title: Controllers
+sidebar_label: Controllers
+description: Controllers of the proyect
 slug: /es/concepts/controllers
 ---
 
-Los controladores se encuentran vinculados a las rutas de su aplicación. Gestionan las solicitudes HTTP entrantes y deciden que servicios deben realizar el trabajo para dar una respuesta correcta al cliente.
+Controllers are tied to your application paths. They manage incoming HTTP requests and decide which services should do the work to give a correct response to the client.
 
-Por ejemplo, la ruta GET `/users/:id` en su aplicación podría estar vinculada a un controlador como:
-
+For example, the rute GET `/users/:id` in your application could be bound to a controller like:
 ```python
 
 # controllers/users.py
@@ -22,29 +21,28 @@ from services.users import users
 
 
 def get_by_id(req: Request, res: Response, next: Next):
-    """Obtener un usuario por su identificador"""
+    """Get a user by her identifier"""
 
     user = users.get_by_id_db(req.param("id", callback=int))
 
-    """Transformar información de respuesta"""
+    """Transform response information"""
     if user:
-        """Retornar una respuesta al cliente"""
+        """Returns a response to the client"""
         res.ok({
             u"valid": True,
             u"msg": "Usuario encontrado.",
             u"data": user
         })
     else:
-        """Retornar un mensaje de error al cliente"""
+        """Returns an error message to the client"""
         res.not_found({
             u"valid": False,
-            u"msg": "Usuario no encontrado."
+            u"msg": "User not found."
         })
 
 
 ```
-
-Por defecto el controlador retorna una respuesta con código de estado 200.
+By default, the controller returns a response with status code 200.
 
 ```python
 
@@ -58,14 +56,14 @@ from services.users import users
 
 
 def get_by_id(req: Request, res: Response, next: Next):
-    """Obtener un usuario por su identificador"""
+    """Get a user by her identifier"""
 
     print("Controlador sin respuesta especifica.")
 
 ```
 
-Cada controlador recibe los siguientes [parámetros](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos"):
+Each controller receives the following [parameters](https://retic.land/manual/es/glossary/#par%C3%A1metros "Glosario de Términos"):
 
-- [Request](../api/request): Representa una solicitud HTTP hacia el servidor.
-- [Response](../api/response): Representa una respuesta al cliente desde el servidor.
-- [Next](../api/next): Permite pasar el control de la petición al siguiente controlador.
+- [Request](../api/request): Represents an HTTP request to the server.
+- [Response](../api/response): Represents a response to the client from the server.
+- [Next](../api/next): Allows control of the request to be passed to the next controller.
