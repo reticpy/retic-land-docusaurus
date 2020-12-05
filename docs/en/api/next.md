@@ -6,7 +6,7 @@ description: Next
 slug: /es/api/next
 ---
 
-La [clase](https://retic.land/manual/es/glossary#clase "Glosario de Términos") ``Next`` permite pasar el control de la petición al siguiente controlador. Con frecuencia se utiliza en el desarrollo de *middlewares* o lógicas para el intercambio de información.
+The ``Next`` [class](https://retic.land/manual/es/glossary#clase "Glosario de Términos") allows control of the request to be passed to the next controller. It is often used in the development of middleware or logic for the exchange of information.
   
 ```python
 
@@ -20,13 +20,13 @@ from services.users.users as users
 
 def oauth(req: Request, res: Response, next:Next):
 
-    """Autentificar usuario"""
+    """Authenticate the user"""
     _user = users.validate(req.headers.get('authorization'))
 
     if _user["valid"] is False:
         return res.forbidden()
 
-    # Continuar con el siguiente middleware
+    # Continue with the next middleware
     next()
 
 ```
