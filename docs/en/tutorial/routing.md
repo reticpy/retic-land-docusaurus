@@ -1,12 +1,14 @@
 ---
 id: routing
-title: Enrutamiento
-sidebar_label: Enrutamiento
-description: Crear rutas de la aplicación
+title: Routing
+sidebar_label: Routing
+description: Create app routes
 slug: /es/tutorial/routing
 ---
 
-_Estructura de carpetas utilizada:_
+_/ en / tutorial / routing
+
+Folder structure used:_
 
 ```bash
 
@@ -22,9 +24,9 @@ retic-restapi-example
 
 ```
 
-Este comando permite definir nuevas rutas para el servidor.
+This command allows you to define new paths for the server.
 
-Para esto se debe crear un archivo `/routes/routes.py` en el cual se encuentran las rutas de nuestra aplicación.
+For this, a file`/routes/routes.py` must be created in which the routes of our application can be found. 
 
 ```python
 
@@ -33,15 +35,16 @@ Para esto se debe crear un archivo `/routes/routes.py` en el cual se encuentran 
 # Retic
 from retic import Router
 
-"""Definir la instancia Router"""
+"""Define the instance Router"""
 router = Router()
 
-"""Definir las rutas de la apliación"""
+"""Define the app routes"""
 router.get("/", lambda req, res, next: res.ok({u"msg": "Hello world!"}))
 
 ```
 
-Crea el archivo principal para almacenar y empaquetar las rutas.
+Create the main file to store and package the routes.
+
 
 ```python
 
@@ -51,7 +54,7 @@ from .routes import router
 
 ```
 
-Actualiza el archivo principal `app.py` de la aplicación y agrega las rutas de la aplicación:
+Update the main app.py file for the app and add the app paths:
 
 ```python
 
@@ -65,11 +68,11 @@ from retic import App as app
 # Routes
 from routes import router
 
-# Agregar las rutas a la aplicación
+# Add the app routes
 app.use(router)
 
 if __name__ == "__main__":
-    # Crear servidor web
+    # Create web server
     app.listen(
         hostname="localhost",
         port=1801,
@@ -77,7 +80,7 @@ if __name__ == "__main__":
 
 ```
 
-Para terminar debes reiniciar el servidor web con el siguiente comando:
+To finish you must restart the web server with the following command:
 
 ```bash
 
@@ -85,8 +88,8 @@ python app.py
 
 ```
 
-Visita el siguiente enlace [http://localhost:1801/](http://localhost:1801/) para ver el resultado.
+Visit the following link [http://localhost:1801/](http://localhost:1801/) to see the result.
 
 ![alt text](../../../static/img/api_rest_app_2.png "API REST")
 
-Para más detalles visita la [guía de enrutamiento](../concepts/routing).
+For more details visit the [routing guide](../concepts/routing).
