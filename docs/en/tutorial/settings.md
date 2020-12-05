@@ -1,12 +1,12 @@
 ---
 id: settings
-title: "Archivo de configuración"
-sidebar_label: "Archivo de configuración"
-description: "Archivo de configuración"
+title: "Configuration file"
+sidebar_label: "Configuration file"
+description: "Configuration file"
 slug: /es/tutorial/settings
 ---
 
-_Estructura de carpetas utilizada:_
+_Folder structure used:_
 
 ```bash
 
@@ -37,11 +37,12 @@ retic-restapi-example
 
 ```
 
-Muchas veces es necesario declarar valores constantes al inicio de cada archivo `.py`. Estos pueden depender de otras variables dentro de la aplicación, los valores que se obtienen del archivo de variables de entorno (.env) son un ejemplo de lo dicho anteriormente.
+Many times it is necessary to declare constant values at the beginning of each `.py`. These can depend on other variables within the application, the values obtained from the environment variables file (.env) are an example of the above.
 
-Por esta razón, Retic recomienda utilizar un archivo `settings.py`, en el cual se importen todas éstas variables y sean agregadas a la configuración de Retic. De ésta manera se podrán utilizar dentro de toda la aplicación.
+For this reason, Retic recommends using a  `settings.py`,file in which all these variables are imported and added to Retic's configuration. In this way they can be used within the entire application.
 
-Crea un archivo `settings.py` y agrega la carga del archivo de variables de entorno de la siguiente manera:
+
+Create a  `settings.py` file and add the environment variable file load as follows:
 
 ```python
 
@@ -55,9 +56,9 @@ app.env.read_env('.env.development', override=True)
 
 ```
 
-Por defecto, la [función](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") `read_env()` realiza una busqueda del archivo `.env`, sin embargo, la ruta del archivo podría ser diferente. Se recomienda cargar las variables desde el sistema directamente y en un entorno de producción.
+By default, the [function](https://retic.land/manual/es/glossary/#funci%C3%B3n "Glosario de Términos") `read_env()` does a search for the `.env` file, however the file path might be different. It is recommended to load variables from the system directly and in a production environment.
 
-Crea el archivo de variables de entorno de desarrollo `.env.development`.
+Create the `.env.development` development environment variable file.
 
 ```bash
 
@@ -70,7 +71,7 @@ APP_ENV                         =development
 
 ```
 
-Luego crea el archivo de variables de entorno de staging `.env.staging`.
+Then create the staging environment variables file `.env.staging`.
 
 ```bash
 
@@ -83,7 +84,7 @@ APP_ENV                         =staging
 
 ```
 
-Finalmente crea el archivo de variables de entorno de producción `.env.production`.
+Finally create the production environment variables file `.env.production`.
 
 ```bash
 
@@ -96,8 +97,7 @@ APP_ENV                         =production
 
 ```
 
-Por último actualiza el archivo principal `app.py` y agrega el archivo de configuración:
-
+Finally update the main `app.py` file and add the configuration file:
 ```python
 
 # app.py
@@ -113,19 +113,19 @@ import settings
 # Routes
 from routes import router
 
-# Agregar las rutas a la aplicación
+# Add the routes of the app
 app.use(router)
 
 if __name__ == "__main__":
-    # Crear servidor web
+    # Create web server
     app.listen(
-        # Obtener la variable de entorno APP_HOSTNAME en el formato por defecto (str)
+        # Get the environment variable APP_HOSTNAME in the default format (str)
         hostname=app.env("APP_HOSTNAME"),
-        # Obtener la variable de entorno APP_PORT en formato númerico. De no existir, retorna 1801.
+        # Get the APP_PORT environment variable in numeric format. If it does not exist, it returns 1801.
         port=app.env.int("APP_PORT", 1801),
     )
 
 
 ```
 
-Si estás buscando más información puedes visitar la sección de [configuración](../concepts/settings).
+If you are looking for more information you can visit the [configuration](../concepts/settings) section.
