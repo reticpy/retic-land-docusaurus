@@ -1,55 +1,55 @@
 ---
 id: requirements
-title: Paquetes necesarios
-sidebar_label: Paquetes necesarios
-description: Instalar paquetes necesarios
+title: Required packages
+sidebar_label: Required packages
+description: Instal required packaged
 slug: /es/getting-started/requirements
 ---
 
-## Instalar Python
+## Instal Python
 
-Retic es compatible con la versión 2.7 de [Python](https://www.python.org/downloads/) al igual que con versiones superiores, sin embargo, se recomienda utilizar la última versión, Python 3.
+Retic is compatible with  [Python](https://www.python.org/downloads/) version 2.7 as well as higher versions, however it is recommended to use the latest version, Python 3.
 
-## Instalar Pip
+## Instal Pip
 
-Pip es un instalador de paquetes para Python. A continuación se muestra cómo realizar una instalación adecuada en los sistemas operativos más populares.
+Pip is a package installer for Python. Here's how to do a proper installation on the most popular operating systems.
 
-Instalación en MacOS:
+Instalation on MacOS:
 
 ```bash
 
-# Instalación del paquete
+# Package installation
 sudo easy_install pip
 
-# Ver la versión instalada
+# Seee the installed version
 pip --version
 
 ```
 
-Instalación en Linux:
+Installation on Linux:
 
 ```bash
 
-# Instalación del paquete
+# Installation of the packaged
 sudo apt-get install python-pip
 sudo apt-get install python3-pip
 
-# Ver la versión instalada
+# see the installed version
 pip --version
 
 ```
 
-Instalación en Windows:
+Installation on Windows:
 
-- Descarga la ultima versión desde [get-pip.py](https://bootstrap.pypa.io/get-pip.py)
-- Dentro de la carpeta donde se encuentre el archivo **get-pip.py** ejecuta:
+- Download the latest version from[get-pip.py](https://bootstrap.pypa.io/get-pip.py)
+- Inside the folder where the  **get-pip.py** file is, execute:
 
 ```bash
 
-# Instalación del paquete
+# Installlation of the package
 python get-pip.py
 
-# Ver la versión instalada
+# See the installed version
 pip --version
 
 ```
