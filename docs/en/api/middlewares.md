@@ -2,29 +2,29 @@
 id: middlewares
 title: Middlewares
 sidebar_label: Middlewares
-description: Middlewares de la Aplicación
+description: Middlewares of the App
 slug: /es/api/middlewares
 ---
 
-Retic proporciona servicios que funcionan como logica de intercambio de la aplicación, ésta se aplica a una o varias rutas **especificadas**.
+Retic provides services that function as the application's exchange logic, it's applied to one or more **specified** routes.
 
 ## cors(*methods: str*,*has_credentials: bool*,*origin: str*, *headers: str*, *expose_headers: str*)
 
-El intercambio de recursos de origen cruzado o "CORS" por sus siglas en ingles, le permitirá como lo indica su nombre, compartir recursos de una gran variedad de fuentes.
+Cross-origin resource sharing, or "CROSS," will allow you, as the name implies, to share resources from a wide variety of sources.
 
-**Los parámetros utilizados por CORS son:**
+**The parameters used by CROSS are:**
 
-* **methods**: Al utilizar el encabezado de respuesta "Access-Control-Allow-Methods", se podrá indicar qué métodos HTTP están permitidos en el intercambio de recursos de origen cruzado. Esto servirá como punto final particular para solicitudes de origen CORS.
+* **methods**: By using the "Access-Control-Allow-Methods" response header, you can indicate which HTTP methods are allowed in cross-origin's resource exchange. This will serve as a particular end point for CROSS origin requests.
 
-* **has_credentials**: El encabezado de respuesta "Access-Control-Allow-Credentials" le dice el navegador que el servidor da consentimiento y permite credenciales para la solicitud de CORS o de origen cruzado.
+* **has_credentials**: The "Access-Control-Allow-Credentials" response header tells the browser that the server gives consent and allows credentials for the CORS or cross-origin request.
 
-* **origin**: "Access-Control-Allow-Origin" en el caso de éste encabezado de respuesta, se indica si los recursos en la respuesta se pueden compartir con el origen del recurso dado.
+* **origin**: "Access-Control-Allow-Origin" in the case of this response header, indicates whether the resources in the response can be shared with the origin of the given resource.
 
-* **headers**: El uso del encabezado de respuesta "Access-Control-Allow-Headers" es usado como respuesta a una solicitud de verificación previa. Esta incluye los encabezados para la solicitud de control de acceso e indicar qué encabezados HTTP pueden ser utilizados durante la solicitud real.
+* **headers**: The use of the "Access-Control-Allow-Headers" response header is used in response to a preflight request. This includes the headers for the access control request and indicates which HTTP headers can be used during the actual request.
 
-* **expose_headers**: Ahora en el caso del encabezado de respuesta "Access-Control-Expose-Headers", indicará qué encabezados se pueden utilizar para mostrarse como parte de la respuesta al enumerar.
+* **expose_headers**: Now in the case of the "Access-Control-Expose-Headers" response header, it will indicate which headers can be used to display as part of the response when enumerating.
 
-Para más seguridad, Retic protege las rutas con el [método](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") ``options`` contra accesos no autorizados. Es por ello que se debe definir las rutas de acceso con el mismo método (``option``) bien especificadas. También pueden utilizarse expresiones regulares como se muestra en el siguiente ejemplo.
+For more security, Retic protects routes with the options [method](https://retic.land/manual/es/glossary#m%C3%A9todo "Glosario de Términos") ``options`` against unauthorized access. That is why the access paths must be defined with the same method (``option``) well specified. Regular expressions can also be used as shown in the following example.
 
 ```python
 
@@ -35,7 +35,7 @@ from retic.lib.api.middlewares import cors
 # Controllers
 import controllers.files as files
 
-"""Definir la instancia de Router"""
+"""Define the Router instance"""
 router = Router()
 
 """Define CORS"""
@@ -44,10 +44,10 @@ _cors = cors(
     expose_headers="Content-Type,source"
 )
 
-"""Agergar las cabeceras que proporciona la función cors a todas las rutas"""
+"""Add the headers provided by the cors function to all routes"""
 router.use(_cors)
 
-"""Define el metodo options para todas las rutas que comiencen con /"""
+"""Define the options method for all routes that start with /"""
 router.options("/*", _cors)
 
 ```
