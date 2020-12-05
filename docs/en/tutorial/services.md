@@ -1,12 +1,14 @@
 ---
 id: services
-title: Servicios
-sidebar_label: Servicios
-description: Crear servicios de la aplicación
+title: Services
+sidebar_label: Services
+description: Create app services
 slug: /es/tutorial/services
 ---
 
-_Estructura de carpetas utilizada:_
+_/ en / tutorial / services
+
+Folder structure used:_
 
 ```bash
 
@@ -33,34 +35,33 @@ retic-restapi-example
 
 ```
 
-Para hacer los servicios de la aplicación se debe crear un archivo `/services/users/users.py`, éste archivo contiene en su interior la logica de los controladores para el usuario de nuestra aplicación.
+To make the application services, a file  `/services/users/users.py`, must be created, this file contains inside the logic of the controllers for the user of our application.
 
 ```python
 
 # services/users/users.py
 
-"""Servicios para el controlador de usuarios"""
+"""Services for the user controller"""
 
 
 def get_by_id_db(user_id):
-    """Encontrar un usuario en base a un identificador
+    """Find a user based on an identifier
 
     :param user_id: Identificador del usuario
     """
 
-    """Realizar la busqueda"""
+    """Perform the search"""
     user = {
         u"username": "Retic",
         u"id": user_id
     }
 
-    """Retornar información"""
+    """Return the information"""
     return user
 
 ```
 
-Se debe actualizar el controlador `controllers/users.py` y agrega el servicio creado:
-
+You must update the controller `controllers/users.py` and add the created service:
 ```python
 
 # controllers/users.py
@@ -73,24 +74,24 @@ from services.users import users
 
 
 def get_by_id(req: Request, res: Response, next: Next):
-    """Obtener un usuario por su identificador"""
+    """Get a user by her identifier"""
 
-    """Obtener usuario en base a su id"""
+    """Get user based on her id"""
     user = users.get_by_id_db(req.param("id"))
 
-    """Transformar información de respuesta"""
+    """Transform response information"""
     response = {
         u"valid": True,
         u"msg": "Usuario encontrado.",
         u"data": user
     }
 
-    """Retornar una respuesta al cliente"""
+    """Return a response to the client"""
     res.ok(response)
 
 ```
 
-Visita el siguiente enlace [http://localhost:1801/users/1234](http://localhost:1801/users/1234) para ver el resultado.
+Visit the following link [http://localhost:1801/users/1234](http://localhost:1801/users/1234) to see the result.
 
 ![alt text](../../../static/img/api_rest_app_4.png "API REST")
 
