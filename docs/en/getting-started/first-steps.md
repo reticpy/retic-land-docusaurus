@@ -1,35 +1,34 @@
 ---
 id: first-steps
-title: Aplicación inicial
-sidebar_label: Aplicación inicial
-description: Crear una aplicación inicial
+title: Initial application 
+sidebar_label: initial application
+description: Create a starter application
 slug: /es/getting-started/first-steps
 ---
-
-Una vez creada la carpeta principal de tu proyecto debes crear, dentro de la misma, el archivo `app.py` con el siguiente codigo:
+Once the main folder of your project has been created, you must create, within it, the`app.py` file with the following code:
 
 ```python
 
 # Retic
 from retic import App as app
 
-# Crear el servidor
+# Create the server
 app.listen()
 
 ```
 
-Luego inicia tu servidor con el siguiente comando:
+Then start your server with the following command:
 
 ```bash
 
-# Opción 1
+# Option 1
 python app.py
 
-# Opción 2
+# Option 2
 python3 app.py
 
 ```
 
-Listo, has creado tu primera API. Visita el siguiente enlace [http://localhost:1801/](http://localhost:1801/) para ver el resultado.
+Ready, you have created your first API. Visit the following link [http://localhost:1801/](http://localhost:1801/)to see the result.
 
 ![alt text](../../../static/img/api_rest_app.png "API REST")
