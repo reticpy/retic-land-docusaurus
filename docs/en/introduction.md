@@ -5,22 +5,22 @@ sidebar_label: Introducción
 slug: /es/introduction
 ---
 
-Retic es un marco de trabajo para crear soluciones en Python.
+Retic is a framework for creating solutions in Python.
 
-Diseñado para atacar los siguientes puntos en el desarrollo de software:
+Designed to attack the following points in software development:
 
-- **Curva de aprendizaje**: Python posee una curva de aprendizaje corta.
+- **Learning curve**: Python has a short learning curve.
 
-- **Hosting**: Configuración fácil y rapida en los servidores.
+- **Hosting**: Quick and easy configuration on the servers.
 
-- **Inteligencia artificial**: Las librerias más importantes están escritas en Python.
+- **Artificial intelligence**: The most important libraries are written in Python.
 
-### Inicio rápido 
+### Quick start 
 
-- [Configure su entorno local para el desarrollo.](./getting-started/requirements)
+- [Set up your local environment for development.](./getting-started/requirements)
 
-- [Instalar Retic.](./getting-started/installation)
+- [Install Retic.](./getting-started/installation)
 
-- [Trabaja en un tutorial completo para crear tu primera aplicación.](./tutorial/set-up)
+- [Work through a complete tutorial to create your first app.](./tutorial/set-up)
 
-- [Conozca los conceptos fundamentales de diseño y la arquitectura de las aplicaciones.](./concepts/architecture)
+- [Learn about fundamental application architecture and design concepts](./concepts/architecture)
