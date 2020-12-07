@@ -216,4 +216,4 @@ def get_by_id(req: Request, res: Response, next: Next):
 ```
 Visite the following liink [http://localhost:1801/users/1](http://localhost:1801/users/1) para ver el resultado.
 
-![alt text](../../static/img/api_rest_app_5.png "API REST")
+![alt text](../../../static/img/api_rest_app_5.png "API REST")

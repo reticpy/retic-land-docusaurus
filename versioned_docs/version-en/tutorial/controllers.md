@@ -79,6 +79,6 @@ router.get("/users/:id", users.get_by_id)
 ```
 Visit the following link [http://localhost:1801/users/123](http://localhost:1801/users/123) para ver el resultado.
 
-![alt text](../../static/img/api_rest_app_3.png "API REST")
+![alt text](../../../static/img/api_rest_app_3.png "API REST")
 
 If you wish to look for more details go visit the [drivers guide](../concepts/controllers).

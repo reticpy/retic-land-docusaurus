@@ -93,6 +93,6 @@ def get_by_id(req: Request, res: Response, next: Next):
 
 Visit the following link [http://localhost:1801/users/1234](http://localhost:1801/users/1234) to see the result.
 
-![alt text](../../static/img/api_rest_app_4.png "API REST")
+![alt text](../../../static/img/api_rest_app_4.png "API REST")
 
 Si deseas ver más detalles sobre esto puedes visitar la [guía de servicios](../concepts/services).
