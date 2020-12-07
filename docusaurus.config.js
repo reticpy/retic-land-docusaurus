@@ -1,8 +1,26 @@
+const versions = require("./versions.json");
+
+// This probably only makes sense for the alpha phase, temporary
+function getNextAlphaVersionName() {
+  const lastReleasedVersion = versions[0];
+
+  return `${lastReleasedVersion}`;
+}
+
+const isDev = process.env.NODE_ENV === "development";
+
+const isDeployPreview =
+  process.env.NETLIFY && process.env.CONTEXT === "deploy-preview";
+
+const baseUrl = process.env.BASE_URL || "/";
+
+const isVersioningDisabled = !!process.env.DISABLE_VERSIONING;
+
 module.exports = {
   title: "Retic",
   tagline: "Retic is a framework for Python.",
   url: "https://retic.land",
-  baseUrl: "/",
+  baseUrl,
   onBrokenLinks: "throw",
   favicon: "img/favic.ico",
   organizationName: "Staimer", // Usually your GitHub org/user name.
@@ -16,10 +34,21 @@ module.exports = {
       // },
       items: [
         {
-          to: "manual/es/introduction",
-          activeBasePath: "docs",
-          label: "Manual",
+          type: "doc",
           position: "right",
+          docId: "introduction",
+          label: "Manual",
+        },
+        {
+          type: "docsVersionDropdown",
+          position: "right",
+          dropdownActiveClassDisabled: true,
+          dropdownItemsAfter: [
+            // {
+            //   to: "/versions",
+            //   label: "All versions",
+            // },
+          ],
         },
         // { to: "blog", label: "Blog", position: "left" },
         {
@@ -49,23 +78,23 @@ module.exports = {
           items: [
             {
               label: "Installation",
-              to: "manual/es/getting-started/installation",
+              to: "manual/getting-started/installation",
             },
             {
               label: "Getting Started",
-              to: "manual/es/getting-started/requirements",
+              to: "manual/getting-started/requirements",
             },
             {
               label: "Tutorial",
-              to: "manual/es/tutorial/set-up",
+              to: "manual/tutorial/set-up",
             },
             {
               label: "Main Concepts",
-              to: "manual/es/concepts/architecture",
+              to: "manual/concepts/architecture",
             },
             {
               label: "API Reference",
-              to: "manual/es/api/request",
+              to: "manual/api/request",
             },
           ],
         },
@@ -108,11 +137,29 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
+          // routeBasePath: '/',
+          // path: "docs",
           routeBasePath: "manual",
+
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
           editUrl:
             "https://github.com/reticpy/retic-land-docusaurus/edit/master/",
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          // remarkPlugins: [
+          //   [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+          // ],
+          disableVersioning: isVersioningDisabled,
+          lastVersion: "current",
+          onlyIncludeVersions:
+            !isVersioningDisabled && (isDev || isDeployPreview)
+              ? ["current", ...versions.slice(1, 2)]
+              : undefined,
+          versions: {
+            current: {
+              label: `${getNextAlphaVersionName()}`,
+            },
+          },
         },
         blog: {
           showReadingTime: true,

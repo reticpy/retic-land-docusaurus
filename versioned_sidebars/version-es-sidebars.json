@@ -1,0 +1,56 @@
+{
+  "version-es/docs": [
+    "version-es/introduction",
+    {
+      "type": "category",
+      "label": "Primeros pasos",
+      "collapsed": false,
+      "items": [
+        "version-es/getting-started/requirements",
+        "version-es/getting-started/virtual-environments",
+        "version-es/getting-started/installation",
+        "version-es/getting-started/first-steps"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Tutorial",
+      "collapsed": true,
+      "items": [
+        "version-es/tutorial/set-up",
+        "version-es/tutorial/app",
+        "version-es/tutorial/routing",
+        "version-es/tutorial/controllers",
+        "version-es/tutorial/services",
+        "version-es/tutorial/settings",
+        "version-es/tutorial/external-apps"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Conceptos principales",
+      "collapsed": true,
+      "items": [
+        "version-es/concepts/architecture",
+        "version-es/concepts/routing",
+        "version-es/concepts/controllers",
+        "version-es/concepts/services",
+        "version-es/concepts/settings",
+        "version-es/concepts/app"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Referencia de la API",
+      "collapsed": true,
+      "items": [
+        "version-es/api/request",
+        "version-es/api/response",
+        "version-es/api/next",
+        "version-es/api/middlewares",
+        "version-es/api/services"
+      ]
+    },
+    "version-es/glossary"
+  ]
+}
