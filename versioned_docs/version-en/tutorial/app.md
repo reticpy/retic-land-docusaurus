@@ -50,4 +50,4 @@ python app.py
 ```
 Visit the following link  [http://localhost:1801/](http://localhost:1801/) to see the result.
 
-![alt text](../../static/img/api_rest_app.png "API REST")
+![alt text](../../../static/img/api_rest_app.png "API REST")
