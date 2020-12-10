@@ -56,7 +56,7 @@ app.env.read_env('.env.development', override=True)
 
 ```
 
-By default, the [function](https://retic.land/manual/glossary/#funci%C3%B3n "Glosario de Términos") `read_env()` does a search for the `.env` file, however the file path might be different. It is recommended to load variables from the system directly and in a production environment.
+By default, the [function](https://retic.land/manual/glossary/#function "Glossary of Terms") `read_env()` does a search for the `.env` file, however the file path might be different. It is recommended to load variables from the system directly and in a production environment.
 
 Create the `.env.development` development environment variable file.
 
