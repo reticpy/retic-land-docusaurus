@@ -8,7 +8,7 @@ slug: /api/request
 
 ## Request Class
 
-The **Request** [class](https://retic.land/manual/glossary#clase "Glosario de Términos") represents the HTTP request and contains a library that helps make requests much simpler. It contains properties such as [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos"), request body, request headers, among others.
+The **Request** [class](https://retic.land/manual/glossary#class "Glosary of Terms") represents the HTTP request and contains a library that helps make requests much simpler. It contains properties such as [parameters](https://retic.land/manual/glossary#parameters "Glosary of Terms"), request body, request headers, among others.
 
 ### Properties
 
@@ -27,7 +27,7 @@ req.access_route: ImmutableList(['127.0.0.1'])
 
 #### args
 
-List all the [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos") in the URL of the request.
+List all the [parameters](https://retic.land/manual/glossary#parameters "Glosary of Terms") in the URL of the request.
 
 ```python
 
@@ -39,7 +39,7 @@ req.args: ImmutableMultiDict([('queryparam', '13344')])
 
 ```
 
-By default an `ImmutableMultiDict` that is returned in this [function](https://retic.land/manual/glossary/#funci%C3%B3n "Glosario de Términos") contains functions like `getlist`, `get`, `get_all` to interact with the [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos") in the URL of a request. If you need more details you can visit the official documentation about this [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList) class.
+By default an `ImmutableMultiDict` that is returned in this [function](https://retic.land/manual/glossary#function "Glosary of Terms") contains functions like `getlist`, `get`, `get_all` to interact with the [parameters](https://retic.land/manual/glossary#parameters "Glosary of Terms") in the URL of a request. If you need more details you can visit the official documentation about this [ImmutableMultiDict](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.ImmutableList) class.
 
 #### base_url
 
@@ -54,7 +54,7 @@ req.base_url: 'http://127.0.0.1:1801/files/123'
 
 #### body
 
-`Body` [class](https://retic.land/manual/glossary#clase "Glosario de Términos") [instance](https://retic.land/manual/glossary/#instancia "Glosario de Términos"). Contains the body that makes up the request.
+`Body` [class](https://retic.land/manual/glossary#class "Glosary of Terms") [instance](https://retic.land/manual/glossary#instance "Glosary of Terms"). Contains the body that makes up the request.
 
 ```python
 
@@ -100,9 +100,9 @@ req.environ: {'CONTENT_LENGTH': '39', 'CONTENT_TYPE': 'text/plain', 'HTTP_ACCEPT
 
 #### files
 
-List all files in the HTTP request. Each value is an [instance](https://retic.land/manual/glossary/#instancia "Glosario de Términos") of the [FileStorage](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.FileStorage) class.
+List all files in the HTTP request. Each value is an [instance](https://retic.land/manual/glossary#instance "Glosary of Terms") of the [FileStorage](https://werkzeug.palletsprojects.com/en/1.0.x/datastructures/#werkzeug.datastructures.FileStorage) class.
 
-Each element behaves like a _file object_ recognized by **Python**, with the difference that it also has a `save()` [function](https://retic.land/manual/glossary/#funci%C3%B3n "Glosario de Términos") that can store the file on a file system.
+Each element behaves like a _file object_ recognized by **Python**, with the difference that it also has a `save()` [function](https://retic.land/manual/glossary#function "Glosary of Terms") that can store the file on a file system.
 
 ```python
 
@@ -184,7 +184,7 @@ req.host: 'localhost:1801'
 
 #### method
 
-This is the [method](https://retic.land/manual/glossary#m%C3%A9todo "Glosario de Términos") used for the request, for example: `GET`, `POST`, `DELETE` y `PUT`.
+This is the [method](https://retic.land/manual/glossary#method "Glosary of Terms") used for the request, for example: `GET`, `POST`, `DELETE` y `PUT`.
 
 ```python
 
@@ -195,7 +195,7 @@ req.method: 'GET'
 
 #### params
 
-Object that contains all the [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos") for the request URL: `GET`, `POST`, `DELETE` y `PUT`.
+Object that contains all the [parameters](https://retic.land/manual/glossary#parameters "Glosary of Terms") for the request URL: `GET`, `POST`, `DELETE` y `PUT`.
 
 ```python
 
@@ -237,13 +237,13 @@ req.retic: {'app1': {'msg': 'say hi!'}}
 
 ### Functions
 
-The Request [class](https://retic.land/manual/glossary#clase "Glosario de Términos") uses the following functions to manipulate your information.
+The Request [class](https://retic.land/manual/glossary#class "Glosary of Terms") uses the following functions to manipulate your information.
 
 #### param(_key: str_, _default_value: any_ = None, _callback_ = None)
 
 This returns the value of the parameter with the specified name.
 
-`req.param(...)` searches the parsed [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos") such as the **URL path**, **request body**, and **query string**, all in that order. If the value does not exist in the request, it will return `None` or the specified default value.
+`req.param(...)` searches the parsed [parameters](https://retic.land/manual/glossary#parameters "Glosary of Terms") such as the **URL path**, **request body**, and **query string**, all in that order. If the value does not exist in the request, it will return `None` or the specified default value.
 
 **Parameters:**
 
@@ -251,7 +251,7 @@ This returns the value of the parameter with the specified name.
 
 - **default_value**: Value by default if the parameter doesn't exist.
 
-- **callback**: [Function](https://retic.land/manual/glossary/#funci%C3%B3n "Glosario de Términos") that is executed after obtaining the value of the parameter, it can be `bool`, `int`, `str`, etc.
+- **callback**: [Function](https://retic.land/manual/glossary#function "Glosary of Terms") that is executed after obtaining the value of the parameter, it can be `bool`, `int`, `str`, etc.
 
 ```python
 
@@ -269,7 +269,7 @@ print(req.param('id3')
 
 #### set(_key: str_, _value: any_ = None)
 
-Assign an [object](https://retic.land/manual/glossary/#objeto "Glosario de Términos") in the **retic dictionary** with a specific name. It should be noted that names are not case-sensitive, in the event that the name already exists, its value will be overwritten and the code will not be as expected. In the event that the value to be assigned does not exist, the value `None` will be saved by default.
+Assign an [object](https://retic.land/manual/glossary#object "Glosary of Terms") in the **retic dictionary** with a specific name. It should be noted that names are not case-sensitive, in the event that the name already exists, its value will be overwritten and the code will not be as expected. In the event that the value to be assigned does not exist, the value `None` will be saved by default.
 
 **Parameters:**
 
@@ -286,7 +286,7 @@ req.set('app1', {u"msg": "say hi!"})
 
 #### get(_key: str_, _default_value: any_ = None)
 
-Here the value of an [object](https://retic.land/manual/glossary/#objeto "Glosario de Términos") in the **retic dictionary** with a specific name is returned. Again you should note that the names are not case sensitive. If there is no value in the request, it will return `None` or whatever default value is specified.
+Here the value of an [object](https://retic.land/manual/glossary#object "Glosary of Terms") in the **retic dictionary** with a specific name is returned. Again you should note that the names are not case sensitive. If there is no value in the request, it will return `None` or whatever default value is specified.
 
 **Parameters:**
 
@@ -310,7 +310,7 @@ print(req.get('app2', 2233))
 
 #### all_params()
 
-Returns the value of all the [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos") sent in the request together with the retic dictionary combined into a single dictionary.
+Returns the value of all the [parameters](https://retic.land/manual/glossary#parameters "Glosary of Terms") sent in the request together with the retic dictionary combined into a single dictionary.
 
 It includes parsed parameters like the **URL path**, **request body**, **query string** and **retic dictionary**, all in that order.
 
@@ -328,4 +328,4 @@ print(req.all_params())
 
 ### Other properties and functions
 
-Retic inherits from `Werkzeug's Request` [class](https://retic.land/manual/glossary#clase "Glosario de Términos") to handle its requests. Visit the documentation about your [Request](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#base-wrappers) class to complement the information that is mentioned here.
+Retic inherits from `Werkzeug's Request` [class](https://retic.land/manual/glossary#class "Glosary of Terms") to handle its requests. Visit the documentation about your [Request](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#base-wrappers) class to complement the information that is mentioned here.
