@@ -102,13 +102,13 @@ The following is the result of the request in JSON format.
 
 ## General services
 
-Retic provides a wide variety of generalized services, with an approach aimed at validating mandatory [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos") and other functionalities.
+Retic provides a wide variety of generalized services, with an approach aimed at validating mandatory [parameters](https://retic.land/manual/glossary/#parameters "Glossary of Terms") and other functionalities.
 
 ### services of the URLs
 
 #### urlencode(_url: str_)
 
-for this [function](https://retic.land/manual/glossary/#funci%C3%B3n "Glosario de Términos") its use is usually convenient when encoding a string to use part of a URL for a query, as a convenient way to pass variables to the next page.
+for this [function](https://retic.land/manual/glossary/#function "Glossary of Terms") its use is usually convenient when encoding a string to use part of a URL for a query, as a convenient way to pass variables to the next page.
 
 **Parameters:**
 
@@ -166,7 +166,7 @@ def get_slug_from_title(title):
 
 #### sleep(_seconds: int_ = 0)
 
-The [method](https://retic.land/manual/glossary#m%C3%A9todo "Glosario de Términos") Time of Python sleep() suspends execution for the given number of seconds. The argument can be a floating point number (also called a decimal) to indicate a more precise rest time.
+The [method](https://retic.land/manual/glossary/#method "Glossary of Terms") Time of Python sleep() suspends execution for the given number of seconds. The argument can be a floating point number (also called a decimal) to indicate a more precise rest time.
 
 **Parameters:**
 
@@ -188,15 +188,15 @@ def download_from_url(url):
 
 ## Validation Services
 
-Retic also offers the ability to validate certain requirements in a request natively. For example, in the case that the mandatory [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos") in a request are valid.
+Retic also offers the ability to validate certain requirements in a request natively. For example, in the case that the mandatory [parameters](https://retic.land/manual/glossary/#parameters "Glossary of Terms") in a request are valid.
 
 ### validate_obligate_fields(*fields: any* = None)
 
-Most of the time there are values that are required. Retic offers the `validate_obligate_fields(...)`service which checks if a list of mandatory [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos") are valid.
+Most of the time there are values that are required. Retic offers the `validate_obligate_fields(...)`service which checks if a list of mandatory [parameters](https://retic.land/manual/glossary/#parameters "Glossary of Terms") are valid.
 
 **Parameters:**
 
-- **fields**: It's the glosary that contains the [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos") that are required, these values ​​can be of type list or simple values.
+- **fields**: It's the glosary that contains the [parameters](https://retic.land/manual/glossary/#parameters "Glossary of Terms") that are required, these values can be of type list or simple values.
 
 The following example validates that the `files` parameter exists, which is obtained when a file is sent in a request.
 
@@ -234,7 +234,7 @@ def upload(req: Request, res: Response):
 
 ## JSON Services
 
-They are services used for the manipulation of [objects](https://retic.land/manual/glossary/#objeto "Glosario de Términos") of the JSON type and its equivalent in other formats.
+They are services used for the manipulation of [objects](https://retic.land/manual/glossary/#object "Glossary of Terms") of the JSON type and its equivalent in other formats.
 
 ### jsonify(_object: any_)
 
@@ -242,7 +242,7 @@ It is used to convert a JSON dictionary to its equivalent in a text string.
 
 **Parameters:**
 
-- **object**: it's the object of response of the client, if the [object](https://retic.land/manual/glossary/#objeto "Glosario de Términos") is "str", its value is returned without transformation, otherwise it creates a representation of the object in JSON format.
+- **object**: it's the object of response of the client, if the [object](https://retic.land/manual/glossary/#object "Glossary of Terms") is "str", its value is returned without transformation, otherwise it creates a representation of the object in JSON format.
 
 ```python
 
@@ -265,7 +265,7 @@ text: '{"msg": "say hi!"}'
 
 ### parse(_content: str_)
 
-Deserialize (an [instance](https://retic.land/manual/glossary/#instancia "Glosario de Términos") of str, bytes or bytearray that contains a JSON)document in an [object](https://retic.land/manual/glossary/#objeto "Glosario de Términos") Python.
+Deserialize (an [instance](https://retic.land/manual/glossary/#instance "Glossary of Terms") of str, bytes or bytearray that contains a JSON)document in an [object](https://retic.land/manual/glossary/#object "Glossary of Terms") Python.
 
 **Parameters:**
 
