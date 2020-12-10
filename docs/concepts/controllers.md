@@ -62,7 +62,7 @@ def get_by_id(req: Request, res: Response, next: Next):
 
 ```
 
-Each controller receives the following [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos"):
+Each controller receives the following [parameters](https://retic.land/manual/glossary/#parameters "Glossary of Terms"):
 
 - [Request](../api/request): Represents an HTTP request to the server.
 - [Response](../api/response): Represents a response to the client from the server.
