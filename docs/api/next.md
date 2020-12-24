@@ -6,7 +6,7 @@ description: Next
 slug: /api/next
 ---
 
-The ``Next`` [class](https://retic.land/manual/glossary#clase "Glosario de Términos") allows control of the request to be passed to the next controller. It is often used in the development of middleware or logic for the exchange of information.
+The ``Next`` [class](https://retic.land/manual/glossary#class "Glosary of Terms") allows control of the request to be passed to the next controller. It is often used in the development of middleware or logic for the exchange of information.
   
 ```python
 
