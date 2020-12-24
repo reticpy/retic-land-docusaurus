@@ -11,7 +11,7 @@ It refers to the definition of how an application responds to a request given by
 
 ## Router class
 
-The [class](https://retic.land/manual/glossary/#clase "Glosario de Términos") **Router** allows you to define the application paths.
+The [class](https://retic.land/manual/glossary/#class "Glossary of Terms") **Router** allows you to define the application paths.
 
 **Parameters:**
 
@@ -74,9 +74,9 @@ router \
 
 where:
 
-- `router` is an [instance](https://retic.land/manual/glossary/#instancia "Glosario de Términos") of the [class](https://retic.land/manual/glossary/#clase "Glosario de Términos") `Router`.
+- `router` is an [instance](https://retic.land/manual/glossary/#instance "Glossary of Terms") of the [class](https://retic.land/manual/glossary/#class "Glossary of Terms") `Router`.
 
-- `METHOD` is a [method](https://retic.land/manual/glossary/#m%C3%A9todo "Glosario de Términos") HTTP, which must be in minusletters.
+- `METHOD` is a [method](https://retic.land/manual/glossary/#method "Glossary of Terms") HTTP, which must be in minusletters.
 
 - `PATH` is a path on the server.
 
