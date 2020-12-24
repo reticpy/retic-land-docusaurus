@@ -9,7 +9,7 @@ slug: /concepts/app
 
 ## App class
 
-The [class](https://retic.land/manual/glossary/#clase "Glosario de Términos") **App** contains the principal [instance](https://retic.land/manual/glossary/#instancia "Glosario de Términos") of the app.
+The [class](https://retic.land/manual/glossary/#class "Glossary of Terms") **App** contains the principal [instance](https://retic.land/manual/glossary/#instance "Glossary of Terms") of the app.
 
 **Parameters:**
 
@@ -69,7 +69,7 @@ It is used to save the configuration of the application. See [settings](./settin
 
 #### router
 
-In the [instance](https://retic.land/manual/glossary/#instancia "Glosario de Términos") of the [class](https://retic.land/manual/glossary/#clase "Glosario de Términos") [Router](./routing).
+In the [instance](https://retic.land/manual/glossary/#instance "Glossary of Terms") of the [class](https://retic.land/manual/glossary/#class "Glossary of Terms") [Router](./routing).
 
 ### Functions
 
@@ -198,7 +198,7 @@ if __name__ == "__main__":
 
 #### listen(_hostname: str_ = "localhost", _port: int_ = 1801, _application: any_ = None, _use_reloader: bool_ = False, _use_debugger: bool_ = False, _use_evalex: bool_ = True, _extra_files: any_ = None, _reloader_interval: int_ = 1, _reloader_type: str_ = 'auto', _threaded: bool_ = False, _processes: int_ = 1, _request_handler: any_ = None, _static_files: any_ = None, _passthrough_errors=False_, _ssl_context: any_ = None)
 
-Create a web server based on configuration [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos") 
+Create a web server based on configuration [parameters](https://retic.land/manual/glossary/#parameters "Glossary of Terms") 
 
 **Parameters:**
 
@@ -215,10 +215,10 @@ Create a web server based on configuration [parameters](https://retic.land/manua
 - **reloader_type**: It is the reboot type, by default it uses automatic detection. Other values: `stat` y `watchdog`.
 - **threaded**: It is used to isolate requests in individual threads.
 - **processes**: If it is greater than 1, it will handle each request in a new process until it reaches the maximum number of concurrent processes defined.
-- **request_handler**: This is an optional parameter that can be used to override the default Request [class](https://retic.land/manual/glossary/#clase "Glosario de Términos") **Request**
+- **request_handler**: This is an optional parameter that can be used to override the default Request [class](https://retic.land/manual/glossary/#class "Glossary of Terms") **Request**
 - **static_files**: It is a list or dictionary of paths for static files.
 - **passthrough_errors**: It is used to disable exception handling, which means that the server will stop working when an error occurs.
-- **ssl_context**: it is a SSL context for the connection. It can be a class `ssl.SSLContext`, a [tupla](https://retic.land/manual/glossary/#tupla "Glosario de Términos") with the`(cert_file, pkey_file)` format, a string or a sequence of characters ` 'adhoc'`, if the server should create one automatically, or `None` to disable SSL (which is used by default)
+- **ssl_context**: it is a SSL context for the connection. It can be a class `ssl.SSLContext`, a [tupla](https://retic.land/manual/glossary/#tupla "Glossary of Terms") with the`(cert_file, pkey_file)` format, a string or a sequence of characters ` 'adhoc'`, if the server should create one automatically, or `None` to disable SSL (which is used by default)
 ```python
 
 # app.py
