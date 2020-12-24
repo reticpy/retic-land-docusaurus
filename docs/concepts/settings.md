@@ -8,11 +8,11 @@ slug: /concepts/settings
 
 ## Config class
 
-the [class](https://retic.land/manual/glossary/#clase "Glosario de Términos") **Config** allows you to set values in the application that allow them to be used in its different sections.
+the [class](https://retic.land/manual/glossary/#class "Glossary of Terms") **Config** allows you to set values in the application that allow them to be used in its different sections.
 
 ### Functions
 
-the [class](https://retic.land/manual/glossary/#clase "Glosario de Términos") **Config** uses the following functions to manipulate its information.
+the [class](https://retic.land/manual/glossary/#class "Glossary of Terms") **Config** uses the following functions to manipulate its information.
 
 #### set(_key: str_, _value: dict_)
 
@@ -41,7 +41,7 @@ app.config.set("default_port", 1801)
 
 #### get(_key: str_, _default_value: dict_ = None, _callback: any_ = None)
 
-The configuration variables can be used in any part of the application using the app [instance](https://retic.land/manual/glossary/#instancia "Glosario de Términos") `app`.
+The configuration variables can be used in any part of the application using the app [instance](https://retic.land/manual/glossary/#instance "Glossary of Terms") `app`.
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ The configuration variables can be used in any part of the application using the
 
 - **default_value**: Defines the default value in case the variable does not exist.
 
-- **callback**: is the [function](https://retic.land/manual/glossary/#funci%C3%B3n "Glosario de Términos") that is executed after obtaining the value.
+- **callback**: is the [function](https://retic.land/manual/glossary/#function "Glossary of Terms") that is executed after obtaining the value.
 
 ```python
 
@@ -89,7 +89,7 @@ Sets the configuration based on a dictionary.
 
 **Parameters:**
 
-- **settings**: is a dictionary type [object](https://retic.land/manual/glossary/#objeto "Glosario de Términos") which contains the settings.
+- **settings**: is a dictionary type [object](https://retic.land/manual/glossary/#object "Glossary of Terms") which contains the settings.
 
 ```python
 
@@ -140,13 +140,13 @@ app.config.clear()
 
 ## Environment Variables
 
-Retic also provides easy access to system variables. The `Env` [class](https://retic.land/manual/glossary/#clase "Glosario de Términos") from the `environs` library is used to define its routes in the app. see the [official documentation ](https://github.com/sloria/environs)for all possible combinations and how to access environment variables in the best way.
+Retic also provides easy access to system variables. The `Env` [class](https://retic.land/manual/glossary/#class "Glossary of Terms") from the `environs` library is used to define its routes in the app. see the [official documentation ](https://github.com/sloria/environs)for all possible combinations and how to access environment variables in the best way.
 
 ### Env class functions
 
 #### env.read_env(*path: str* = None, _recurse: bool_ = True, _verbose: bool_ = False, _override: bool_)
 
-By default, variables are searched in the .env file if it exists. However, sometimes it is necessary to have more than one environment file.  This [funtion](https://retic.land/manual/glossary/#funci%C3%B3n "Glosario de Términos") allows you to read as many environment files as you indicate.
+By default, variables are searched in the .env file if it exists. However, sometimes it is necessary to have more than one environment file.  This [funtion](https://retic.land/manual/glossary/#function "Glossary of Terms") allows you to read as many environment files as you indicate.
 
 ```bash
 
