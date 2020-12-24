@@ -24,7 +24,7 @@ Cross-origin resource sharing, or "CROSS," will allow you, as the name implies, 
 
 * **expose_headers**: Now in the case of the "Access-Control-Expose-Headers" response header, it will indicate which headers can be used to display as part of the response when enumerating.
 
-For more security, Retic protects routes with the options [method](https://retic.land/manual/glossary#m%C3%A9todo "Glosario de Términos") ``options`` against unauthorized access. That is why the access paths must be defined with the same method (``option``) well specified. Regular expressions can also be used as shown in the following example.
+For more security, Retic protects routes with the options [method](https://retic.land/manual/glossary#method "Glosary of Terms") ``options`` against unauthorized access. That is why the access paths must be defined with the same method (``option``) well specified. Regular expressions can also be used as shown in the following example.
 
 ```python
 
