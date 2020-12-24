@@ -8,7 +8,7 @@ slug: /concepts/architecture
 
 Retic is a framework used to create **server-side applications**. Retic is written in Python, and uses Werkzeug as a server.
 
-An app is define by **rutes, controlers and services**. Retic provides the [class](https://retic.land/manual/glossary/#clase "Glosario de Términos") **Router** that helps to define the access points of the app. 
+An app is define by **rutes, controlers and services**. Retic provides the [class](https://retic.land/manual/glossary/#class "Glossary of Terms") **Router** that helps to define the access points of the app. 
 
 
 Retic recommends the following directory structure for easier application stability and maintenance.
