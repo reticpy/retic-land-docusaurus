@@ -8,11 +8,11 @@ slug: /api/response
 
 ## Response class
 
-The **Response** [class](https://retic.land/manual/glossary#clase "Glosario de Términos") represents the response to an HTTP request made by a client.
+The **Response** [class](https://retic.land/manual/glossary#class "Glossary of Terms") represents the response to an HTTP request made by a client.
 
 ### Properties
 
-The main properties of the `Response` [class](https://retic.land/manual/glossary#clase "Glosario de Términos") and their functionality are presented below:
+The main properties of the `Response` [class](https://retic.land/manual/glossary#class "Glossary of Terms") and their functionality are presented below:
 
 #### default_mimetype
 
@@ -71,13 +71,13 @@ res.status_code: 200
 
 ### Features
 
-The **Response** [class](https://retic.land/manual/glossary#clase "Glosario de Términos") uses the following functions to manipulate its information:
+The **Response** [class](https://retic.land/manual/glossary#class "Glossary of Terms") uses the following functions to manipulate its information:
 
 #### bad_request(*content: any* = "")
 
-This [method](https://retic.land/manual/glossary#m%C3%A9todo "Glosario de Términos") will respond with a _400 Bad_ Request to the client's request, this is to indicate that the request is not valid.
+This [method](https://retic.land/manual/glossary#method "Glossary of Terms") will respond with a _400 Bad_ Request to the client's request, this is to indicate that the request is not valid.
 
-This generally means that the request contained invalid [parameters](https://retic.land/manual/glossary/#par%C3%A1metros "Glosario de Términos") or headers, or that you tried to do something that your request logic does not support.
+This generally means that the request contained invalid [parameters](https://retic.land/manual/glossary#parameters "Glossary of Terms") or headers, or that you tried to do something that your request logic does not support.
 
 **Parameters:**
 
@@ -118,7 +118,7 @@ def upload(req: Request, res: Response):
 
 #### forbidden(_content: any_ = "")
 
-This [method](https://retic.land/manual/glossary#m%C3%A9todo "Glosario de Términos") is used to send a _403 forbidden_ response to the client, indicating that a request is not authorized.
+This [method](https://retic.land/manual/glossary#method "Glossary of Terms") is used to send a _403 forbidden_ response to the client, indicating that a request is not authorized.
 
 This generally means that the user agent tried to do an "action" for which it did not have any type of authorization to do so, something like changing the password of another user would fall into one of these actions that are normally not authorized.
 
@@ -162,9 +162,9 @@ def login(req: Request, res: Response):
 
 #### not_found(*content: any* = "")
 
-This [method](https://retic.land/manual/glossary#m%C3%A9todo "Glosario de Términos") is used to send a _404 not_found_ response.
+This [method](https://retic.land/manual/glossary#method "Glossary of Terms") is used to send a _404 not_found_ response.
 
-When called manually from your application code, this [method](https://retic.land/manual/glossary#m%C3%A9todo "Glosario de Términos") is typically used to indicate that the client tried to find, update, or remove something that doesn't exist.
+When called manually from your application code, this [method](https://retic.land/manual/glossary#method "Glossary of Terms") is typically used to indicate that the client tried to find, update, or remove something that doesn't exist.
 
 **Parameters:**
 
@@ -207,7 +207,7 @@ def get_by_folder(req: Request, res: Response):
 
 #### ok(_content: dict_ = None)
 
-This [method](https://retic.land/manual/glossary#m%C3%A9todo "Glosario de Términos") is used to send a _200 OK_ response to the client.
+This [method](https://retic.land/manual/glossary#method "Glossary of Terms") is used to send a _200 OK_ response to the client.
 
 This means that the client's request has been accepted.
 
@@ -270,7 +270,7 @@ def get_by_folder(req: Request, res: Response):
 
 #### server_error(*content: any* = "")
 
-This [method](https://retic.land/manual/glossary#m%C3%A9todo "Glosario de Términos") is used to send a _500 Server error_ response to the client, indicating that some kind of error occurred on the server.
+This [method](https://retic.land/manual/glossary#method "Glossary of Terms") is used to send a _500 Server error_ response to the client, indicating that some kind of error occurred on the server.
 
 **Parameters:**
 
@@ -302,7 +302,7 @@ def undefined(req: Request, res: Response):
 
 Sends a response in string with a format (XML, CSV, plain text), responses in JSON format, among others. Its use is recommended in the event that it is necessary to send a success response to the client with a status code other than 200.
 
-This [method](https://retic.land/manual/glossary#m%C3%A9todo "Glosario de Términos") is used in the underlying implementation of most of the other terminal response methods.
+This [method](https://retic.land/manual/glossary#method "Glossary of Terms") is used in the underlying implementation of most of the other terminal response methods.
 
 **Parameters:**
 
@@ -330,11 +330,11 @@ Hi!
 
 Set response headers or headers with specific values.
 
-Alternatively, an [object](https://retic.land/manual/glossary/#objeto "Glosario de Términos") containing headers can be passed to set multiple values at once, where the keys are the names of the headers and the corresponding values are the desired values.
+Alternatively, an [object](https://retic.land/manual/glossary/#object "Glossary of Terms") containing headers can be passed to set multiple values at once, where the keys are the names of the headers and the corresponding values are the desired values.
 
 **Parameters:**
 
-- **headers**: It can be of type `dict`, to represent an [object](https://retic.land/manual/glossary/#objeto "Glosario de Términos") of headers that will be added to the current headers. If it is of type `str` it will be used to access a specific header. Any other type of format will cause an error exception.
+- **headers**: It can be of type `dict`, to represent an [object](https://retic.land/manual/glossary/#object "Glossary of Terms") of headers that will be added to the current headers. If it is of type `str` it will be used to access a specific header. Any other type of format will cause an error exception.
 
 - **value**: This is the value that will be assigned to the specified header. By default it has a specified `None` value.
 
@@ -421,4 +421,4 @@ def upload(req: Request, res: Response):
 
 ### Other properties and functions
 
-Retic inherits from `Werkzeug's Response` [class](https://retic.land/manual/glossary#clase "Glosario de Términos")  for managing request responses, visit the documentation about its [Response](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#werkzeug.wrappers.Response) class to complement the information mentioned here.
+Retic inherits from `Werkzeug's Response` [class](https://retic.land/manual/glossary/#class "Glossary of Terms")  for managing request responses, visit the documentation about its [Response](https://werkzeug.palletsprojects.com/en/1.0.x/wrappers/#werkzeug.wrappers.Response) class to complement the information mentioned here.
